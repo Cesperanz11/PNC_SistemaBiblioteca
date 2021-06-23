@@ -38,5 +38,6 @@ namespace Sistema.Entidades
 
         public string ubicacion { set; get; }
 
+        public string hola { set; get; }
     }
 }
