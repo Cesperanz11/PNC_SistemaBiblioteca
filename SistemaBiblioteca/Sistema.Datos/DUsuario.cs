@@ -8,5 +8,10 @@ namespace Sistema.Datos
 {
     class DUsuario
     {
+        // Funcion de login
+
+        // Funcion de verificar existencia de usuario
+
+        //Funcion de listar usuarios (maestros)
     }
 }

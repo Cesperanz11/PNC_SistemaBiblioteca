@@ -8,5 +8,12 @@ namespace Sistema.Datos
 {
     class DLibros
     {
+        //Funcion de listar libros
+
+        //Funcion de insertar libros
+
+        //Funcion de actualizar libros
+
+        //Funcion de eliminar libros
     }
 }
