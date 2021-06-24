@@ -70,6 +70,7 @@ namespace Sistema.Presentacion
             this.TabControl = new System.Windows.Forms.TabControl();
             this.TPSelectV = new System.Windows.Forms.TabPage();
             this.dgvListaVideos = new System.Windows.Forms.DataGridView();
+            this.TPInsertarV = new System.Windows.Forms.TabPage();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -385,6 +386,7 @@ namespace Sistema.Presentacion
             this.TabControl.Controls.Add(this.TPActualizarL);
             this.TabControl.Controls.Add(this.TPEliminarL);
             this.TabControl.Controls.Add(this.TPSelectV);
+            this.TabControl.Controls.Add(this.TPInsertarV);
             this.TabControl.Location = new System.Drawing.Point(0, 85);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
@@ -411,6 +413,15 @@ namespace Sistema.Presentacion
             this.dgvListaVideos.ReadOnly = true;
             this.dgvListaVideos.Size = new System.Drawing.Size(624, 311);
             this.dgvListaVideos.TabIndex = 0;
+            // 
+            // TPInsertarV
+            // 
+            this.TPInsertarV.Location = new System.Drawing.Point(4, 22);
+            this.TPInsertarV.Name = "TPInsertarV";
+            this.TPInsertarV.Size = new System.Drawing.Size(624, 317);
+            this.TPInsertarV.TabIndex = 5;
+            this.TPInsertarV.Text = "Ingresar Videos";
+            this.TPInsertarV.UseVisualStyleBackColor = true;
             // 
             // FrmAdmin
             // 
@@ -486,6 +497,7 @@ namespace Sistema.Presentacion
         private System.Windows.Forms.TabControl TabControl;
         private System.Windows.Forms.TabPage TPSelectV;
         private System.Windows.Forms.DataGridView dgvListaVideos;
+        private System.Windows.Forms.TabPage TPInsertarV;
     }
 }
 
