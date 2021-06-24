@@ -56,5 +56,15 @@ namespace Sistema.Negocio
             DUsuario Datos = new DUsuario();
             return Datos.Listar();
         }
+
+        // Funcion de obtener rol
+        public static string Get_Rol(string Email)
+        {
+            //Utiizando funcion para obtener rol del usuario
+            DUsuario Datos = new DUsuario();
+            string Rol = Datos.Get_Rol(Email);
+
+            return Rol;
+        }
     }
 }

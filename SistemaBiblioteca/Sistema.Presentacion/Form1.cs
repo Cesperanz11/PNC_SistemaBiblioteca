@@ -43,6 +43,9 @@ namespace Sistema.Presentacion
         {
             string email = TxtEmail.Text;
             string password = TxtPassword.Text;
+            string Rol;
+            FrmMaestros frm_maestros = new FrmMaestros(); // Creando un formulario hijo de FrmMaestros
+            FrmAdmin frm_admin = new FrmAdmin(); // Creando un formulario hijo de FrmAdmin
 
             try
             {
@@ -72,7 +75,18 @@ namespace Sistema.Presentacion
                         if (Rpta.Equals("OK")) //La password es correcta
                         {
                             this.MensajeOk("Se hizo un login exitosamente"); //Mostrarle al usuario que si se hacer login
-                                                                             
+                            this.Close();  // Cerrando el formulario de login
+
+                            Rol = NUsuario.Get_Rol(email.Trim()); // Obteniendo el rol del usuario loggeado
+
+                            if (Rol.Equals("1"))
+                            {
+                                frm_maestros.Show();
+                            }
+                            else if(Rol.Equals("2"))
+                            {
+                                frm_admin.Show();
+                            }
                         }
                         else //La password es incorrecta
                         {
