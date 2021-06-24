@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sistema.Entidades
 {
-    class Usuario
+    public class Usuario
     {
         //Creando las variables que actuaran como los atributos de la tabla Usuario
         public int id_usuario { set; get; }

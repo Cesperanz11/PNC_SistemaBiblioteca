@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using Sistema.Entidades;
 
 namespace Sistema.Datos
 {
@@ -47,6 +48,97 @@ namespace Sistema.Datos
         }
 
         //Funcion de insertar libros
+        public string Insertar(Libros Obj)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //creando conexion con la BD
+                SqlCon = Conexion.getInstancia().CrearConexion();
+
+                //generando nuevo comando para ejecutar en SQL Server el procedimiento almacenado "libros_insertar"
+                SqlCommand Comando = new SqlCommand("libros_insertar", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                //Declarando value de los parametros dentro del procedimiento almacenado
+                Comando.Parameters.Add("@numero_ejemplares", SqlDbType.Int).Value = Obj.numero_ejemplares;
+                Comando.Parameters.Add("@isbn", SqlDbType.VarChar).Value = Obj.isbn;
+                Comando.Parameters.Add("@titulo", SqlDbType.VarChar).Value = Obj.titulo;
+                Comando.Parameters.Add("@autor", SqlDbType.VarChar).Value = Obj.autor;
+                Comando.Parameters.Add("@editorial", SqlDbType.VarChar).Value = Obj.editorial;
+                Comando.Parameters.Add("@anio_edicion", SqlDbType.Int).Value = Obj.anio_edicion;
+                Comando.Parameters.Add("@numero_edicion", SqlDbType.VarChar).Value = Obj.numero_edicion;
+                Comando.Parameters.Add("@pais", SqlDbType.VarChar).Value = Obj.pais;
+                Comando.Parameters.Add("@idioma", SqlDbType.VarChar).Value = Obj.idioma;
+                Comando.Parameters.Add("@materia", SqlDbType.VarChar).Value = Obj.materia;
+                Comando.Parameters.Add("@numero_pagina", SqlDbType.Int).Value = Obj.numero_pagina;
+                Comando.Parameters.Add("@ubicacion", SqlDbType.VarChar).Value = Obj.ubicacion;
+                Comando.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Obj.descripcion;
+
+
+                //se abre la conexion
+                SqlCon.Open();
+
+                Rpta = Comando.ExecuteNonQuery() == 1 ? "OK" : "No se pudo ingresar el registro del libro";
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                //si se genera conexion con exito, luego de tener los datos se cierra
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
+
+        //Funcion para validar existencia del libro
+        public string Existe(string isbn)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //creando conexion con la BD
+                SqlCon = Conexion.getInstancia().CrearConexion();
+
+                //generando nuevo comando para ejecutar en SQL Server el procedimiento almacenado "librs_existe"
+                SqlCommand Comando = new SqlCommand("libros_existe", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                //Declarando value de los parametros dentro del procedimiento almacenado
+                Comando.Parameters.Add("@isbn", SqlDbType.VarChar).Value = isbn;
+
+                //consulta para ejecutar el procedimiento almacenado
+                SqlParameter ParExiste = new SqlParameter();
+                ParExiste.ParameterName = "@existe";
+                //especificando el tipo de variable que va retornar
+                ParExiste.SqlDbType = SqlDbType.Int;
+
+                //retornando el valor de respuesta de la query
+                ParExiste.Direction = ParameterDirection.Output;
+                Comando.Parameters.Add(ParExiste);
+
+                //se abre la conexion con BD
+                SqlCon.Open();
+
+                //ejecutando query que no devuelve ningun valor
+                Comando.ExecuteNonQuery();
+                Rpta = Convert.ToString(ParExiste.Value);
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                //si se genera conexion con exito, luego de tener los datos se cierra
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
 
         //Funcion de actualizar libros
 
