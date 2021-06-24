@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sistema.Negocio;
 
 namespace Sistema.Presentacion
 {
@@ -18,6 +19,42 @@ namespace Sistema.Presentacion
         {
             InitializeComponent();
         }
+
+
+        //Funcion para listar libros
+        private void Listar_Libros()
+        {
+            try
+            {
+                //Obteniendo la tabla de la BD
+                dgvLista.DataSource = NUsuario.Listar();
+
+                //Aplicando el formato a la tabla para mejor disenio
+                // this.Formato();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        //Funcion para listar videos
+        private void Listar_Videos()
+        {
+            try
+            {
+                //Obteniendo la tabla de la BD
+                dgvLista.DataSource = NUsuario.Listar();
+
+                //Aplicando el formato a la tabla para mejor disenio
+                // this.Formato();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
 
         private void ShowNewForm(object sender, EventArgs e)
         {
@@ -107,6 +144,17 @@ namespace Sistema.Presentacion
         private void prestamosDeLibrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void TPSelectL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmAdmin_Load(object sender, EventArgs e)
+        {
+            this.Listar_Libros(); //Funcion para cargar el contenido de la tabla Libros
+            this.Listar_Videos(); //Funcion para 
         }
     }
 }

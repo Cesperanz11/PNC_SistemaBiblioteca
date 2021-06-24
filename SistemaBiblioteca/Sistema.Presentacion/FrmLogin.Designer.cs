@@ -108,6 +108,7 @@ namespace Sistema.Presentacion
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.TxtEmail);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesion";
             this.ResumeLayout(false);
             this.PerformLayout();
