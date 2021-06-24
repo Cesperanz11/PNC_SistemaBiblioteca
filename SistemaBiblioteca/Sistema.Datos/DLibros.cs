@@ -104,7 +104,7 @@ namespace Sistema.Datos
                 //creando conexion con la BD
                 SqlCon = Conexion.getInstancia().CrearConexion();
 
-                //generando nuevo comando para ejecutar en SQL Server el procedimiento almacenado "librs_existe"
+                //generando nuevo comando para ejecutar en SQL Server el procedimiento almacenado "libros_existe"
                 SqlCommand Comando = new SqlCommand("libros_existe", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
