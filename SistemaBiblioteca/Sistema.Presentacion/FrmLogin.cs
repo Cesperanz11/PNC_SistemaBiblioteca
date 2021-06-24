@@ -12,9 +12,9 @@ using Sistema.Negocio;
 
 namespace Sistema.Presentacion
 {
-    public partial class Form1 : Form
+    public partial class FrmLogin : Form
     {
-        public Form1()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -36,6 +36,20 @@ namespace Sistema.Presentacion
         {
             TxtEmail.Clear();
             TxtPassword.Clear();
+        }
+
+        //Funcion para crear el FrmMaestros
+        public static void ThreadProcMaestros()
+        {
+            FrmMaestros f;
+            Application.Run(new FrmMaestros());
+        }
+
+        //Funcion para crear el FrmAdmin
+        public static void ThreadProcAdmin()
+        {
+            FrmAdmin f;
+            Application.Run(new FrmAdmin());
         }
 
         //Funcion de Login y Verificacion
@@ -74,18 +88,26 @@ namespace Sistema.Presentacion
                         Rpta = NUsuario.Login(email.Trim(), password.Trim());
                         if (Rpta.Equals("OK")) //La password es correcta
                         {
-                            this.MensajeOk("Se hizo un login exitosamente"); //Mostrarle al usuario que si se hacer login
-                            this.Close();  // Cerrando el formulario de login
+                            //this.MensajeOk("Se hizo un login exitosamente"); //Mostrarle al usuario que si se hacer login
+                            
 
                             Rol = NUsuario.Get_Rol(email.Trim()); // Obteniendo el rol del usuario loggeado
 
                             if (Rol.Equals("1"))
                             {
-                                frm_maestros.Show();
+                                
+                                // Pasando el control al FrmMaestros y cerrando el FrmLogin
+                                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProcMaestros));
+                                t.Start();
+                                this.Close();
                             }
                             else if(Rol.Equals("2"))
                             {
-                                frm_admin.Show();
+
+                                // Pasanda el control al FrmAdmin y cerrando el FrmLogin
+                                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProcAdmin));
+                                t.Start();
+                                this.Close();
                             }
                         }
                         else //La password es incorrecta
