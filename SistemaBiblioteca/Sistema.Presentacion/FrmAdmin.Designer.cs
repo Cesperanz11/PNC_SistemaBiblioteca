@@ -66,14 +66,18 @@ namespace Sistema.Presentacion
             this.TPActualizarL = new System.Windows.Forms.TabPage();
             this.TPInsertarL = new System.Windows.Forms.TabPage();
             this.TPSelectL = new System.Windows.Forms.TabPage();
-            this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.dgvListaLibros = new System.Windows.Forms.DataGridView();
             this.TabControl = new System.Windows.Forms.TabControl();
+            this.TPSelectV = new System.Windows.Forms.TabPage();
+            this.dgvListaVideos = new System.Windows.Forms.DataGridView();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.TPSelectL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaLibros)).BeginInit();
             this.TabControl.SuspendLayout();
+            this.TPSelectV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaVideos)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -353,7 +357,7 @@ namespace Sistema.Presentacion
             // 
             // TPSelectL
             // 
-            this.TPSelectL.Controls.Add(this.dgvLista);
+            this.TPSelectL.Controls.Add(this.dgvListaLibros);
             this.TPSelectL.Location = new System.Drawing.Point(4, 22);
             this.TPSelectL.Name = "TPSelectL";
             this.TPSelectL.Padding = new System.Windows.Forms.Padding(3);
@@ -363,16 +367,16 @@ namespace Sistema.Presentacion
             this.TPSelectL.UseVisualStyleBackColor = true;
             this.TPSelectL.Click += new System.EventHandler(this.TPSelectL_Click);
             // 
-            // dgvLista
+            // dgvListaLibros
             // 
-            this.dgvLista.AllowUserToAddRows = false;
-            this.dgvLista.AllowUserToDeleteRows = false;
-            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLista.Location = new System.Drawing.Point(4, 42);
-            this.dgvLista.Name = "dgvLista";
-            this.dgvLista.ReadOnly = true;
-            this.dgvLista.Size = new System.Drawing.Size(617, 269);
-            this.dgvLista.TabIndex = 0;
+            this.dgvListaLibros.AllowUserToAddRows = false;
+            this.dgvListaLibros.AllowUserToDeleteRows = false;
+            this.dgvListaLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaLibros.Location = new System.Drawing.Point(4, 0);
+            this.dgvListaLibros.Name = "dgvListaLibros";
+            this.dgvListaLibros.ReadOnly = true;
+            this.dgvListaLibros.Size = new System.Drawing.Size(617, 311);
+            this.dgvListaLibros.TabIndex = 0;
             // 
             // TabControl
             // 
@@ -380,11 +384,33 @@ namespace Sistema.Presentacion
             this.TabControl.Controls.Add(this.TPInsertarL);
             this.TabControl.Controls.Add(this.TPActualizarL);
             this.TabControl.Controls.Add(this.TPEliminarL);
+            this.TabControl.Controls.Add(this.TPSelectV);
             this.TabControl.Location = new System.Drawing.Point(0, 85);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
             this.TabControl.Size = new System.Drawing.Size(632, 343);
             this.TabControl.TabIndex = 4;
+            // 
+            // TPSelectV
+            // 
+            this.TPSelectV.Controls.Add(this.dgvListaVideos);
+            this.TPSelectV.Location = new System.Drawing.Point(4, 22);
+            this.TPSelectV.Name = "TPSelectV";
+            this.TPSelectV.Size = new System.Drawing.Size(624, 317);
+            this.TPSelectV.TabIndex = 4;
+            this.TPSelectV.Text = "Consultar Videos";
+            this.TPSelectV.UseVisualStyleBackColor = true;
+            // 
+            // dgvListaVideos
+            // 
+            this.dgvListaVideos.AllowUserToAddRows = false;
+            this.dgvListaVideos.AllowUserToDeleteRows = false;
+            this.dgvListaVideos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaVideos.Location = new System.Drawing.Point(0, 3);
+            this.dgvListaVideos.Name = "dgvListaVideos";
+            this.dgvListaVideos.ReadOnly = true;
+            this.dgvListaVideos.Size = new System.Drawing.Size(624, 311);
+            this.dgvListaVideos.TabIndex = 0;
             // 
             // FrmAdmin
             // 
@@ -410,8 +436,10 @@ namespace Sistema.Presentacion
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.TPSelectL.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaLibros)).EndInit();
             this.TabControl.ResumeLayout(false);
+            this.TPSelectV.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaVideos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,8 +482,10 @@ namespace Sistema.Presentacion
         private System.Windows.Forms.TabPage TPActualizarL;
         private System.Windows.Forms.TabPage TPInsertarL;
         private System.Windows.Forms.TabPage TPSelectL;
-        private System.Windows.Forms.DataGridView dgvLista;
+        private System.Windows.Forms.DataGridView dgvListaLibros;
         private System.Windows.Forms.TabControl TabControl;
+        private System.Windows.Forms.TabPage TPSelectV;
+        private System.Windows.Forms.DataGridView dgvListaVideos;
     }
 }
 
