@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Sistema.Datos
 {
-    class DUsuario
+    public class DUsuario
     {
         // Funcion de login
         public string Login(string Email, string Password)
