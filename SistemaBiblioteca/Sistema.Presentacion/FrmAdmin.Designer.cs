@@ -67,13 +67,13 @@ namespace Sistema.Presentacion
             this.TPInsertarL = new System.Windows.Forms.TabPage();
             this.TPSelectL = new System.Windows.Forms.TabPage();
             this.dgvLista = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.TabControl = new System.Windows.Forms.TabControl();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.TPSelectL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.TabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -374,17 +374,17 @@ namespace Sistema.Presentacion
             this.dgvLista.Size = new System.Drawing.Size(617, 269);
             this.dgvLista.TabIndex = 0;
             // 
-            // tabControl1
+            // TabControl
             // 
-            this.tabControl1.Controls.Add(this.TPSelectL);
-            this.tabControl1.Controls.Add(this.TPInsertarL);
-            this.tabControl1.Controls.Add(this.TPActualizarL);
-            this.tabControl1.Controls.Add(this.TPEliminarL);
-            this.tabControl1.Location = new System.Drawing.Point(0, 85);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(632, 343);
-            this.tabControl1.TabIndex = 4;
+            this.TabControl.Controls.Add(this.TPSelectL);
+            this.TabControl.Controls.Add(this.TPInsertarL);
+            this.TabControl.Controls.Add(this.TPActualizarL);
+            this.TabControl.Controls.Add(this.TPEliminarL);
+            this.TabControl.Location = new System.Drawing.Point(0, 85);
+            this.TabControl.Name = "TabControl";
+            this.TabControl.SelectedIndex = 0;
+            this.TabControl.Size = new System.Drawing.Size(632, 343);
+            this.TabControl.TabIndex = 4;
             // 
             // FrmAdmin
             // 
@@ -393,7 +393,7 @@ namespace Sistema.Presentacion
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(632, 453);
             this.Controls.Add(this.LblAdmin);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.TabControl);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -411,7 +411,7 @@ namespace Sistema.Presentacion
             this.statusStrip.PerformLayout();
             this.TPSelectL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.TabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,7 +455,7 @@ namespace Sistema.Presentacion
         private System.Windows.Forms.TabPage TPInsertarL;
         private System.Windows.Forms.TabPage TPSelectL;
         private System.Windows.Forms.DataGridView dgvLista;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl TabControl;
     }
 }
 

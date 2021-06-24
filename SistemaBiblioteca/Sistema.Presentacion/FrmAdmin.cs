@@ -27,7 +27,7 @@ namespace Sistema.Presentacion
             try
             {
                 //Obteniendo la tabla de la BD
-                dgvLista.DataSource = NUsuario.Listar();
+                dgvLista.DataSource = NLibros.Listar();
 
                 //Aplicando el formato a la tabla para mejor disenio
                 // this.Formato();
@@ -44,7 +44,7 @@ namespace Sistema.Presentacion
             try
             {
                 //Obteniendo la tabla de la BD
-                dgvLista.DataSource = NUsuario.Listar();
+                dgvLista.DataSource = NVideos.Listar();
 
                 //Aplicando el formato a la tabla para mejor disenio
                 // this.Formato();
@@ -153,8 +153,9 @@ namespace Sistema.Presentacion
 
         private void FrmAdmin_Load(object sender, EventArgs e)
         {
-            this.Listar_Libros(); //Funcion para cargar el contenido de la tabla Libros
-            this.Listar_Videos(); //Funcion para 
+            if(TabControl.SelectedIndex == 0) this.Listar_Libros(); //Funcion para cargar el contenido de la tabla Libros
+            if(TabControl.SelectedIndex == 5) this.Listar_Videos(); //Funcion para cargar e contenido de la tabla Videos
+
         }
     }
 }
