@@ -1,0 +1,9 @@
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Datos\bin\Debug\Sistema.Datos.dll
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Datos\bin\Debug\Sistema.Datos.pdb
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Datos\bin\Debug\Sistema.Entidades.dll
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Datos\bin\Debug\Sistema.Entidades.pdb
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.csprojAssemblyReference.cache
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.csproj.CoreCompileInputs.cache
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.csproj.CopyComplete
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.dll
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.pdb

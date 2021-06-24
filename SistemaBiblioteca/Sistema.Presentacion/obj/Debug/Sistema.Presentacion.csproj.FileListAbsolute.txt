@@ -1,0 +1,15 @@
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\bin\Debug\Sistema.Presentacion.exe.config
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\bin\Debug\Sistema.Presentacion.exe
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\bin\Debug\Sistema.Presentacion.pdb
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\bin\Debug\Sistema.Negocio.dll
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\bin\Debug\Sistema.Datos.dll
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\bin\Debug\Sistema.Negocio.pdb
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\bin\Debug\Sistema.Datos.pdb
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.csprojAssemblyReference.cache
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.Form1.resources
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.Properties.Resources.resources
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.csproj.GenerateResource.cache
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.csproj.CopyComplete
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.exe
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.pdb

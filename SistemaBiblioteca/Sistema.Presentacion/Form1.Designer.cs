@@ -45,8 +45,10 @@ namespace Sistema.Presentacion
             // 
             this.TxtPassword.Location = new System.Drawing.Point(308, 151);
             this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.PasswordChar = '*';
             this.TxtPassword.Size = new System.Drawing.Size(131, 20);
             this.TxtPassword.TabIndex = 1;
+            this.TxtPassword.UseSystemPasswordChar = true;
             // 
             // BtnLogin
             // 
