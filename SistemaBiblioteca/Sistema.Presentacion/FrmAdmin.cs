@@ -67,8 +67,8 @@ namespace Sistema.Presentacion
             MessageBox.Show(Mensaje, "Sistema Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        //Funcion de Limpiar formulario
-        private void Limpiar()
+        //Funcion de Limpiar formulario de ingresar Libros
+        private void Limpiar_L()
         {
             TxtIsbn.Clear();
             TxtTituloL.Clear();
@@ -83,6 +83,24 @@ namespace Sistema.Presentacion
             TxtUbiL.Clear();
             TxtPaisL.Clear();
             TxtIdiomaL.Clear();
+        }
+
+        //Funcion de Limpiar formulario de ingresar Videos
+        private void Limpiar_V()
+        {
+            TxtTituloV.Clear();
+            TxtDirector.Clear();
+            TxtProd.Clear();
+            TxtTipo.Clear();
+            TxtAnio.Clear();
+            TxtDuracion.Clear();
+            TxtPaisV.Clear();
+            TxtIdiomaV.Clear();
+            TxtSubs.Clear();
+            TxtClasificacion.Clear();
+            TxtGenero.Clear();
+            TxtSinopsis.Clear();
+            TxtUbiV.Clear();
         }
 
 
@@ -204,16 +222,16 @@ namespace Sistema.Presentacion
                 }
                 else
                 {
-                    Rpta = NLibros.Insertar(TxtNumEjemplares.Text.Trim(), TxtIsbn.Text.Trim(), TxtTituloL.Text.Trim(),
-                        TxtAutor.Text.Trim(), TxtEditorial.Text.Trim(), TxtAnioEdicion.Text.Trim(), TxtNumEdicion.Text.Trim(),
-                        TxtPaisL.Text.Trim(), TxtIdiomaL.Text.Trim(), TxtMateria.Text.Trim(), TxtNumPaginas.Text.Trim() ,
+                    Rpta = NLibros.Insertar( Convert.ToInt32(TxtNumEjemplares.Text.Trim()) , TxtIsbn.Text.Trim(), TxtTituloL.Text.Trim(),
+                        TxtAutor.Text.Trim(), TxtEditorial.Text.Trim(), Convert.ToInt32(TxtAnioEdicion.Text.Trim()), TxtNumEdicion.Text.Trim(),
+                        TxtPaisL.Text.Trim(), TxtIdiomaL.Text.Trim(), TxtMateria.Text.Trim(), Convert.ToInt32(TxtNumPaginas.Text.Trim()),
                         TxtUbiL.Text.Trim(), TxtDescripcion.Text.Trim());
                     if (Rpta.Equals("OK"))
                     {
                         this.MensajeOk("Se ingreso el libro de forma correcta en el registro");
-                        this.Limpiar();
+                        this.Limpiar_L();
                         this.Listar_Libros();
-                        //Esto hace que el Tab General donde estan "Listado" y "Mantenimiento" muestre la columna 0, es decir, el "Listado"
+                        //Esto hace que el Tab General donde estan las Tabs muestre la columna 0, es decir, el "Listado de Libros"
                         TabControl.SelectedIndex = 0;
 
                     }
@@ -228,6 +246,64 @@ namespace Sistema.Presentacion
 
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Limpiar_L();
+            //Esto hace que el Tab General donde estan las Tabs muestre la columna 0, es decir, el "Listado de Libros"
+            TabControl.SelectedIndex = 0;
+        }
+
+        private void BtnIngresarV_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string Rpta = "";
+                if (TxtTituloV.Text == string.Empty || TxtDirector.Text == string.Empty || TxtProd.Text == string.Empty
+                    || TxtTipo.Text == string.Empty || TxtAnio.Text == string.Empty || TxtDuracion.Text == string.Empty
+                    || TxtPaisV.Text == string.Empty || TxtIdiomaV.Text == string.Empty || TxtSubs.Text == string.Empty
+                    || TxtClasificacion.Text == string.Empty || TxtGenero.Text == string.Empty || TxtSinopsis.Text == string.Empty
+                    || TxtUbiV.Text == string.Empty)
+                {
+                    MensajeError("Falta ingresar algunos datos que deben ser obligatorios.");
+                    //ErrorIcono.SetError(TxtNombre, "Ingrese un nombre");
+                }
+                else
+                {
+                    Rpta = NVideos.Insertar(TxtTituloV.Text.Trim(), TxtDirector.Text.Trim(), TxtProd.Text.Trim(),
+                    TxtTipo.Text.Trim(), Convert.ToInt32(TxtAnio.Text.Trim()), Convert.ToInt32(TxtDuracion.Text.Trim()),
+                    TxtPaisV.Text.Trim(), TxtIdiomaV.Text.Trim(), TxtSubs.Text.Trim(),
+                    TxtClasificacion.Text.Trim(), TxtGenero.Text.Trim(), TxtSinopsis.Text.Trim(),
+                    TxtUbiV.Text.Trim());
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.MensajeOk("Se ingreso el video de forma correcta en el registro");
+                        this.Limpiar_V();
+                        this.Listar_Videos();
+                        //Esto hace que el Tab General donde estan las Tabs muestre la columna 4, es decir, el "Listado de Videos"
+                        TabControl.SelectedIndex = 4;
+
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void BtnCancelarV_Click(object sender, EventArgs e)
+        {
+            this.Limpiar_V();
+            //Esto hace que el Tab General donde estan las tabs muestre la columna 4, es decir, el "Listado de Videos"
+            TabControl.SelectedIndex = 4;
         }
     }
 }

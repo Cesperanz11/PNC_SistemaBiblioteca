@@ -15,3 +15,5 @@ C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_Sis
 C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmAdmin.resources
 C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmMaestros.resources
 C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmLogin.resources
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\bin\Debug\Sistema.Entidades.dll
+C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Presentacion\bin\Debug\Sistema.Entidades.pdb

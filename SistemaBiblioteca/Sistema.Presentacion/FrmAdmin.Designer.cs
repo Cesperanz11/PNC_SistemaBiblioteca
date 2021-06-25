@@ -57,6 +57,11 @@ namespace Sistema.Presentacion
             this.TPEliminarL = new System.Windows.Forms.TabPage();
             this.TPActualizarL = new System.Windows.Forms.TabPage();
             this.TPInsertarL = new System.Windows.Forms.TabPage();
+            this.BtnCancelarL = new System.Windows.Forms.Button();
+            this.BtnIngresarL = new System.Windows.Forms.Button();
+            this.TxtNumEjemplares = new System.Windows.Forms.TextBox();
+            this.TxtNumPaginas = new System.Windows.Forms.TextBox();
+            this.TxtMateria = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -86,11 +91,34 @@ namespace Sistema.Presentacion
             this.TPSelectV = new System.Windows.Forms.TabPage();
             this.dgvListaVideos = new System.Windows.Forms.DataGridView();
             this.TPInsertarV = new System.Windows.Forms.TabPage();
-            this.TxtMateria = new System.Windows.Forms.TextBox();
-            this.TxtNumPaginas = new System.Windows.Forms.TextBox();
-            this.TxtNumEjemplares = new System.Windows.Forms.TextBox();
-            this.BtnIngresar = new System.Windows.Forms.Button();
-            this.BtnCancelar = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.TxtTituloV = new System.Windows.Forms.TextBox();
+            this.TxtDirector = new System.Windows.Forms.TextBox();
+            this.TxtProd = new System.Windows.Forms.TextBox();
+            this.TxtDuracion = new System.Windows.Forms.TextBox();
+            this.TxtTipo = new System.Windows.Forms.TextBox();
+            this.TxtAnio = new System.Windows.Forms.TextBox();
+            this.TxtClasificacion = new System.Windows.Forms.TextBox();
+            this.TxtGenero = new System.Windows.Forms.TextBox();
+            this.TxtSinopsis = new System.Windows.Forms.TextBox();
+            this.TxtUbiV = new System.Windows.Forms.TextBox();
+            this.TxtIdiomaV = new System.Windows.Forms.TextBox();
+            this.TxtSubs = new System.Windows.Forms.TextBox();
+            this.TxtPaisV = new System.Windows.Forms.TextBox();
+            this.BtnIngresarV = new System.Windows.Forms.Button();
+            this.BtnCancelarV = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -100,6 +128,7 @@ namespace Sistema.Presentacion
             this.TabControl.SuspendLayout();
             this.TPSelectV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaVideos)).BeginInit();
+            this.TPInsertarV.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -310,8 +339,8 @@ namespace Sistema.Presentacion
             // 
             // TPInsertarL
             // 
-            this.TPInsertarL.Controls.Add(this.BtnCancelar);
-            this.TPInsertarL.Controls.Add(this.BtnIngresar);
+            this.TPInsertarL.Controls.Add(this.BtnCancelarL);
+            this.TPInsertarL.Controls.Add(this.BtnIngresarL);
             this.TPInsertarL.Controls.Add(this.TxtNumEjemplares);
             this.TPInsertarL.Controls.Add(this.TxtNumPaginas);
             this.TPInsertarL.Controls.Add(this.TxtMateria);
@@ -345,6 +374,49 @@ namespace Sistema.Presentacion
             this.TPInsertarL.TabIndex = 1;
             this.TPInsertarL.Text = "Ingresar Libros";
             this.TPInsertarL.UseVisualStyleBackColor = true;
+            // 
+            // BtnCancelarL
+            // 
+            this.BtnCancelarL.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnCancelarL.ForeColor = System.Drawing.Color.Black;
+            this.BtnCancelarL.Location = new System.Drawing.Point(474, 262);
+            this.BtnCancelarL.Name = "BtnCancelarL";
+            this.BtnCancelarL.Size = new System.Drawing.Size(142, 23);
+            this.BtnCancelarL.TabIndex = 27;
+            this.BtnCancelarL.Text = "Cancelar";
+            this.BtnCancelarL.UseVisualStyleBackColor = false;
+            this.BtnCancelarL.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // BtnIngresarL
+            // 
+            this.BtnIngresarL.Location = new System.Drawing.Point(315, 262);
+            this.BtnIngresarL.Name = "BtnIngresarL";
+            this.BtnIngresarL.Size = new System.Drawing.Size(142, 23);
+            this.BtnIngresarL.TabIndex = 26;
+            this.BtnIngresarL.Text = "Ingresar Libro";
+            this.BtnIngresarL.UseVisualStyleBackColor = true;
+            this.BtnIngresarL.Click += new System.EventHandler(this.BtnIngresar_Click);
+            // 
+            // TxtNumEjemplares
+            // 
+            this.TxtNumEjemplares.Location = new System.Drawing.Point(131, 242);
+            this.TxtNumEjemplares.Name = "TxtNumEjemplares";
+            this.TxtNumEjemplares.Size = new System.Drawing.Size(116, 20);
+            this.TxtNumEjemplares.TabIndex = 25;
+            // 
+            // TxtNumPaginas
+            // 
+            this.TxtNumPaginas.Location = new System.Drawing.Point(116, 215);
+            this.TxtNumPaginas.Name = "TxtNumPaginas";
+            this.TxtNumPaginas.Size = new System.Drawing.Size(131, 20);
+            this.TxtNumPaginas.TabIndex = 24;
+            // 
+            // TxtMateria
+            // 
+            this.TxtMateria.Location = new System.Drawing.Point(116, 189);
+            this.TxtMateria.Name = "TxtMateria";
+            this.TxtMateria.Size = new System.Drawing.Size(194, 20);
+            this.TxtMateria.TabIndex = 23;
             // 
             // label13
             // 
@@ -594,6 +666,34 @@ namespace Sistema.Presentacion
             // 
             // TPInsertarV
             // 
+            this.TPInsertarV.Controls.Add(this.BtnCancelarV);
+            this.TPInsertarV.Controls.Add(this.BtnIngresarV);
+            this.TPInsertarV.Controls.Add(this.TxtPaisV);
+            this.TPInsertarV.Controls.Add(this.TxtSubs);
+            this.TPInsertarV.Controls.Add(this.TxtIdiomaV);
+            this.TPInsertarV.Controls.Add(this.TxtUbiV);
+            this.TPInsertarV.Controls.Add(this.TxtSinopsis);
+            this.TPInsertarV.Controls.Add(this.TxtGenero);
+            this.TPInsertarV.Controls.Add(this.TxtClasificacion);
+            this.TPInsertarV.Controls.Add(this.TxtAnio);
+            this.TPInsertarV.Controls.Add(this.TxtTipo);
+            this.TPInsertarV.Controls.Add(this.TxtDuracion);
+            this.TPInsertarV.Controls.Add(this.TxtProd);
+            this.TPInsertarV.Controls.Add(this.TxtDirector);
+            this.TPInsertarV.Controls.Add(this.TxtTituloV);
+            this.TPInsertarV.Controls.Add(this.label26);
+            this.TPInsertarV.Controls.Add(this.label25);
+            this.TPInsertarV.Controls.Add(this.label24);
+            this.TPInsertarV.Controls.Add(this.label23);
+            this.TPInsertarV.Controls.Add(this.label22);
+            this.TPInsertarV.Controls.Add(this.label21);
+            this.TPInsertarV.Controls.Add(this.label20);
+            this.TPInsertarV.Controls.Add(this.label19);
+            this.TPInsertarV.Controls.Add(this.label18);
+            this.TPInsertarV.Controls.Add(this.label17);
+            this.TPInsertarV.Controls.Add(this.label16);
+            this.TPInsertarV.Controls.Add(this.label15);
+            this.TPInsertarV.Controls.Add(this.label14);
             this.TPInsertarV.Location = new System.Drawing.Point(4, 22);
             this.TPInsertarV.Name = "TPInsertarV";
             this.TPInsertarV.Size = new System.Drawing.Size(624, 317);
@@ -601,47 +701,236 @@ namespace Sistema.Presentacion
             this.TPInsertarV.Text = "Ingresar Videos";
             this.TPInsertarV.UseVisualStyleBackColor = true;
             // 
-            // TxtMateria
+            // label14
             // 
-            this.TxtMateria.Location = new System.Drawing.Point(116, 189);
-            this.TxtMateria.Name = "TxtMateria";
-            this.TxtMateria.Size = new System.Drawing.Size(194, 20);
-            this.TxtMateria.TabIndex = 23;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(12, 28);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(36, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Titulo:";
             // 
-            // TxtNumPaginas
+            // label15
             // 
-            this.TxtNumPaginas.Location = new System.Drawing.Point(116, 215);
-            this.TxtNumPaginas.Name = "TxtNumPaginas";
-            this.TxtNumPaginas.Size = new System.Drawing.Size(131, 20);
-            this.TxtNumPaginas.TabIndex = 24;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 102);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(62, 13);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Productora:";
             // 
-            // TxtNumEjemplares
+            // label16
             // 
-            this.TxtNumEjemplares.Location = new System.Drawing.Point(131, 242);
-            this.TxtNumEjemplares.Name = "TxtNumEjemplares";
-            this.TxtNumEjemplares.Size = new System.Drawing.Size(116, 20);
-            this.TxtNumEjemplares.TabIndex = 25;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(12, 130);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 13);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Duracion:";
             // 
-            // BtnIngresar
+            // label17
             // 
-            this.BtnIngresar.Location = new System.Drawing.Point(315, 262);
-            this.BtnIngresar.Name = "BtnIngresar";
-            this.BtnIngresar.Size = new System.Drawing.Size(142, 23);
-            this.BtnIngresar.TabIndex = 26;
-            this.BtnIngresar.Text = "Ingresar Libro";
-            this.BtnIngresar.UseVisualStyleBackColor = true;
-            this.BtnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(12, 160);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(31, 13);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Tipo:";
             // 
-            // BtnCancelar
+            // label18
             // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.IndianRed;
-            this.BtnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.BtnCancelar.Location = new System.Drawing.Point(474, 262);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(142, 23);
-            this.BtnCancelar.TabIndex = 27;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(12, 188);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(89, 13);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Año de Creacion:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(12, 218);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(69, 13);
+            this.label19.TabIndex = 5;
+            this.label19.Text = "Clasificacion:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(12, 72);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(64, 13);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "Director(es):";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(353, 28);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(49, 13);
+            this.label21.TabIndex = 7;
+            this.label21.Text = "Sinopsis:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(353, 160);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(41, 13);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Idioma:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(353, 188);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(56, 13);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "Subtitulos:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(353, 130);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(58, 13);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "Ubicacion:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(353, 214);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(30, 13);
+            this.label25.TabIndex = 11;
+            this.label25.Text = "Pais:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(12, 249);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(45, 13);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "Genero:";
+            // 
+            // TxtTituloV
+            // 
+            this.TxtTituloV.Location = new System.Drawing.Point(54, 28);
+            this.TxtTituloV.Multiline = true;
+            this.TxtTituloV.Name = "TxtTituloV";
+            this.TxtTituloV.Size = new System.Drawing.Size(259, 31);
+            this.TxtTituloV.TabIndex = 13;
+            // 
+            // TxtDirector
+            // 
+            this.TxtDirector.Location = new System.Drawing.Point(82, 65);
+            this.TxtDirector.Name = "TxtDirector";
+            this.TxtDirector.Size = new System.Drawing.Size(231, 20);
+            this.TxtDirector.TabIndex = 14;
+            // 
+            // TxtProd
+            // 
+            this.TxtProd.Location = new System.Drawing.Point(82, 95);
+            this.TxtProd.Name = "TxtProd";
+            this.TxtProd.Size = new System.Drawing.Size(231, 20);
+            this.TxtProd.TabIndex = 15;
+            // 
+            // TxtDuracion
+            // 
+            this.TxtDuracion.Location = new System.Drawing.Point(82, 121);
+            this.TxtDuracion.Name = "TxtDuracion";
+            this.TxtDuracion.Size = new System.Drawing.Size(119, 20);
+            this.TxtDuracion.TabIndex = 16;
+            // 
+            // TxtTipo
+            // 
+            this.TxtTipo.Location = new System.Drawing.Point(54, 153);
+            this.TxtTipo.Name = "TxtTipo";
+            this.TxtTipo.Size = new System.Drawing.Size(147, 20);
+            this.TxtTipo.TabIndex = 17;
+            // 
+            // TxtAnio
+            // 
+            this.TxtAnio.Location = new System.Drawing.Point(107, 181);
+            this.TxtAnio.Name = "TxtAnio";
+            this.TxtAnio.Size = new System.Drawing.Size(94, 20);
+            this.TxtAnio.TabIndex = 18;
+            // 
+            // TxtClasificacion
+            // 
+            this.TxtClasificacion.Location = new System.Drawing.Point(107, 211);
+            this.TxtClasificacion.Name = "TxtClasificacion";
+            this.TxtClasificacion.Size = new System.Drawing.Size(182, 20);
+            this.TxtClasificacion.TabIndex = 19;
+            // 
+            // TxtGenero
+            // 
+            this.TxtGenero.Location = new System.Drawing.Point(63, 242);
+            this.TxtGenero.Name = "TxtGenero";
+            this.TxtGenero.Size = new System.Drawing.Size(226, 20);
+            this.TxtGenero.TabIndex = 20;
+            // 
+            // TxtSinopsis
+            // 
+            this.TxtSinopsis.Location = new System.Drawing.Point(408, 25);
+            this.TxtSinopsis.Multiline = true;
+            this.TxtSinopsis.Name = "TxtSinopsis";
+            this.TxtSinopsis.Size = new System.Drawing.Size(208, 90);
+            this.TxtSinopsis.TabIndex = 21;
+            // 
+            // TxtUbiV
+            // 
+            this.TxtUbiV.Location = new System.Drawing.Point(408, 121);
+            this.TxtUbiV.Name = "TxtUbiV";
+            this.TxtUbiV.Size = new System.Drawing.Size(208, 20);
+            this.TxtUbiV.TabIndex = 22;
+            // 
+            // TxtIdiomaV
+            // 
+            this.TxtIdiomaV.Location = new System.Drawing.Point(408, 153);
+            this.TxtIdiomaV.Name = "TxtIdiomaV";
+            this.TxtIdiomaV.Size = new System.Drawing.Size(208, 20);
+            this.TxtIdiomaV.TabIndex = 23;
+            // 
+            // TxtSubs
+            // 
+            this.TxtSubs.Location = new System.Drawing.Point(408, 179);
+            this.TxtSubs.Name = "TxtSubs";
+            this.TxtSubs.Size = new System.Drawing.Size(208, 20);
+            this.TxtSubs.TabIndex = 24;
+            // 
+            // TxtPaisV
+            // 
+            this.TxtPaisV.Location = new System.Drawing.Point(389, 211);
+            this.TxtPaisV.Name = "TxtPaisV";
+            this.TxtPaisV.Size = new System.Drawing.Size(176, 20);
+            this.TxtPaisV.TabIndex = 25;
+            // 
+            // BtnIngresarV
+            // 
+            this.BtnIngresarV.Location = new System.Drawing.Point(318, 267);
+            this.BtnIngresarV.Name = "BtnIngresarV";
+            this.BtnIngresarV.Size = new System.Drawing.Size(136, 23);
+            this.BtnIngresarV.TabIndex = 26;
+            this.BtnIngresarV.Text = "Ingresar Video";
+            this.BtnIngresarV.UseVisualStyleBackColor = true;
+            this.BtnIngresarV.Click += new System.EventHandler(this.BtnIngresarV_Click);
+            // 
+            // BtnCancelarV
+            // 
+            this.BtnCancelarV.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnCancelarV.Location = new System.Drawing.Point(469, 267);
+            this.BtnCancelarV.Name = "BtnCancelarV";
+            this.BtnCancelarV.Size = new System.Drawing.Size(136, 23);
+            this.BtnCancelarV.TabIndex = 27;
+            this.BtnCancelarV.Text = "Cancelar";
+            this.BtnCancelarV.UseVisualStyleBackColor = false;
+            this.BtnCancelarV.Click += new System.EventHandler(this.BtnCancelarV_Click);
             // 
             // FrmAdmin
             // 
@@ -673,6 +962,8 @@ namespace Sistema.Presentacion
             this.TabControl.ResumeLayout(false);
             this.TPSelectV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaVideos)).EndInit();
+            this.TPInsertarV.ResumeLayout(false);
+            this.TPInsertarV.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -735,11 +1026,39 @@ namespace Sistema.Presentacion
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button BtnCancelar;
-        private System.Windows.Forms.Button BtnIngresar;
+        private System.Windows.Forms.Button BtnCancelarL;
+        private System.Windows.Forms.Button BtnIngresarL;
         private System.Windows.Forms.TextBox TxtNumEjemplares;
         private System.Windows.Forms.TextBox TxtNumPaginas;
         private System.Windows.Forms.TextBox TxtMateria;
+        private System.Windows.Forms.Button BtnCancelarV;
+        private System.Windows.Forms.Button BtnIngresarV;
+        private System.Windows.Forms.TextBox TxtPaisV;
+        private System.Windows.Forms.TextBox TxtSubs;
+        private System.Windows.Forms.TextBox TxtIdiomaV;
+        private System.Windows.Forms.TextBox TxtUbiV;
+        private System.Windows.Forms.TextBox TxtSinopsis;
+        private System.Windows.Forms.TextBox TxtGenero;
+        private System.Windows.Forms.TextBox TxtClasificacion;
+        private System.Windows.Forms.TextBox TxtAnio;
+        private System.Windows.Forms.TextBox TxtTipo;
+        private System.Windows.Forms.TextBox TxtDuracion;
+        private System.Windows.Forms.TextBox TxtProd;
+        private System.Windows.Forms.TextBox TxtDirector;
+        private System.Windows.Forms.TextBox TxtTituloV;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
     }
 }
 
