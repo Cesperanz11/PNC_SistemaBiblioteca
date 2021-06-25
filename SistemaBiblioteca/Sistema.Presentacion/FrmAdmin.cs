@@ -55,6 +55,36 @@ namespace Sistema.Presentacion
             }
         }
 
+        //Funcion de Mensaje de Error
+        private void MensajeError(string Mensaje)
+        {
+            MessageBox.Show(Mensaje, "Sistema Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        //Funcion de Mensaje de OK
+        private void MensajeOk(string Mensaje)
+        {
+            MessageBox.Show(Mensaje, "Sistema Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //Funcion de Limpiar formulario
+        private void Limpiar()
+        {
+            TxtIsbn.Clear();
+            TxtTituloL.Clear();
+            TxtAutor.Clear();
+            TxtEditorial.Clear();
+            TxtNumEdicion.Clear();
+            TxtAnioEdicion.Clear();
+            TxtMateria.Clear();
+            TxtNumPaginas.Clear();
+            TxtNumEjemplares.Clear();
+            TxtDescripcion.Clear();
+            TxtUbiL.Clear();
+            TxtPaisL.Clear();
+            TxtIdiomaL.Clear();
+        }
+
 
         private void ShowNewForm(object sender, EventArgs e)
         {
@@ -156,6 +186,48 @@ namespace Sistema.Presentacion
             this.Listar_Libros(); //Funcion para cargar el contenido de la tabla Libros
             this.Listar_Videos(); //Funcion para cargar e contenido de la tabla Videos
 
+        }
+
+        private void BtnIngresar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Rpta = "";
+                if (TxtIsbn.Text == string.Empty || TxtTituloL.Text == string.Empty || TxtAutor.Text == string.Empty
+                    || TxtEditorial.Text == string.Empty || TxtNumEdicion.Text == string.Empty || TxtAnioEdicion.Text == string.Empty
+                    || TxtMateria.Text == string.Empty || TxtNumPaginas.Text == string.Empty || TxtNumEjemplares.Text == string.Empty
+                    || TxtDescripcion.Text == string.Empty || TxtUbiL.Text == string.Empty || TxtPaisL.Text == string.Empty
+                    || TxtIdiomaL.Text == string.Empty)
+                {
+                    MensajeError("Falta ingresar algunos datos que deben ser obligatorios.");
+                    //ErrorIcono.SetError(TxtNombre, "Ingrese un nombre");
+                }
+                else
+                {
+                    Rpta = NLibros.Insertar(TxtNumEjemplares.Text.Trim(), TxtIsbn.Text.Trim(), TxtTituloL.Text.Trim(),
+                        TxtAutor.Text.Trim(), TxtEditorial.Text.Trim(), TxtAnioEdicion.Text.Trim(), TxtNumEdicion.Text.Trim(),
+                        TxtPaisL.Text.Trim(), TxtIdiomaL.Text.Trim(), TxtMateria.Text.Trim(), TxtNumPaginas.Text.Trim() ,
+                        TxtUbiL.Text.Trim(), TxtDescripcion.Text.Trim());
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.MensajeOk("Se ingreso el libro de forma correcta en el registro");
+                        this.Limpiar();
+                        this.Listar_Libros();
+                        //Esto hace que el Tab General donde estan "Listado" y "Mantenimiento" muestre la columna 0, es decir, el "Listado"
+                        TabControl.SelectedIndex = 0;
+
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
     }
 }
