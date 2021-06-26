@@ -54,5 +54,13 @@ namespace Sistema.Negocio
                 return Datos.Insertar(Obj);
             }
         }
+
+        // Funcion para buscar libros
+        public static DataTable Buscar(string Valor, int criterio)
+        {
+            DLibros Datos = new DLibros();
+
+            return Datos.Buscar(Valor, criterio);
+        }
     }
 }
