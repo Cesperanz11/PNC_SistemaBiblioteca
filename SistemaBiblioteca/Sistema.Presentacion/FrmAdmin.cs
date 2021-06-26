@@ -147,6 +147,83 @@ namespace Sistema.Presentacion
         }
 
 
+        //Funcion para ocultar textboxes de Actualizar Libros
+        private void OcultarLibros()
+        {
+            //Esto hara que cada textbox no aparezca hasta que lo indiquemos
+            TxtTituloL_.Visible = false;
+            TxtAutor_.Visible = false;
+            TxtEditorial_.Visible = false;
+            TxtNumEdicion_.Visible = false;
+            TxtAnio_.Visible = false;
+            TxtMateria_.Visible = false;
+            TxtNumPagina_.Visible = false;
+            TxtNumEjemplares_.Visible = false;
+            TxtDescripcion_.Visible = false;
+            TxtUbiL_.Visible = false;
+            TxtPaisL_.Visible = false;
+            TxtIdiomaL_.Visible = false;
+        }
+
+        //Funcion para mostar textboxes de Actualizar Videos
+        private void MostrarLibros()
+        {
+            //Esto hara que cada textbox no aparezca hasta que lo indiquemos
+            TxtTituloL_.Visible = true;
+            TxtAutor_.Visible = true;
+            TxtEditorial_.Visible = true;
+            TxtNumEdicion_.Visible = true;
+            TxtAnio_.Visible = true;
+            TxtMateria_.Visible = true;
+            TxtNumPagina_.Visible = true;
+            TxtNumEjemplares_.Visible = true;
+            TxtDescripcion_.Visible = true;
+            TxtUbiL_.Visible = true;
+            TxtPaisL_.Visible = true;
+            TxtIdiomaL_.Visible = true;
+        }
+
+
+        //Funcion para ocultar textboxes de Actualizar Videos
+        private void OcultarVideos()
+        {
+            //Esto hara que cada textbox no aparezca hasta que lo indiquemos
+            TxtTituloV_.Visible = false;
+            TxtDirector_.Visible = false;
+            TxtProductora_.Visible = false;
+            TxtTipo_.Visible = false;
+            TxtAnioV_.Visible = false; 
+            TxtDuracion_.Visible = false; 
+            TxtPaisV_.Visible = false; 
+            TxtIdiomaV_.Visible = false; 
+            TxtSubs_.Visible = false; 
+            TxtClasificacion_.Visible = false; 
+            TxtGenero_.Visible = false; 
+            TxtSinopsis_.Visible = false; 
+            TxtUbiV_.Visible = false; 
+        }
+
+        //Funcion para mostar textboxes de Actualizar Videos
+        private void MostrarVideos()
+        {
+            //Esto hara que cada textbox no aparezca hasta que lo indiquemos
+            TxtTituloV_.Visible = true;
+            TxtDirector_.Visible = true;
+            TxtProductora_.Visible = true;
+            TxtTipo_.Visible = true;
+            TxtAnioV_.Visible = true;
+            TxtDuracion_.Visible = true;
+            TxtPaisV_.Visible = true;
+            TxtIdiomaV_.Visible = true;
+            TxtSubs_.Visible = true;
+            TxtClasificacion_.Visible = true ;
+            TxtGenero_.Visible = true;
+            TxtSinopsis_.Visible = true;
+            TxtUbiV_.Visible = true;
+        }
+
+
+
 
         //Funcion para actualizar libros
         private void Actualizar_L()
@@ -380,6 +457,12 @@ namespace Sistema.Presentacion
         {
             this.Listar_Libros(); //Funcion para cargar el contenido de la tabla Libros
             this.Listar_Videos(); //Funcion para cargar e contenido de la tabla Videos
+            this.OcultarLibros(); //Funcion para ocultar los textbox de la pestania actualizar libros
+            this.OcultarVideos(); //Funcion para ocultar los textbox de la pestania actualizar videos
+            BtnActualizarL.Visible = false;
+            BtnActualizarV.Visible = false;
+            BtnEliminarEL.Visible = false;
+            BtnEliminarEV.Visible = false;
 
         }
 
@@ -503,6 +586,8 @@ namespace Sistema.Presentacion
             if (Rpta.Equals("OK"))
             {
                 this.BuscarL();
+                this.MostrarLibros();
+                BtnActualizarL.Visible = true;
 
             }
             else
@@ -514,13 +599,26 @@ namespace Sistema.Presentacion
         //Boton de Actualizar de pestania Actualizar Libros
         private void BtnActualizarL_Click(object sender, EventArgs e)
         {
-            this.Actualizar_L();
+            if (TxtIsbn_.Text.Equals(""))
+            {
+                this.MensajeError("Primero ingrese un ISBN de libro antes de querer actualizar");
+            }
+            else
+            {
+
+                this.Actualizar_L();
+                this.OcultarLibros();
+                BtnActualizarL.Visible = false;
+            }
+
         }
 
         //Boton de Cancelar de pestania Actualizar Libros
         private void BtnCancelarL__Click(object sender, EventArgs e) 
         {
             this.Limpiar_LAct();
+            this.OcultarLibros();
+            BtnActualizarL.Visible = false;
             TabControl.SelectedIndex = 0;
         }
 
@@ -537,6 +635,8 @@ namespace Sistema.Presentacion
             if (Rpta.Equals("OK"))
             {
                 this.BuscarV();
+                this.MostrarVideos();
+                BtnActualizarV.Visible = true;
 
             }
             else
@@ -548,13 +648,26 @@ namespace Sistema.Presentacion
         //Boton de Actualizar de pestania Actualizar Videos
         private void BtnActualizarV_Click(object sender, EventArgs e)
         {
-            this.Actualizar_V();
+            if (TxtId_.Text.Equals(""))
+            {
+                this.MensajeError("Primero ingrese un id de video antes de querer actualizar");
+            }
+            else
+            {
+                
+                this.Actualizar_V();
+                this.OcultarVideos();
+                BtnActualizarV.Visible = false;
+            }
+            
         }
 
         //Boton de Cancelar de pestania Actualizar Videos
         private void BtnCancelarV__Click(object sender, EventArgs e)
         {
             this.Limpiar_VAct();
+            this.OcultarVideos();
+            BtnActualizarV.Visible = false;
             TabControl.SelectedIndex = 4;
         }
 
@@ -569,6 +682,7 @@ namespace Sistema.Presentacion
             if (Rpta.Equals("OK"))
             {
                 dgvEliminarL.DataSource = NLibros.Buscar(TxtIsbnEL.Text.Trim().ToString(), 0);
+                BtnEliminarEL.Visible = true;
 
             }
             else
@@ -593,6 +707,7 @@ namespace Sistema.Presentacion
                     TxtIsbnEL.Clear();
                     dgvEliminarL.DataSource = null;
                     this.Listar_Libros();
+                    BtnEliminarEL.Visible = false;
                     TabControl.SelectedIndex = 0;
 
                 }
@@ -611,6 +726,7 @@ namespace Sistema.Presentacion
             TxtIsbnEL.Clear();
             dgvEliminarL.DataSource = null;
             this.Listar_Libros();
+            BtnEliminarEL.Visible = false;
             TabControl.SelectedIndex = 0;
         }
 
@@ -625,6 +741,7 @@ namespace Sistema.Presentacion
             if (Rpta.Equals("OK"))
             {
                 dgvEliminarV.DataSource = NVideos.Obtener(Convert.ToInt32(TxtIdEV.Text));
+                BtnEliminarEV.Visible = true;
 
             }
             else
@@ -649,6 +766,7 @@ namespace Sistema.Presentacion
                     TxtIdEV.Clear();
                     dgvEliminarV.DataSource = null;
                     this.Listar_Videos();
+                    BtnEliminarEV.Visible = false;
                     TabControl.SelectedIndex = 4;
 
                 }
@@ -666,6 +784,7 @@ namespace Sistema.Presentacion
             TxtIdEV.Clear();
             dgvEliminarV.DataSource = null;
             this.Listar_Videos();
+            BtnEliminarEV.Visible = false;
             TabControl.SelectedIndex = 4;
         }
     }
