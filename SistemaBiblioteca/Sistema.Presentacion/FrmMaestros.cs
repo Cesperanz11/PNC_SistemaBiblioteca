@@ -35,6 +35,24 @@ namespace Sistema.Presentacion
             }
         }
 
+        // Funcion para listar videos
+        private void Listar_Videos()
+        {
+            try
+            {
+                //Obteniendo la tabla de la BD
+                dgvVideo.DataSource = NVideos.Listar();
+
+                //Aplicando el formato a la tabla para mejor disenio
+                // this.Formato();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
         // Funcion para buscar libros
         private void BuscarL()
         {
@@ -51,16 +69,42 @@ namespace Sistema.Presentacion
             }
         }
 
+        // Funcion para buscar Videos
+        private void BuscarV()
+        {
+            try
+            {
+                dgvVideo.DataSource = NVideos.Buscar(TxtSearchV.Text, cmbVideos.SelectedIndex);
+                //this.Formato();
+                //LblTotal.Text = "Total de registros: " + Convert.ToString(DgvListado.Rows.Count);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        // Boton de busqueda de Libros
         private void BtnBuscarL_Click(object sender, EventArgs e)
         {
             this.BuscarL();
         }
 
+        // Funcion que carga todo al iniciar el Form
         private void FrmMaestros_Load(object sender, EventArgs e)
         {
             this.Listar_Libros();
             cmbLibros.SelectedIndex = 1;
+            this.Listar_Videos();
+            cmbVideos.SelectedIndex = 0;
 
+        }
+
+        // Boton de buscar Videos
+        private void BtnBuscarV_Click(object sender, EventArgs e)
+        {
+            this.BuscarV();
         }
     }
 }

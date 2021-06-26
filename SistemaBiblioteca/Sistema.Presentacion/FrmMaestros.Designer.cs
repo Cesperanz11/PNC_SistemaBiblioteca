@@ -38,9 +38,16 @@ namespace Sistema.Presentacion
             this.TxtSearchL = new System.Windows.Forms.TextBox();
             this.LblCriterio = new System.Windows.Forms.Label();
             this.dgvLibros = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvVideo = new System.Windows.Forms.DataGridView();
+            this.cmbVideos = new System.Windows.Forms.ComboBox();
+            this.BtnBuscarV = new System.Windows.Forms.Button();
+            this.TxtSearchV = new System.Windows.Forms.TextBox();
             this.TabControlMaestros.SuspendLayout();
             this.TPLibros.SuspendLayout();
+            this.TPVideos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControlMaestros
@@ -70,6 +77,11 @@ namespace Sistema.Presentacion
             // 
             // TPVideos
             // 
+            this.TPVideos.Controls.Add(this.TxtSearchV);
+            this.TPVideos.Controls.Add(this.BtnBuscarV);
+            this.TPVideos.Controls.Add(this.cmbVideos);
+            this.TPVideos.Controls.Add(this.dgvVideo);
+            this.TPVideos.Controls.Add(this.label2);
             this.TPVideos.Location = new System.Drawing.Point(4, 22);
             this.TPVideos.Name = "TPVideos";
             this.TPVideos.Padding = new System.Windows.Forms.Padding(3);
@@ -138,6 +150,55 @@ namespace Sistema.Presentacion
             this.dgvLibros.Size = new System.Drawing.Size(794, 324);
             this.dgvLibros.TabIndex = 5;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(417, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Criterio de Busqueda:";
+            // 
+            // dgvVideo
+            // 
+            this.dgvVideo.AllowUserToAddRows = false;
+            this.dgvVideo.AllowUserToDeleteRows = false;
+            this.dgvVideo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVideo.Location = new System.Drawing.Point(0, 68);
+            this.dgvVideo.Name = "dgvVideo";
+            this.dgvVideo.ReadOnly = true;
+            this.dgvVideo.Size = new System.Drawing.Size(794, 319);
+            this.dgvVideo.TabIndex = 1;
+            // 
+            // cmbVideos
+            // 
+            this.cmbVideos.FormattingEnabled = true;
+            this.cmbVideos.Items.AddRange(new object[] {
+            "Titulo",
+            "Director(es)",
+            "Productora"});
+            this.cmbVideos.Location = new System.Drawing.Point(531, 25);
+            this.cmbVideos.Name = "cmbVideos";
+            this.cmbVideos.Size = new System.Drawing.Size(121, 21);
+            this.cmbVideos.TabIndex = 2;
+            // 
+            // BtnBuscarV
+            // 
+            this.BtnBuscarV.Location = new System.Drawing.Point(669, 25);
+            this.BtnBuscarV.Name = "BtnBuscarV";
+            this.BtnBuscarV.Size = new System.Drawing.Size(104, 23);
+            this.BtnBuscarV.TabIndex = 3;
+            this.BtnBuscarV.Text = "Buscar";
+            this.BtnBuscarV.UseVisualStyleBackColor = true;
+            this.BtnBuscarV.Click += new System.EventHandler(this.BtnBuscarV_Click);
+            // 
+            // TxtSearchV
+            // 
+            this.TxtSearchV.Location = new System.Drawing.Point(10, 25);
+            this.TxtSearchV.Name = "TxtSearchV";
+            this.TxtSearchV.Size = new System.Drawing.Size(379, 20);
+            this.TxtSearchV.TabIndex = 4;
+            // 
             // FrmMaestros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,7 +213,10 @@ namespace Sistema.Presentacion
             this.TabControlMaestros.ResumeLayout(false);
             this.TPLibros.ResumeLayout(false);
             this.TPLibros.PerformLayout();
+            this.TPVideos.ResumeLayout(false);
+            this.TPVideos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +233,10 @@ namespace Sistema.Presentacion
         private System.Windows.Forms.Button BtnBuscarL;
         private System.Windows.Forms.TabPage TPVideos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TxtSearchV;
+        private System.Windows.Forms.Button BtnBuscarV;
+        private System.Windows.Forms.ComboBox cmbVideos;
+        private System.Windows.Forms.DataGridView dgvVideo;
+        private System.Windows.Forms.Label label2;
     }
 }

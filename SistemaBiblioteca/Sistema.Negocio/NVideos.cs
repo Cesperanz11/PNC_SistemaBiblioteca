@@ -54,5 +54,13 @@ namespace Sistema.Negocio
                 return Datos.Insertar(Obj);
             }
         }
+
+        // Funcion de buscar videos
+        public static DataTable Buscar(string Valor, int criterio)
+        {
+            DVideos Datos = new DVideos();
+
+            return Datos.Buscar(Valor, criterio);
+        }
     }
 }
