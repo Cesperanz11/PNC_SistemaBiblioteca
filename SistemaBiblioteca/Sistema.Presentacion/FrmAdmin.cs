@@ -56,6 +56,9 @@ namespace Sistema.Presentacion
             }
         }
 
+
+
+
         //Funcion de Mensaje de Error
         private void MensajeError(string Mensaje)
         {
@@ -67,6 +70,8 @@ namespace Sistema.Presentacion
         {
             MessageBox.Show(Mensaje, "Sistema Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+
 
         //Funcion de Limpiar formulario de ingresar Libros
         private void Limpiar_L()
@@ -122,6 +127,27 @@ namespace Sistema.Presentacion
             TxtUbiV.Clear();
         }
 
+        //Funcion de Limpiar formulario de actualizar Videos
+        private void Limpiar_VAct()
+        {
+            TxtId_.Clear();
+            TxtTituloV_.Clear();
+            TxtDirector_.Clear();
+            TxtProductora_.Clear();
+            TxtTipo_.Clear();
+            TxtAnioV_.Clear();
+            TxtDuracion_.Clear();
+            TxtPaisV_.Clear();
+            TxtIdiomaV_.Clear();
+            TxtSubs_.Clear();
+            TxtClasificacion_.Clear();
+            TxtGenero_.Clear();
+            TxtSinopsis_.Clear();
+            TxtUbiV_.Clear();
+        }
+
+
+
         //Funcion para actualizar libros
         private void Actualizar_L()
         {
@@ -155,7 +181,43 @@ namespace Sistema.Presentacion
             }
         }
 
-        //Funcion para buscar un libro
+        //Funcion para actualizar videos
+        private void Actualizar_V()
+        {
+            try
+            {
+                string Rpta = "";
+
+
+                Rpta = NVideos.Actualizar(Convert.ToInt32(TxtId_.Text.Trim()) ,TxtTituloV_.Text.Trim(), TxtDirector_.Text.Trim(), TxtProductora_.Text.Trim(),
+                    TxtTipo_.Text.Trim(), Convert.ToInt32(TxtAnioV_.Text.Trim()), Convert.ToInt32(TxtDuracion_.Text.Trim()),
+                    TxtPaisV_.Text.Trim(), TxtIdiomaV_.Text.Trim(), TxtSubs_.Text.Trim(),
+                    TxtClasificacion_.Text.Trim(), TxtGenero_.Text.Trim(), TxtSinopsis_.Text.Trim(),
+                    TxtUbiV_.Text.Trim());
+                if (Rpta.Equals("OK"))
+                {
+                    this.MensajeOk("Se actualizo de forma correcta el video en el registro");
+                    this.Limpiar_VAct();
+                    this.Listar_Videos();
+                    //Se regresa a la tab de "Listado de Videos"
+                    TabControl.SelectedIndex = 4;
+                }
+                else
+                {
+                    this.MensajeError(Rpta);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
+
+        //Funcion para buscar un libro al actualizar
         private void BuscarL()
         {
             DataTable libro = new DataTable();
@@ -184,6 +246,40 @@ namespace Sistema.Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+        //Funcion para buscar un video al actualizar
+        private void BuscarV()
+        {
+            DataTable video = new DataTable();
+
+            try
+            {
+                video = NVideos.Obtener(Convert.ToInt32(TxtId_.Text));
+                //Asignando al texto de Actualizar Libro su valor correspondiente, identificandolo con su nombre de alias (establecido en la BD)
+                TxtTituloV_.Text = video.Rows[0]["titulo"].ToString();
+                TxtDirector_.Text = video.Rows[0]["director(es)"].ToString();
+                TxtProductora_.Text = video.Rows[0]["productora"].ToString();
+                TxtAnioV_.Text = video.Rows[0]["año"].ToString();
+                TxtDuracion_.Text = video.Rows[0]["duracion"].ToString();
+                TxtSubs_.Text = video.Rows[0]["subtitulos"].ToString();
+                TxtPaisV_.Text = video.Rows[0]["pais"].ToString();
+                TxtIdiomaV_.Text = video.Rows[0]["idioma"].ToString();
+                TxtGenero_.Text = video.Rows[0]["género"].ToString();
+                TxtClasificacion_.Text = video.Rows[0]["clasificación"].ToString();
+                TxtUbiV_.Text = video.Rows[0]["ubicacion"].ToString();
+                TxtSinopsis_.Text = video.Rows[0]["sinopsis"].ToString();
+                TxtTipo_.Text = video.Rows[0]["tipo"].ToString();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
+
 
         private void ShowNewForm(object sender, EventArgs e)
         {
@@ -338,6 +434,9 @@ namespace Sistema.Presentacion
             TabControl.SelectedIndex = 0;
         }
 
+
+
+
         //Boton de Ingresar de pestania Insertar Videos
         private void BtnIngresarV_Click(object sender, EventArgs e)
         {
@@ -391,6 +490,9 @@ namespace Sistema.Presentacion
             TabControl.SelectedIndex = 4;
         }
 
+
+
+
         //Boton de Buscar de pestania Actualizar Libros
         private void BtnBuscarL__Click(object sender, EventArgs e)
         {
@@ -420,6 +522,40 @@ namespace Sistema.Presentacion
         {
             this.Limpiar_LAct();
             TabControl.SelectedIndex = 0;
+        }
+
+
+
+
+        //Boton de Buscar de pestania Actualizar Videos
+        private void BtnBuscarV__Click(object sender, EventArgs e)
+        {
+            string Rpta = "";
+
+            Rpta = NVideos.BuscarID(Convert.ToInt32(TxtId_.Text));
+
+            if (Rpta.Equals("OK"))
+            {
+                this.BuscarV();
+
+            }
+            else
+            {
+                this.MensajeError(Rpta);
+            }
+        }
+
+        //Boton de Actualizar de pestania Actualizar Videos
+        private void BtnActualizarV_Click(object sender, EventArgs e)
+        {
+            this.Actualizar_V();
+        }
+
+        //Boton de Cancelar de pestania Actualizar Videos
+        private void BtnCancelarV__Click(object sender, EventArgs e)
+        {
+            this.Limpiar_VAct();
+            TabControl.SelectedIndex = 4;
         }
     }
 }

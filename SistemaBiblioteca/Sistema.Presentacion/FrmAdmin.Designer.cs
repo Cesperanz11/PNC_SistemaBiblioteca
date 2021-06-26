@@ -149,24 +149,24 @@ namespace Sistema.Presentacion
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.TPActualizarV = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.BtnBuscarV_ = new System.Windows.Forms.Button();
+            this.TxtId_ = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.BtnCancelarV_ = new System.Windows.Forms.Button();
+            this.BtnActualizarV = new System.Windows.Forms.Button();
+            this.TxtPaisV_ = new System.Windows.Forms.TextBox();
+            this.TxtSubs_ = new System.Windows.Forms.TextBox();
+            this.TxtIdiomaV_ = new System.Windows.Forms.TextBox();
+            this.TxtUbiV_ = new System.Windows.Forms.TextBox();
+            this.TxtSinopsis_ = new System.Windows.Forms.TextBox();
+            this.TxtGenero_ = new System.Windows.Forms.TextBox();
+            this.TxtClasificacion_ = new System.Windows.Forms.TextBox();
+            this.TxtAnioV_ = new System.Windows.Forms.TextBox();
+            this.TxtTipo_ = new System.Windows.Forms.TextBox();
+            this.TxtDuracion_ = new System.Windows.Forms.TextBox();
+            this.TxtProductora_ = new System.Windows.Forms.TextBox();
+            this.TxtDirector_ = new System.Windows.Forms.TextBox();
+            this.TxtTituloV_ = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -1270,24 +1270,24 @@ namespace Sistema.Presentacion
             // 
             // TPActualizarV
             // 
-            this.TPActualizarV.Controls.Add(this.button6);
-            this.TPActualizarV.Controls.Add(this.textBox27);
+            this.TPActualizarV.Controls.Add(this.BtnBuscarV_);
+            this.TPActualizarV.Controls.Add(this.TxtId_);
             this.TPActualizarV.Controls.Add(this.label53);
-            this.TPActualizarV.Controls.Add(this.button4);
-            this.TPActualizarV.Controls.Add(this.button5);
-            this.TPActualizarV.Controls.Add(this.textBox14);
-            this.TPActualizarV.Controls.Add(this.textBox15);
-            this.TPActualizarV.Controls.Add(this.textBox16);
-            this.TPActualizarV.Controls.Add(this.textBox17);
-            this.TPActualizarV.Controls.Add(this.textBox18);
-            this.TPActualizarV.Controls.Add(this.textBox19);
-            this.TPActualizarV.Controls.Add(this.textBox20);
-            this.TPActualizarV.Controls.Add(this.textBox21);
-            this.TPActualizarV.Controls.Add(this.textBox22);
-            this.TPActualizarV.Controls.Add(this.textBox23);
-            this.TPActualizarV.Controls.Add(this.textBox24);
-            this.TPActualizarV.Controls.Add(this.textBox25);
-            this.TPActualizarV.Controls.Add(this.textBox26);
+            this.TPActualizarV.Controls.Add(this.BtnCancelarV_);
+            this.TPActualizarV.Controls.Add(this.BtnActualizarV);
+            this.TPActualizarV.Controls.Add(this.TxtPaisV_);
+            this.TPActualizarV.Controls.Add(this.TxtSubs_);
+            this.TPActualizarV.Controls.Add(this.TxtIdiomaV_);
+            this.TPActualizarV.Controls.Add(this.TxtUbiV_);
+            this.TPActualizarV.Controls.Add(this.TxtSinopsis_);
+            this.TPActualizarV.Controls.Add(this.TxtGenero_);
+            this.TPActualizarV.Controls.Add(this.TxtClasificacion_);
+            this.TPActualizarV.Controls.Add(this.TxtAnioV_);
+            this.TPActualizarV.Controls.Add(this.TxtTipo_);
+            this.TPActualizarV.Controls.Add(this.TxtDuracion_);
+            this.TPActualizarV.Controls.Add(this.TxtProductora_);
+            this.TPActualizarV.Controls.Add(this.TxtDirector_);
+            this.TPActualizarV.Controls.Add(this.TxtTituloV_);
             this.TPActualizarV.Controls.Add(this.label40);
             this.TPActualizarV.Controls.Add(this.label41);
             this.TPActualizarV.Controls.Add(this.label42);
@@ -1308,21 +1308,22 @@ namespace Sistema.Presentacion
             this.TPActualizarV.Text = "Actualizar Videos";
             this.TPActualizarV.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // BtnBuscarV_
             // 
-            this.button6.Location = new System.Drawing.Point(259, 21);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(109, 23);
-            this.button6.TabIndex = 58;
-            this.button6.Text = "Buscar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.BtnBuscarV_.Location = new System.Drawing.Point(259, 21);
+            this.BtnBuscarV_.Name = "BtnBuscarV_";
+            this.BtnBuscarV_.Size = new System.Drawing.Size(109, 23);
+            this.BtnBuscarV_.TabIndex = 58;
+            this.BtnBuscarV_.Text = "Buscar";
+            this.BtnBuscarV_.UseVisualStyleBackColor = true;
+            this.BtnBuscarV_.Click += new System.EventHandler(this.BtnBuscarV__Click);
             // 
-            // textBox27
+            // TxtId_
             // 
-            this.textBox27.Location = new System.Drawing.Point(106, 23);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(147, 20);
-            this.textBox27.TabIndex = 57;
+            this.TxtId_.Location = new System.Drawing.Point(106, 23);
+            this.TxtId_.Name = "TxtId_";
+            this.TxtId_.Size = new System.Drawing.Size(147, 20);
+            this.TxtId_.TabIndex = 57;
             // 
             // label53
             // 
@@ -1333,117 +1334,119 @@ namespace Sistema.Presentacion
             this.label53.TabIndex = 56;
             this.label53.Text = "Codigo de Video:";
             // 
-            // button4
+            // BtnCancelarV_
             // 
-            this.button4.BackColor = System.Drawing.Color.IndianRed;
-            this.button4.Location = new System.Drawing.Point(521, 267);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 23);
-            this.button4.TabIndex = 55;
-            this.button4.Text = "Cancelar";
-            this.button4.UseVisualStyleBackColor = false;
+            this.BtnCancelarV_.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnCancelarV_.Location = new System.Drawing.Point(521, 267);
+            this.BtnCancelarV_.Name = "BtnCancelarV_";
+            this.BtnCancelarV_.Size = new System.Drawing.Size(136, 23);
+            this.BtnCancelarV_.TabIndex = 55;
+            this.BtnCancelarV_.Text = "Cancelar";
+            this.BtnCancelarV_.UseVisualStyleBackColor = false;
+            this.BtnCancelarV_.Click += new System.EventHandler(this.BtnCancelarV__Click);
             // 
-            // button5
+            // BtnActualizarV
             // 
-            this.button5.Location = new System.Drawing.Point(364, 267);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(142, 23);
-            this.button5.TabIndex = 54;
-            this.button5.Text = "Actualizar Video";
-            this.button5.UseVisualStyleBackColor = true;
+            this.BtnActualizarV.Location = new System.Drawing.Point(364, 267);
+            this.BtnActualizarV.Name = "BtnActualizarV";
+            this.BtnActualizarV.Size = new System.Drawing.Size(142, 23);
+            this.BtnActualizarV.TabIndex = 54;
+            this.BtnActualizarV.Text = "Actualizar Video";
+            this.BtnActualizarV.UseVisualStyleBackColor = true;
+            this.BtnActualizarV.Click += new System.EventHandler(this.BtnActualizarV_Click);
             // 
-            // textBox14
+            // TxtPaisV_
             // 
-            this.textBox14.Location = new System.Drawing.Point(430, 213);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(176, 20);
-            this.textBox14.TabIndex = 53;
+            this.TxtPaisV_.Location = new System.Drawing.Point(430, 213);
+            this.TxtPaisV_.Name = "TxtPaisV_";
+            this.TxtPaisV_.Size = new System.Drawing.Size(176, 20);
+            this.TxtPaisV_.TabIndex = 53;
             // 
-            // textBox15
+            // TxtSubs_
             // 
-            this.textBox15.Location = new System.Drawing.Point(449, 181);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(208, 20);
-            this.textBox15.TabIndex = 52;
+            this.TxtSubs_.Location = new System.Drawing.Point(449, 181);
+            this.TxtSubs_.Name = "TxtSubs_";
+            this.TxtSubs_.Size = new System.Drawing.Size(208, 20);
+            this.TxtSubs_.TabIndex = 52;
             // 
-            // textBox16
+            // TxtIdiomaV_
             // 
-            this.textBox16.Location = new System.Drawing.Point(449, 155);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(208, 20);
-            this.textBox16.TabIndex = 51;
+            this.TxtIdiomaV_.Location = new System.Drawing.Point(449, 155);
+            this.TxtIdiomaV_.Name = "TxtIdiomaV_";
+            this.TxtIdiomaV_.Size = new System.Drawing.Size(208, 20);
+            this.TxtIdiomaV_.TabIndex = 51;
             // 
-            // textBox17
+            // TxtUbiV_
             // 
-            this.textBox17.Location = new System.Drawing.Point(449, 123);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(208, 20);
-            this.textBox17.TabIndex = 50;
+            this.TxtUbiV_.Location = new System.Drawing.Point(449, 123);
+            this.TxtUbiV_.Name = "TxtUbiV_";
+            this.TxtUbiV_.Size = new System.Drawing.Size(208, 20);
+            this.TxtUbiV_.TabIndex = 50;
             // 
-            // textBox18
+            // TxtSinopsis_
             // 
-            this.textBox18.Location = new System.Drawing.Point(449, 27);
-            this.textBox18.Multiline = true;
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(208, 90);
-            this.textBox18.TabIndex = 49;
+            this.TxtSinopsis_.Location = new System.Drawing.Point(449, 27);
+            this.TxtSinopsis_.Multiline = true;
+            this.TxtSinopsis_.Name = "TxtSinopsis_";
+            this.TxtSinopsis_.Size = new System.Drawing.Size(208, 90);
+            this.TxtSinopsis_.TabIndex = 49;
             // 
-            // textBox19
+            // TxtGenero_
             // 
-            this.textBox19.Location = new System.Drawing.Point(70, 274);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(226, 20);
-            this.textBox19.TabIndex = 48;
+            this.TxtGenero_.Location = new System.Drawing.Point(70, 274);
+            this.TxtGenero_.Name = "TxtGenero_";
+            this.TxtGenero_.Size = new System.Drawing.Size(226, 20);
+            this.TxtGenero_.TabIndex = 48;
             // 
-            // textBox20
+            // TxtClasificacion_
             // 
-            this.textBox20.Location = new System.Drawing.Point(114, 243);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(182, 20);
-            this.textBox20.TabIndex = 47;
+            this.TxtClasificacion_.Location = new System.Drawing.Point(114, 243);
+            this.TxtClasificacion_.Name = "TxtClasificacion_";
+            this.TxtClasificacion_.Size = new System.Drawing.Size(182, 20);
+            this.TxtClasificacion_.TabIndex = 47;
             // 
-            // textBox21
+            // TxtAnioV_
             // 
-            this.textBox21.Location = new System.Drawing.Point(114, 213);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(94, 20);
-            this.textBox21.TabIndex = 46;
+            this.TxtAnioV_.Location = new System.Drawing.Point(114, 213);
+            this.TxtAnioV_.Name = "TxtAnioV_";
+            this.TxtAnioV_.Size = new System.Drawing.Size(94, 20);
+            this.TxtAnioV_.TabIndex = 46;
             // 
-            // textBox22
+            // TxtTipo_
             // 
-            this.textBox22.Location = new System.Drawing.Point(61, 185);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(147, 20);
-            this.textBox22.TabIndex = 45;
+            this.TxtTipo_.Location = new System.Drawing.Point(61, 185);
+            this.TxtTipo_.Name = "TxtTipo_";
+            this.TxtTipo_.Size = new System.Drawing.Size(147, 20);
+            this.TxtTipo_.TabIndex = 45;
             // 
-            // textBox23
+            // TxtDuracion_
             // 
-            this.textBox23.Location = new System.Drawing.Point(89, 153);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(119, 20);
-            this.textBox23.TabIndex = 44;
+            this.TxtDuracion_.Location = new System.Drawing.Point(89, 153);
+            this.TxtDuracion_.Name = "TxtDuracion_";
+            this.TxtDuracion_.Size = new System.Drawing.Size(119, 20);
+            this.TxtDuracion_.TabIndex = 44;
             // 
-            // textBox24
+            // TxtProductora_
             // 
-            this.textBox24.Location = new System.Drawing.Point(89, 127);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(231, 20);
-            this.textBox24.TabIndex = 43;
+            this.TxtProductora_.Location = new System.Drawing.Point(89, 127);
+            this.TxtProductora_.Name = "TxtProductora_";
+            this.TxtProductora_.Size = new System.Drawing.Size(231, 20);
+            this.TxtProductora_.TabIndex = 43;
             // 
-            // textBox25
+            // TxtDirector_
             // 
-            this.textBox25.Location = new System.Drawing.Point(89, 97);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(231, 20);
-            this.textBox25.TabIndex = 42;
+            this.TxtDirector_.Location = new System.Drawing.Point(89, 97);
+            this.TxtDirector_.Name = "TxtDirector_";
+            this.TxtDirector_.Size = new System.Drawing.Size(231, 20);
+            this.TxtDirector_.TabIndex = 42;
             // 
-            // textBox26
+            // TxtTituloV_
             // 
-            this.textBox26.Location = new System.Drawing.Point(61, 60);
-            this.textBox26.Multiline = true;
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(259, 31);
-            this.textBox26.TabIndex = 41;
+            this.TxtTituloV_.Location = new System.Drawing.Point(61, 60);
+            this.TxtTituloV_.Multiline = true;
+            this.TxtTituloV_.Name = "TxtTituloV_";
+            this.TxtTituloV_.Size = new System.Drawing.Size(259, 31);
+            this.TxtTituloV_.TabIndex = 41;
             // 
             // label40
             // 
@@ -1732,24 +1735,24 @@ namespace Sistema.Presentacion
         private System.Windows.Forms.TextBox TxtPaisL_;
         private System.Windows.Forms.Button BtnCancelarL_;
         private System.Windows.Forms.TabPage TPActualizarV;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.Button BtnBuscarV_;
+        private System.Windows.Forms.TextBox TxtId_;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.Button BtnCancelarV_;
+        private System.Windows.Forms.Button BtnActualizarV;
+        private System.Windows.Forms.TextBox TxtPaisV_;
+        private System.Windows.Forms.TextBox TxtSubs_;
+        private System.Windows.Forms.TextBox TxtIdiomaV_;
+        private System.Windows.Forms.TextBox TxtUbiV_;
+        private System.Windows.Forms.TextBox TxtSinopsis_;
+        private System.Windows.Forms.TextBox TxtGenero_;
+        private System.Windows.Forms.TextBox TxtClasificacion_;
+        private System.Windows.Forms.TextBox TxtAnioV_;
+        private System.Windows.Forms.TextBox TxtTipo_;
+        private System.Windows.Forms.TextBox TxtDuracion_;
+        private System.Windows.Forms.TextBox TxtProductora_;
+        private System.Windows.Forms.TextBox TxtDirector_;
+        private System.Windows.Forms.TextBox TxtTituloV_;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;

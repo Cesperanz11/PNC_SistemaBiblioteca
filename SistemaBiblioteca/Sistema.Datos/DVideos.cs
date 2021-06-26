@@ -170,7 +170,122 @@ namespace Sistema.Datos
 
         }
 
+        //Funcion para obtener video al actualizar
+        public DataTable Obtener(int id_video)
+        {
+            SqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {
+                SqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("videos_obtener", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@id_video", SqlDbType.Int).Value = id_video;
+                SqlCon.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+
+
+        }
+
         //Funcion de actualizar videos
+        public string Actualizar(Videos Obj)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("videos_actualizar", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                //Declarando value de los parametros dentro del procedimiento almacenado
+                Comando.Parameters.Add("@id_video", SqlDbType.Int).Value = Obj.id_video;
+                Comando.Parameters.Add("@titulo", SqlDbType.VarChar).Value = Obj.titulo;
+                Comando.Parameters.Add("@director", SqlDbType.VarChar).Value = Obj.director;
+                Comando.Parameters.Add("@productora", SqlDbType.VarChar).Value = Obj.productora;
+                Comando.Parameters.Add("@tipo", SqlDbType.VarChar).Value = Obj.tipo;
+                Comando.Parameters.Add("@anio", SqlDbType.Int).Value = Obj.anio;
+                Comando.Parameters.Add("@duracion", SqlDbType.Int).Value = Obj.duracion;
+                Comando.Parameters.Add("@pais", SqlDbType.VarChar).Value = Obj.pais;
+                Comando.Parameters.Add("@idioma", SqlDbType.VarChar).Value = Obj.idioma;
+                Comando.Parameters.Add("@subtitulos", SqlDbType.VarChar).Value = Obj.subtitulos;
+                Comando.Parameters.Add("@clasificacion", SqlDbType.VarChar).Value = Obj.clasificacion;
+                Comando.Parameters.Add("@genero", SqlDbType.VarChar).Value = Obj.genero;
+                Comando.Parameters.Add("@sinopsis", SqlDbType.VarChar).Value = Obj.sinopsis;
+                Comando.Parameters.Add("@ubicacion", SqlDbType.VarChar).Value = Obj.ubicacion;
+                SqlCon.Open();
+                Rpta = Comando.ExecuteNonQuery() == 1 ? "OK" : "No se pudo actualizar el registro del video";
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+
+            return Rpta;
+        }
+
+        //Funcion de validar existencia del video al Actualizar
+        public string BuscarID(int id_video)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //creando conexion con la BD
+                SqlCon = Conexion.getInstancia().CrearConexion();
+
+                //generando nuevo comando para ejecutar en SQL Server el procedimiento almacenado "videos_buscarId"
+                SqlCommand Comando = new SqlCommand("videos_buscarId", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                //Declarando value de los parametros dentro del procedimiento almacenado
+                Comando.Parameters.Add("@id_video", SqlDbType.Int).Value = id_video;
+
+                //consulta para ejecutar el procedimiento almacenado
+                SqlParameter ParExiste = new SqlParameter();
+                ParExiste.ParameterName = "@existe";
+                //especificando el tipo de variable que va retornar
+                ParExiste.SqlDbType = SqlDbType.Int;
+
+                //retornando el valor de respuesta de la query
+                ParExiste.Direction = ParameterDirection.Output;
+                Comando.Parameters.Add(ParExiste);
+
+                //se abre la conexion con BD
+                SqlCon.Open();
+
+                //ejecutando query que no devuelve ningun valor
+                Comando.ExecuteNonQuery();
+                Rpta = Convert.ToString(ParExiste.Value);
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                //si se genera conexion con exito, luego de tener los datos se cierra
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
 
         //Funcion de eliminar videos
     }
