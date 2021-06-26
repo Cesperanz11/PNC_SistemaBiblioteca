@@ -62,5 +62,32 @@ namespace Sistema.Negocio
 
             return Datos.Buscar(Valor, criterio);
         }
+
+        // Funcion para actualizar libros
+        public static string Actualizar(int num_ejemplares, string isbn, string titulo, string autor,
+            string editorial, int anio_edicion, string num_edicion, string pais, string idioma,
+            string materia, int num_pagina, string ubicacion, string descripcion)
+        {
+            DLibros Datos = new DLibros();
+            Libros Obj = new Libros();
+
+            //Como ponemos a disposicion del admin todos los campos y sus valores, el es responsable de mandar la info de manera
+            //correcta y ya editada
+            //Mandamos en un objetvo Libros todos los parametros.
+            Obj.numero_ejemplares = num_ejemplares;
+            Obj.titulo = titulo;
+            Obj.autor = autor;
+            Obj.editorial = editorial;
+            Obj.anio_edicion = anio_edicion;
+            Obj.numero_edicion = num_edicion;
+            Obj.pais = pais;
+            Obj.idioma = idioma;
+            Obj.materia = materia;
+            Obj.numero_pagina = num_pagina;
+            Obj.ubicacion = ubicacion;
+            Obj.descripcion = descripcion;
+
+            return Datos.Actualizar(Obj);
+        }
     }
 }

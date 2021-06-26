@@ -103,6 +103,39 @@ namespace Sistema.Presentacion
             TxtUbiV.Clear();
         }
 
+        //Funcion para actualizar libros
+        private void Actualizar_L()
+        {
+            try
+            {
+                string Rpta = "";
+
+
+                //Rpta = NLibros.Actualizar(Convert.ToInt32(TxtNumEjemplares.Text.Trim()), TxtIsbn.Text.Trim(), TxtTituloL.Text.Trim(),
+                //        TxtAutor.Text.Trim(), TxtEditorial.Text.Trim(), Convert.ToInt32(TxtAnioEdicion.Text.Trim()), TxtNumEdicion.Text.Trim(),
+                //        TxtPaisL.Text.Trim(), TxtIdiomaL.Text.Trim(), TxtMateria.Text.Trim(), Convert.ToInt32(TxtNumPaginas.Text.Trim()),
+                //        TxtUbiL.Text.Trim(), TxtDescripcion.Text.Trim());
+                if (Rpta.Equals("OK"))
+                {
+                    this.MensajeOk("Se actualizo de forma correcta el libro en el registro");
+                    //this.Limpiar_LAct();
+                    this.Listar_Libros();
+                    //Se regresa a la tab de "Listado de Libros"
+                    TabControl.SelectedIndex = 0;
+                }
+                else
+                {
+                    this.MensajeError(Rpta);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
 
         private void ShowNewForm(object sender, EventArgs e)
         {
@@ -305,5 +338,7 @@ namespace Sistema.Presentacion
             //Esto hace que el Tab General donde estan las tabs muestre la columna 4, es decir, el "Listado de Videos"
             TabControl.SelectedIndex = 4;
         }
+
+        
     }
 }
