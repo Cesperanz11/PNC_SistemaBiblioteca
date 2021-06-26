@@ -184,6 +184,7 @@ namespace Sistema.Datos
 
                 //Declarando value de los parametros dentro del procedimiento almacenado
                 Comando.Parameters.Add("@numero_ejemplares", SqlDbType.Int).Value = Obj.numero_ejemplares;
+                Comando.Parameters.Add("@isbn", SqlDbType.VarChar).Value = Obj.isbn;
                 Comando.Parameters.Add("@titulo", SqlDbType.VarChar).Value = Obj.titulo;
                 Comando.Parameters.Add("@autor", SqlDbType.VarChar).Value = Obj.autor;
                 Comando.Parameters.Add("@editorial", SqlDbType.VarChar).Value = Obj.editorial;
@@ -192,7 +193,7 @@ namespace Sistema.Datos
                 Comando.Parameters.Add("@pais", SqlDbType.VarChar).Value = Obj.pais;
                 Comando.Parameters.Add("@idioma", SqlDbType.VarChar).Value = Obj.idioma;
                 Comando.Parameters.Add("@materia", SqlDbType.VarChar).Value = Obj.materia;
-                Comando.Parameters.Add("@numero_pagina", SqlDbType.Int).Value = Obj.numero_pagina;
+                Comando.Parameters.Add("@numero_paginas", SqlDbType.Int).Value = Obj.numero_pagina;
                 Comando.Parameters.Add("@ubicacion", SqlDbType.VarChar).Value = Obj.ubicacion;
                 Comando.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Obj.descripcion;
                 SqlCon.Open();

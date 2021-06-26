@@ -19,6 +19,24 @@ namespace Sistema.Negocio
             return Datos.Listar();
         }
 
+        //Funcion para determinar existencia de libro
+        public static string Existe(string ISBN)
+        {
+            DLibros Datos = new DLibros();
+            string Rpta = "";
+
+            Rpta = Datos.Existe(ISBN);
+            if (Rpta.Equals("0"))
+            {
+                return "El isbn que se ha consultado no existe en la BD";
+            }
+            else 
+            {
+                return "OK";
+            }
+            
+        }
+
         // Funcion para insertar libros
         public static string Insertar(int num_ejemplares, string isbn, string titulo, string autor, 
             string editorial, int anio_edicion, string num_edicion, string pais, string idioma, 
@@ -75,6 +93,7 @@ namespace Sistema.Negocio
             //correcta y ya editada
             //Mandamos en un objetvo Libros todos los parametros.
             Obj.numero_ejemplares = num_ejemplares;
+            Obj.isbn = isbn;
             Obj.titulo = titulo;
             Obj.autor = autor;
             Obj.editorial = editorial;

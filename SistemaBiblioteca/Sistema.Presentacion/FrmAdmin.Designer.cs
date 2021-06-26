@@ -56,14 +56,22 @@ namespace Sistema.Presentacion
             this.LblAdmin = new System.Windows.Forms.Label();
             this.TPEliminarL = new System.Windows.Forms.TabPage();
             this.TPActualizarL = new System.Windows.Forms.TabPage();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnCancelarL_ = new System.Windows.Forms.Button();
+            this.TxtNumEjemplares_ = new System.Windows.Forms.TextBox();
+            this.TxtNumPagina_ = new System.Windows.Forms.TextBox();
+            this.TxtMateria_ = new System.Windows.Forms.TextBox();
+            this.TxtAnio_ = new System.Windows.Forms.TextBox();
+            this.TxtNumEdicion_ = new System.Windows.Forms.TextBox();
+            this.TxtIdiomaL_ = new System.Windows.Forms.TextBox();
+            this.TxtPaisL_ = new System.Windows.Forms.TextBox();
+            this.TxtUbiL_ = new System.Windows.Forms.TextBox();
+            this.TxtDescripcion_ = new System.Windows.Forms.TextBox();
+            this.TxtEditorial_ = new System.Windows.Forms.TextBox();
+            this.TxtAutor_ = new System.Windows.Forms.TextBox();
+            this.TxtTituloL_ = new System.Windows.Forms.TextBox();
+            this.TxtIsbn_ = new System.Windows.Forms.TextBox();
+            this.BtnActualizarL = new System.Windows.Forms.Button();
+            this.BtnBuscarL_ = new System.Windows.Forms.Button();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
@@ -140,15 +148,10 @@ namespace Sistema.Presentacion
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
             this.TPActualizarV = new System.Windows.Forms.TabPage();
-            this.TPEliminarV = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox14 = new System.Windows.Forms.TextBox();
@@ -177,10 +180,7 @@ namespace Sistema.Presentacion
             this.label50 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.TPEliminarV = new System.Windows.Forms.TabPage();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -394,22 +394,22 @@ namespace Sistema.Presentacion
             // 
             // TPActualizarL
             // 
-            this.TPActualizarL.Controls.Add(this.button7);
-            this.TPActualizarL.Controls.Add(this.textBox13);
-            this.TPActualizarL.Controls.Add(this.textBox12);
-            this.TPActualizarL.Controls.Add(this.textBox11);
-            this.TPActualizarL.Controls.Add(this.textBox10);
-            this.TPActualizarL.Controls.Add(this.textBox9);
-            this.TPActualizarL.Controls.Add(this.textBox8);
-            this.TPActualizarL.Controls.Add(this.textBox7);
-            this.TPActualizarL.Controls.Add(this.textBox6);
-            this.TPActualizarL.Controls.Add(this.textBox5);
-            this.TPActualizarL.Controls.Add(this.textBox4);
-            this.TPActualizarL.Controls.Add(this.textBox3);
-            this.TPActualizarL.Controls.Add(this.textBox2);
-            this.TPActualizarL.Controls.Add(this.textBox1);
-            this.TPActualizarL.Controls.Add(this.button2);
-            this.TPActualizarL.Controls.Add(this.button1);
+            this.TPActualizarL.Controls.Add(this.BtnCancelarL_);
+            this.TPActualizarL.Controls.Add(this.TxtNumEjemplares_);
+            this.TPActualizarL.Controls.Add(this.TxtNumPagina_);
+            this.TPActualizarL.Controls.Add(this.TxtMateria_);
+            this.TPActualizarL.Controls.Add(this.TxtAnio_);
+            this.TPActualizarL.Controls.Add(this.TxtNumEdicion_);
+            this.TPActualizarL.Controls.Add(this.TxtIdiomaL_);
+            this.TPActualizarL.Controls.Add(this.TxtPaisL_);
+            this.TPActualizarL.Controls.Add(this.TxtUbiL_);
+            this.TPActualizarL.Controls.Add(this.TxtDescripcion_);
+            this.TPActualizarL.Controls.Add(this.TxtEditorial_);
+            this.TPActualizarL.Controls.Add(this.TxtAutor_);
+            this.TPActualizarL.Controls.Add(this.TxtTituloL_);
+            this.TPActualizarL.Controls.Add(this.TxtIsbn_);
+            this.TPActualizarL.Controls.Add(this.BtnActualizarL);
+            this.TPActualizarL.Controls.Add(this.BtnBuscarL_);
             this.TPActualizarL.Controls.Add(this.label39);
             this.TPActualizarL.Controls.Add(this.label38);
             this.TPActualizarL.Controls.Add(this.label37);
@@ -430,66 +430,129 @@ namespace Sistema.Presentacion
             this.TPActualizarL.Text = "Actualizar Libros";
             this.TPActualizarL.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // BtnCancelarL_
             // 
-            this.textBox6.Location = new System.Drawing.Point(442, 162);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(200, 20);
-            this.textBox6.TabIndex = 21;
+            this.BtnCancelarL_.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnCancelarL_.ForeColor = System.Drawing.Color.Black;
+            this.BtnCancelarL_.Location = new System.Drawing.Point(500, 263);
+            this.BtnCancelarL_.Name = "BtnCancelarL_";
+            this.BtnCancelarL_.Size = new System.Drawing.Size(142, 23);
+            this.BtnCancelarL_.TabIndex = 29;
+            this.BtnCancelarL_.Text = "Cancelar";
+            this.BtnCancelarL_.UseVisualStyleBackColor = false;
+            this.BtnCancelarL_.Click += new System.EventHandler(this.BtnCancelarL__Click);
             // 
-            // textBox5
+            // TxtNumEjemplares_
             // 
-            this.textBox5.Location = new System.Drawing.Point(442, 44);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 112);
-            this.textBox5.TabIndex = 20;
+            this.TxtNumEjemplares_.Location = new System.Drawing.Point(130, 268);
+            this.TxtNumEjemplares_.Name = "TxtNumEjemplares_";
+            this.TxtNumEjemplares_.Size = new System.Drawing.Size(137, 20);
+            this.TxtNumEjemplares_.TabIndex = 28;
             // 
-            // textBox4
+            // TxtNumPagina_
             // 
-            this.textBox4.Location = new System.Drawing.Point(57, 108);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(210, 20);
-            this.textBox4.TabIndex = 19;
+            this.TxtNumPagina_.Location = new System.Drawing.Point(117, 238);
+            this.TxtNumPagina_.Name = "TxtNumPagina_";
+            this.TxtNumPagina_.Size = new System.Drawing.Size(150, 20);
+            this.TxtNumPagina_.TabIndex = 27;
             // 
-            // textBox3
+            // TxtMateria_
             // 
-            this.textBox3.Location = new System.Drawing.Point(56, 79);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(211, 20);
-            this.textBox3.TabIndex = 18;
+            this.TxtMateria_.Location = new System.Drawing.Point(63, 210);
+            this.TxtMateria_.Name = "TxtMateria_";
+            this.TxtMateria_.Size = new System.Drawing.Size(245, 20);
+            this.TxtMateria_.TabIndex = 26;
             // 
-            // textBox2
+            // TxtAnio_
             // 
-            this.textBox2.Location = new System.Drawing.Point(57, 52);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(251, 20);
-            this.textBox2.TabIndex = 17;
+            this.TxtAnio_.Location = new System.Drawing.Point(115, 169);
+            this.TxtAnio_.Name = "TxtAnio_";
+            this.TxtAnio_.Size = new System.Drawing.Size(135, 20);
+            this.TxtAnio_.TabIndex = 25;
             // 
-            // textBox1
+            // TxtNumEdicion_
             // 
-            this.textBox1.Location = new System.Drawing.Point(57, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 20);
-            this.textBox1.TabIndex = 16;
+            this.TxtNumEdicion_.Location = new System.Drawing.Point(115, 140);
+            this.TxtNumEdicion_.Name = "TxtNumEdicion_";
+            this.TxtNumEdicion_.Size = new System.Drawing.Size(193, 20);
+            this.TxtNumEdicion_.TabIndex = 24;
             // 
-            // button2
+            // TxtIdiomaL_
             // 
-            this.button2.Location = new System.Drawing.Point(353, 263);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 23);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Actualizar libro";
-            this.button2.UseVisualStyleBackColor = true;
+            this.TxtIdiomaL_.Location = new System.Drawing.Point(442, 215);
+            this.TxtIdiomaL_.Name = "TxtIdiomaL_";
+            this.TxtIdiomaL_.Size = new System.Drawing.Size(200, 20);
+            this.TxtIdiomaL_.TabIndex = 23;
             // 
-            // button1
+            // TxtPaisL_
             // 
-            this.button1.Location = new System.Drawing.Point(199, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.TxtPaisL_.Location = new System.Drawing.Point(442, 188);
+            this.TxtPaisL_.Name = "TxtPaisL_";
+            this.TxtPaisL_.Size = new System.Drawing.Size(200, 20);
+            this.TxtPaisL_.TabIndex = 22;
+            // 
+            // TxtUbiL_
+            // 
+            this.TxtUbiL_.Location = new System.Drawing.Point(442, 162);
+            this.TxtUbiL_.Name = "TxtUbiL_";
+            this.TxtUbiL_.Size = new System.Drawing.Size(200, 20);
+            this.TxtUbiL_.TabIndex = 21;
+            // 
+            // TxtDescripcion_
+            // 
+            this.TxtDescripcion_.Location = new System.Drawing.Point(442, 44);
+            this.TxtDescripcion_.Multiline = true;
+            this.TxtDescripcion_.Name = "TxtDescripcion_";
+            this.TxtDescripcion_.Size = new System.Drawing.Size(200, 112);
+            this.TxtDescripcion_.TabIndex = 20;
+            // 
+            // TxtEditorial_
+            // 
+            this.TxtEditorial_.Location = new System.Drawing.Point(57, 108);
+            this.TxtEditorial_.Name = "TxtEditorial_";
+            this.TxtEditorial_.Size = new System.Drawing.Size(210, 20);
+            this.TxtEditorial_.TabIndex = 19;
+            // 
+            // TxtAutor_
+            // 
+            this.TxtAutor_.Location = new System.Drawing.Point(56, 79);
+            this.TxtAutor_.Name = "TxtAutor_";
+            this.TxtAutor_.Size = new System.Drawing.Size(211, 20);
+            this.TxtAutor_.TabIndex = 18;
+            // 
+            // TxtTituloL_
+            // 
+            this.TxtTituloL_.Location = new System.Drawing.Point(57, 52);
+            this.TxtTituloL_.Name = "TxtTituloL_";
+            this.TxtTituloL_.Size = new System.Drawing.Size(251, 20);
+            this.TxtTituloL_.TabIndex = 17;
+            // 
+            // TxtIsbn_
+            // 
+            this.TxtIsbn_.Location = new System.Drawing.Point(57, 17);
+            this.TxtIsbn_.Name = "TxtIsbn_";
+            this.TxtIsbn_.Size = new System.Drawing.Size(127, 20);
+            this.TxtIsbn_.TabIndex = 16;
+            // 
+            // BtnActualizarL
+            // 
+            this.BtnActualizarL.Location = new System.Drawing.Point(353, 263);
+            this.BtnActualizarL.Name = "BtnActualizarL";
+            this.BtnActualizarL.Size = new System.Drawing.Size(141, 23);
+            this.BtnActualizarL.TabIndex = 14;
+            this.BtnActualizarL.Text = "Actualizar libro";
+            this.BtnActualizarL.UseVisualStyleBackColor = true;
+            this.BtnActualizarL.Click += new System.EventHandler(this.BtnActualizarL_Click);
+            // 
+            // BtnBuscarL_
+            // 
+            this.BtnBuscarL_.Location = new System.Drawing.Point(199, 15);
+            this.BtnBuscarL_.Name = "BtnBuscarL_";
+            this.BtnBuscarL_.Size = new System.Drawing.Size(109, 23);
+            this.BtnBuscarL_.TabIndex = 13;
+            this.BtnBuscarL_.Text = "Buscar";
+            this.BtnBuscarL_.UseVisualStyleBackColor = true;
+            this.BtnBuscarL_.Click += new System.EventHandler(this.BtnBuscarL__Click);
             // 
             // label39
             // 
@@ -1205,55 +1268,6 @@ namespace Sistema.Presentacion
             this.label14.TabIndex = 0;
             this.label14.Text = "Titulo:";
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(442, 188);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(200, 20);
-            this.textBox7.TabIndex = 22;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(442, 215);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(200, 20);
-            this.textBox8.TabIndex = 23;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(115, 140);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(193, 20);
-            this.textBox9.TabIndex = 24;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(115, 169);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(135, 20);
-            this.textBox10.TabIndex = 25;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(63, 210);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(245, 20);
-            this.textBox11.TabIndex = 26;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(117, 238);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(150, 20);
-            this.textBox12.TabIndex = 27;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(130, 268);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(137, 20);
-            this.textBox13.TabIndex = 28;
-            // 
             // TPActualizarV
             // 
             this.TPActualizarV.Controls.Add(this.button6);
@@ -1294,14 +1308,30 @@ namespace Sistema.Presentacion
             this.TPActualizarV.Text = "Actualizar Videos";
             this.TPActualizarV.UseVisualStyleBackColor = true;
             // 
-            // TPEliminarV
+            // button6
             // 
-            this.TPEliminarV.Location = new System.Drawing.Point(4, 22);
-            this.TPEliminarV.Name = "TPEliminarV";
-            this.TPEliminarV.Size = new System.Drawing.Size(684, 317);
-            this.TPEliminarV.TabIndex = 7;
-            this.TPEliminarV.Text = "Eliminar Videos";
-            this.TPEliminarV.UseVisualStyleBackColor = true;
+            this.button6.Location = new System.Drawing.Point(259, 21);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(109, 23);
+            this.button6.TabIndex = 58;
+            this.button6.Text = "Buscar";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // textBox27
+            // 
+            this.textBox27.Location = new System.Drawing.Point(106, 23);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(147, 20);
+            this.textBox27.TabIndex = 57;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(20, 27);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(88, 13);
+            this.label53.TabIndex = 56;
+            this.label53.Text = "Codigo de Video:";
             // 
             // button4
             // 
@@ -1532,41 +1562,14 @@ namespace Sistema.Presentacion
             this.label52.TabIndex = 28;
             this.label52.Text = "Titulo:";
             // 
-            // label53
+            // TPEliminarV
             // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(20, 27);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(88, 13);
-            this.label53.TabIndex = 56;
-            this.label53.Text = "Codigo de Video:";
-            // 
-            // textBox27
-            // 
-            this.textBox27.Location = new System.Drawing.Point(106, 23);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(147, 20);
-            this.textBox27.TabIndex = 57;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(259, 21);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(109, 23);
-            this.button6.TabIndex = 58;
-            this.button6.Text = "Buscar";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.IndianRed;
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(500, 263);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(142, 23);
-            this.button7.TabIndex = 29;
-            this.button7.Text = "Cancelar";
-            this.button7.UseVisualStyleBackColor = false;
+            this.TPEliminarV.Location = new System.Drawing.Point(4, 22);
+            this.TPEliminarV.Name = "TPEliminarV";
+            this.TPEliminarV.Size = new System.Drawing.Size(684, 317);
+            this.TPEliminarV.TabIndex = 7;
+            this.TPEliminarV.Text = "Eliminar Videos";
+            this.TPEliminarV.UseVisualStyleBackColor = true;
             // 
             // FrmAdmin
             // 
@@ -1699,14 +1702,14 @@ namespace Sistema.Presentacion
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox TxtUbiL_;
+        private System.Windows.Forms.TextBox TxtDescripcion_;
+        private System.Windows.Forms.TextBox TxtEditorial_;
+        private System.Windows.Forms.TextBox TxtAutor_;
+        private System.Windows.Forms.TextBox TxtTituloL_;
+        private System.Windows.Forms.TextBox TxtIsbn_;
+        private System.Windows.Forms.Button BtnActualizarL;
+        private System.Windows.Forms.Button BtnBuscarL_;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
@@ -1720,14 +1723,14 @@ namespace Sistema.Presentacion
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox TxtNumEjemplares_;
+        private System.Windows.Forms.TextBox TxtNumPagina_;
+        private System.Windows.Forms.TextBox TxtMateria_;
+        private System.Windows.Forms.TextBox TxtAnio_;
+        private System.Windows.Forms.TextBox TxtNumEdicion_;
+        private System.Windows.Forms.TextBox TxtIdiomaL_;
+        private System.Windows.Forms.TextBox TxtPaisL_;
+        private System.Windows.Forms.Button BtnCancelarL_;
         private System.Windows.Forms.TabPage TPActualizarV;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox27;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema.Negocio;
+using System.Data;
 
 namespace Sistema.Presentacion
 {
@@ -85,6 +86,24 @@ namespace Sistema.Presentacion
             TxtIdiomaL.Clear();
         }
 
+        //Funcion de Limpiar formulario de actualizar Libros
+        private void Limpiar_LAct()
+        {
+            TxtIsbn_.Clear();
+            TxtTituloL_.Clear();
+            TxtAutor_.Clear();
+            TxtEditorial_.Clear();
+            TxtNumEdicion_.Clear();
+            TxtAnio_.Clear();
+            TxtMateria_.Clear();
+            TxtNumPagina_.Clear();
+            TxtNumEjemplares_.Clear();
+            TxtDescripcion_.Clear();
+            TxtUbiL_.Clear();
+            TxtPaisL_.Clear();
+            TxtIdiomaL_.Clear();
+        }
+
         //Funcion de Limpiar formulario de ingresar Videos
         private void Limpiar_V()
         {
@@ -111,14 +130,14 @@ namespace Sistema.Presentacion
                 string Rpta = "";
 
 
-                //Rpta = NLibros.Actualizar(Convert.ToInt32(TxtNumEjemplares.Text.Trim()), TxtIsbn.Text.Trim(), TxtTituloL.Text.Trim(),
-                //        TxtAutor.Text.Trim(), TxtEditorial.Text.Trim(), Convert.ToInt32(TxtAnioEdicion.Text.Trim()), TxtNumEdicion.Text.Trim(),
-                //        TxtPaisL.Text.Trim(), TxtIdiomaL.Text.Trim(), TxtMateria.Text.Trim(), Convert.ToInt32(TxtNumPaginas.Text.Trim()),
-                //        TxtUbiL.Text.Trim(), TxtDescripcion.Text.Trim());
+                Rpta = NLibros.Actualizar(Convert.ToInt32(TxtNumEjemplares_.Text.Trim()), TxtIsbn_.Text.Trim(), TxtTituloL_.Text.Trim(),
+                       TxtAutor_.Text.Trim(), TxtEditorial_.Text.Trim(), Convert.ToInt32(TxtAnio_.Text.Trim()), TxtNumEdicion_.Text.Trim(),
+                        TxtPaisL_.Text.Trim(), TxtIdiomaL_.Text.Trim(), TxtMateria_.Text.Trim(), Convert.ToInt32(TxtNumPagina_.Text.Trim()),
+                        TxtUbiL_.Text.Trim(), TxtDescripcion_.Text.Trim());
                 if (Rpta.Equals("OK"))
                 {
                     this.MensajeOk("Se actualizo de forma correcta el libro en el registro");
-                    //this.Limpiar_LAct();
+                    this.Limpiar_LAct();
                     this.Listar_Libros();
                     //Se regresa a la tab de "Listado de Libros"
                     TabControl.SelectedIndex = 0;
@@ -136,6 +155,35 @@ namespace Sistema.Presentacion
             }
         }
 
+        //Funcion para buscar un libro
+        private void BuscarL()
+        {
+            DataTable libro = new DataTable();
+            
+            try
+            {
+                libro = NLibros.Buscar(TxtIsbn_.Text, 0);
+                //Asignando al texto de Actualizar Libro su valor correspondiente, identificandolo con su nombre de alias (establecido en la BD)
+                TxtTituloL_.Text = libro.Rows[0]["titulo"].ToString();
+                TxtAutor_.Text = libro.Rows[0]["autor(es)"].ToString();
+                TxtEditorial_.Text = libro.Rows[0]["editorial"].ToString();
+                TxtAnio_.Text = libro.Rows[0]["año edicion"].ToString();
+                TxtNumEdicion_.Text = libro.Rows[0]["numero edicion"].ToString();
+                TxtNumEjemplares_.Text = libro.Rows[0]["ejemplares"].ToString();
+                TxtPaisL_.Text = libro.Rows[0]["pais"].ToString();
+                TxtIdiomaL_.Text = libro.Rows[0]["idioma"].ToString();
+                TxtMateria_.Text = libro.Rows[0]["materia"].ToString();
+                TxtNumPagina_.Text = libro.Rows[0]["paginas"].ToString();
+                TxtUbiL_.Text = libro.Rows[0]["ubicacion"].ToString();
+                TxtDescripcion_.Text = libro.Rows[0]["descripcion"].ToString();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
 
         private void ShowNewForm(object sender, EventArgs e)
         {
@@ -239,6 +287,7 @@ namespace Sistema.Presentacion
 
         }
 
+        //Boton de Ingresar de pestania Insertar Libros
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
             try
@@ -281,6 +330,7 @@ namespace Sistema.Presentacion
             }
         }
 
+        //Boton de Cancelar de pestania Insertar Libros
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Limpiar_L();
@@ -288,6 +338,7 @@ namespace Sistema.Presentacion
             TabControl.SelectedIndex = 0;
         }
 
+        //Boton de Ingresar de pestania Insertar Videos
         private void BtnIngresarV_Click(object sender, EventArgs e)
         {
 
@@ -332,6 +383,7 @@ namespace Sistema.Presentacion
             }
         }
 
+        //Boton de Cancelar de pestania Insertar Videos
         private void BtnCancelarV_Click(object sender, EventArgs e)
         {
             this.Limpiar_V();
@@ -339,6 +391,35 @@ namespace Sistema.Presentacion
             TabControl.SelectedIndex = 4;
         }
 
-        
+        //Boton de Buscar de pestania Actualizar Libros
+        private void BtnBuscarL__Click(object sender, EventArgs e)
+        {
+            string Rpta = "";
+
+            Rpta = NLibros.Existe(TxtIsbn_.Text);
+
+            if (Rpta.Equals("OK"))
+            {
+                this.BuscarL();
+
+            }
+            else
+            {
+                this.MensajeError(Rpta);
+            }
+        }
+
+        //Boton de Actualizar de pestania Actualizar Libros
+        private void BtnActualizarL_Click(object sender, EventArgs e)
+        {
+            this.Actualizar_L();
+        }
+
+        //Boton de Cancelar de pestania Actualizar Libros
+        private void BtnCancelarL__Click(object sender, EventArgs e) 
+        {
+            this.Limpiar_LAct();
+            TabControl.SelectedIndex = 0;
+        }
     }
 }
