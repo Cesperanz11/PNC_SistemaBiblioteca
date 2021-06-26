@@ -55,6 +55,12 @@ namespace Sistema.Presentacion
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.LblAdmin = new System.Windows.Forms.Label();
             this.TPEliminarL = new System.Windows.Forms.TabPage();
+            this.BtnCancelarEL = new System.Windows.Forms.Button();
+            this.BtnEliminarEL = new System.Windows.Forms.Button();
+            this.dgvEliminarL = new System.Windows.Forms.DataGridView();
+            this.TxtIsbnEL = new System.Windows.Forms.TextBox();
+            this.BtnBuscarEL = new System.Windows.Forms.Button();
+            this.label54 = new System.Windows.Forms.Label();
             this.TPActualizarL = new System.Windows.Forms.TabPage();
             this.BtnCancelarL_ = new System.Windows.Forms.Button();
             this.TxtNumEjemplares_ = new System.Windows.Forms.TextBox();
@@ -181,22 +187,17 @@ namespace Sistema.Presentacion
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.TPEliminarV = new System.Windows.Forms.TabPage();
-            this.TxtIsbnEL = new System.Windows.Forms.TextBox();
-            this.BtnBuscarEL = new System.Windows.Forms.Button();
-            this.label54 = new System.Windows.Forms.Label();
-            this.dgvEliminarL = new System.Windows.Forms.DataGridView();
-            this.BtnCancelarEL = new System.Windows.Forms.Button();
-            this.BtnEliminarEL = new System.Windows.Forms.Button();
-            this.BtnCancelarEV = new System.Windows.Forms.Button();
-            this.BtnEliminarEV = new System.Windows.Forms.Button();
-            this.dgvEliminarV = new System.Windows.Forms.DataGridView();
             this.BtnBuscarEV = new System.Windows.Forms.Button();
             this.TxtIdEV = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
+            this.BtnCancelarEV = new System.Windows.Forms.Button();
+            this.BtnEliminarEV = new System.Windows.Forms.Button();
+            this.dgvEliminarV = new System.Windows.Forms.DataGridView();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.TPEliminarL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEliminarL)).BeginInit();
             this.TPActualizarL.SuspendLayout();
             this.TPInsertarL.SuspendLayout();
             this.TPSelectL.SuspendLayout();
@@ -207,7 +208,6 @@ namespace Sistema.Presentacion
             this.TPInsertarV.SuspendLayout();
             this.TPActualizarV.SuspendLayout();
             this.TPEliminarV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEliminarL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliminarV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -413,6 +413,65 @@ namespace Sistema.Presentacion
             this.TPEliminarL.TabIndex = 3;
             this.TPEliminarL.Text = "Eliminar Libros";
             this.TPEliminarL.UseVisualStyleBackColor = true;
+            // 
+            // BtnCancelarEL
+            // 
+            this.BtnCancelarEL.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnCancelarEL.ForeColor = System.Drawing.Color.Black;
+            this.BtnCancelarEL.Location = new System.Drawing.Point(364, 255);
+            this.BtnCancelarEL.Name = "BtnCancelarEL";
+            this.BtnCancelarEL.Size = new System.Drawing.Size(142, 23);
+            this.BtnCancelarEL.TabIndex = 31;
+            this.BtnCancelarEL.Text = "Cancelar";
+            this.BtnCancelarEL.UseVisualStyleBackColor = false;
+            this.BtnCancelarEL.Click += new System.EventHandler(this.BtnCancelarEL_Click);
+            // 
+            // BtnEliminarEL
+            // 
+            this.BtnEliminarEL.Location = new System.Drawing.Point(217, 255);
+            this.BtnEliminarEL.Name = "BtnEliminarEL";
+            this.BtnEliminarEL.Size = new System.Drawing.Size(141, 23);
+            this.BtnEliminarEL.TabIndex = 30;
+            this.BtnEliminarEL.Text = "Eliminar libro";
+            this.BtnEliminarEL.UseVisualStyleBackColor = true;
+            this.BtnEliminarEL.Click += new System.EventHandler(this.BtnEliminarEL_Click);
+            // 
+            // dgvEliminarL
+            // 
+            this.dgvEliminarL.AllowUserToAddRows = false;
+            this.dgvEliminarL.AllowUserToDeleteRows = false;
+            this.dgvEliminarL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEliminarL.Location = new System.Drawing.Point(0, 91);
+            this.dgvEliminarL.Name = "dgvEliminarL";
+            this.dgvEliminarL.ReadOnly = true;
+            this.dgvEliminarL.Size = new System.Drawing.Size(681, 96);
+            this.dgvEliminarL.TabIndex = 20;
+            // 
+            // TxtIsbnEL
+            // 
+            this.TxtIsbnEL.Location = new System.Drawing.Point(248, 41);
+            this.TxtIsbnEL.Name = "TxtIsbnEL";
+            this.TxtIsbnEL.Size = new System.Drawing.Size(127, 20);
+            this.TxtIsbnEL.TabIndex = 19;
+            // 
+            // BtnBuscarEL
+            // 
+            this.BtnBuscarEL.Location = new System.Drawing.Point(397, 39);
+            this.BtnBuscarEL.Name = "BtnBuscarEL";
+            this.BtnBuscarEL.Size = new System.Drawing.Size(109, 23);
+            this.BtnBuscarEL.TabIndex = 18;
+            this.BtnBuscarEL.Text = "Buscar";
+            this.BtnBuscarEL.UseVisualStyleBackColor = true;
+            this.BtnBuscarEL.Click += new System.EventHandler(this.BtnBuscarEL_Click);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(207, 44);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(35, 13);
+            this.label54.TabIndex = 17;
+            this.label54.Text = "ISBN:";
             // 
             // TPActualizarL
             // 
@@ -1602,93 +1661,6 @@ namespace Sistema.Presentacion
             this.TPEliminarV.Text = "Eliminar Videos";
             this.TPEliminarV.UseVisualStyleBackColor = true;
             // 
-            // TxtIsbnEL
-            // 
-            this.TxtIsbnEL.Location = new System.Drawing.Point(248, 41);
-            this.TxtIsbnEL.Name = "TxtIsbnEL";
-            this.TxtIsbnEL.Size = new System.Drawing.Size(127, 20);
-            this.TxtIsbnEL.TabIndex = 19;
-            // 
-            // BtnBuscarEL
-            // 
-            this.BtnBuscarEL.Location = new System.Drawing.Point(397, 39);
-            this.BtnBuscarEL.Name = "BtnBuscarEL";
-            this.BtnBuscarEL.Size = new System.Drawing.Size(109, 23);
-            this.BtnBuscarEL.TabIndex = 18;
-            this.BtnBuscarEL.Text = "Buscar";
-            this.BtnBuscarEL.UseVisualStyleBackColor = true;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(207, 44);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(35, 13);
-            this.label54.TabIndex = 17;
-            this.label54.Text = "ISBN:";
-            // 
-            // dgvEliminarL
-            // 
-            this.dgvEliminarL.AllowUserToAddRows = false;
-            this.dgvEliminarL.AllowUserToDeleteRows = false;
-            this.dgvEliminarL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEliminarL.Location = new System.Drawing.Point(0, 91);
-            this.dgvEliminarL.Name = "dgvEliminarL";
-            this.dgvEliminarL.ReadOnly = true;
-            this.dgvEliminarL.Size = new System.Drawing.Size(681, 96);
-            this.dgvEliminarL.TabIndex = 20;
-            // 
-            // BtnCancelarEL
-            // 
-            this.BtnCancelarEL.BackColor = System.Drawing.Color.IndianRed;
-            this.BtnCancelarEL.ForeColor = System.Drawing.Color.Black;
-            this.BtnCancelarEL.Location = new System.Drawing.Point(364, 255);
-            this.BtnCancelarEL.Name = "BtnCancelarEL";
-            this.BtnCancelarEL.Size = new System.Drawing.Size(142, 23);
-            this.BtnCancelarEL.TabIndex = 31;
-            this.BtnCancelarEL.Text = "Cancelar";
-            this.BtnCancelarEL.UseVisualStyleBackColor = false;
-            // 
-            // BtnEliminarEL
-            // 
-            this.BtnEliminarEL.Location = new System.Drawing.Point(217, 255);
-            this.BtnEliminarEL.Name = "BtnEliminarEL";
-            this.BtnEliminarEL.Size = new System.Drawing.Size(141, 23);
-            this.BtnEliminarEL.TabIndex = 30;
-            this.BtnEliminarEL.Text = "Eliminar libro";
-            this.BtnEliminarEL.UseVisualStyleBackColor = true;
-            // 
-            // BtnCancelarEV
-            // 
-            this.BtnCancelarEV.BackColor = System.Drawing.Color.IndianRed;
-            this.BtnCancelarEV.ForeColor = System.Drawing.Color.Black;
-            this.BtnCancelarEV.Location = new System.Drawing.Point(366, 255);
-            this.BtnCancelarEV.Name = "BtnCancelarEV";
-            this.BtnCancelarEV.Size = new System.Drawing.Size(142, 23);
-            this.BtnCancelarEV.TabIndex = 37;
-            this.BtnCancelarEV.Text = "Cancelar";
-            this.BtnCancelarEV.UseVisualStyleBackColor = false;
-            // 
-            // BtnEliminarEV
-            // 
-            this.BtnEliminarEV.Location = new System.Drawing.Point(219, 255);
-            this.BtnEliminarEV.Name = "BtnEliminarEV";
-            this.BtnEliminarEV.Size = new System.Drawing.Size(141, 23);
-            this.BtnEliminarEV.TabIndex = 36;
-            this.BtnEliminarEV.Text = "Eliminar video";
-            this.BtnEliminarEV.UseVisualStyleBackColor = true;
-            // 
-            // dgvEliminarV
-            // 
-            this.dgvEliminarV.AllowUserToAddRows = false;
-            this.dgvEliminarV.AllowUserToDeleteRows = false;
-            this.dgvEliminarV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEliminarV.Location = new System.Drawing.Point(2, 91);
-            this.dgvEliminarV.Name = "dgvEliminarV";
-            this.dgvEliminarV.ReadOnly = true;
-            this.dgvEliminarV.Size = new System.Drawing.Size(681, 96);
-            this.dgvEliminarV.TabIndex = 35;
-            // 
             // BtnBuscarEV
             // 
             this.BtnBuscarEV.Location = new System.Drawing.Point(415, 34);
@@ -1697,6 +1669,7 @@ namespace Sistema.Presentacion
             this.BtnBuscarEV.TabIndex = 61;
             this.BtnBuscarEV.Text = "Buscar";
             this.BtnBuscarEV.UseVisualStyleBackColor = true;
+            this.BtnBuscarEV.Click += new System.EventHandler(this.BtnBuscarEV_Click);
             // 
             // TxtIdEV
             // 
@@ -1713,6 +1686,39 @@ namespace Sistema.Presentacion
             this.label55.Size = new System.Drawing.Size(88, 13);
             this.label55.TabIndex = 59;
             this.label55.Text = "Codigo de Video:";
+            // 
+            // BtnCancelarEV
+            // 
+            this.BtnCancelarEV.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnCancelarEV.ForeColor = System.Drawing.Color.Black;
+            this.BtnCancelarEV.Location = new System.Drawing.Point(366, 255);
+            this.BtnCancelarEV.Name = "BtnCancelarEV";
+            this.BtnCancelarEV.Size = new System.Drawing.Size(142, 23);
+            this.BtnCancelarEV.TabIndex = 37;
+            this.BtnCancelarEV.Text = "Cancelar";
+            this.BtnCancelarEV.UseVisualStyleBackColor = false;
+            this.BtnCancelarEV.Click += new System.EventHandler(this.BtnCancelarEV_Click);
+            // 
+            // BtnEliminarEV
+            // 
+            this.BtnEliminarEV.Location = new System.Drawing.Point(219, 255);
+            this.BtnEliminarEV.Name = "BtnEliminarEV";
+            this.BtnEliminarEV.Size = new System.Drawing.Size(141, 23);
+            this.BtnEliminarEV.TabIndex = 36;
+            this.BtnEliminarEV.Text = "Eliminar video";
+            this.BtnEliminarEV.UseVisualStyleBackColor = true;
+            this.BtnEliminarEV.Click += new System.EventHandler(this.BtnEliminarEV_Click);
+            // 
+            // dgvEliminarV
+            // 
+            this.dgvEliminarV.AllowUserToAddRows = false;
+            this.dgvEliminarV.AllowUserToDeleteRows = false;
+            this.dgvEliminarV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEliminarV.Location = new System.Drawing.Point(2, 91);
+            this.dgvEliminarV.Name = "dgvEliminarV";
+            this.dgvEliminarV.ReadOnly = true;
+            this.dgvEliminarV.Size = new System.Drawing.Size(681, 96);
+            this.dgvEliminarV.TabIndex = 35;
             // 
             // FrmAdmin
             // 
@@ -1739,6 +1745,7 @@ namespace Sistema.Presentacion
             this.statusStrip.PerformLayout();
             this.TPEliminarL.ResumeLayout(false);
             this.TPEliminarL.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEliminarL)).EndInit();
             this.TPActualizarL.ResumeLayout(false);
             this.TPActualizarL.PerformLayout();
             this.TPInsertarL.ResumeLayout(false);
@@ -1754,7 +1761,6 @@ namespace Sistema.Presentacion
             this.TPActualizarV.PerformLayout();
             this.TPEliminarV.ResumeLayout(false);
             this.TPEliminarV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEliminarL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliminarV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

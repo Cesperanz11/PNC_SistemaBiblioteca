@@ -117,5 +117,13 @@ namespace Sistema.Negocio
             }
 
         }
+
+        //Funcion para eliminar videos
+        public static string Eliminar(int id_video)
+        {
+            DVideos Datos = new DVideos();
+
+            return Datos.Eliminar(id_video);
+        }
     }
 }

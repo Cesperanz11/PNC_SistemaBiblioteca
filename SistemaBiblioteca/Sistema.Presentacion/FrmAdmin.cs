@@ -557,5 +557,116 @@ namespace Sistema.Presentacion
             this.Limpiar_VAct();
             TabControl.SelectedIndex = 4;
         }
+
+
+        //Boton de Buscar de pestania Eliminar Libros
+        private void BtnBuscarEL_Click(object sender, EventArgs e)
+        {
+            string Rpta = "";
+
+            Rpta = NLibros.Existe(TxtIsbnEL.Text.Trim().ToString());
+
+            if (Rpta.Equals("OK"))
+            {
+                dgvEliminarL.DataSource = NLibros.Buscar(TxtIsbnEL.Text.Trim().ToString(), 0);
+
+            }
+            else
+            {
+                this.MensajeError(Rpta);
+            }
+        }
+
+        //Boton de Eliminar de pestania Eliminar Libros
+        private void BtnEliminarEL_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Realmente deseas eliminar este libro?", "Sistema de Biblioteca", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.OK)
+                {
+
+                    NLibros.Eliminar(TxtIsbnEL.Text.Trim().ToString());
+                    TxtIsbnEL.Clear();
+                    dgvEliminarL.DataSource = null;
+                    this.Listar_Libros();
+                    TabControl.SelectedIndex = 0;
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+
+        }
+
+        //Boton de Cancelar de pestania Eliminar Libros
+        private void BtnCancelarEL_Click(object sender, EventArgs e)
+        {
+            TxtIsbnEL.Clear();
+            dgvEliminarL.DataSource = null;
+            this.Listar_Libros();
+            TabControl.SelectedIndex = 0;
+        }
+
+
+        //Boton de Buscar de pestania Eliminar Videos
+        private void BtnBuscarEV_Click(object sender, EventArgs e)
+        {
+            string Rpta = "";
+
+            Rpta = NVideos.BuscarID(Convert.ToInt32(TxtIdEV.Text));
+
+            if (Rpta.Equals("OK"))
+            {
+                dgvEliminarV.DataSource = NVideos.Obtener(Convert.ToInt32(TxtIdEV.Text));
+
+            }
+            else
+            {
+                this.MensajeError(Rpta);
+            }
+        }
+
+        //Boton de Eliminar de pestania Eliminar Videos
+        private void BtnEliminarEV_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Realmente deseas eliminar este video?", "Sistema de Biblioteca", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.OK)
+                {
+
+                    NVideos.Eliminar(Convert.ToInt32(TxtIdEV.Text));
+                    TxtIdEV.Clear();
+                    dgvEliminarV.DataSource = null;
+                    this.Listar_Videos();
+                    TabControl.SelectedIndex = 4;
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        //Boton de Cancelar de pestania Eliminar Videos
+        private void BtnCancelarEV_Click(object sender, EventArgs e)
+        {
+            TxtIdEV.Clear();
+            dgvEliminarV.DataSource = null;
+            this.Listar_Videos();
+            TabControl.SelectedIndex = 4;
+        }
     }
 }

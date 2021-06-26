@@ -108,5 +108,13 @@ namespace Sistema.Negocio
 
             return Datos.Actualizar(Obj);
         }
+
+        // Funcion para eliminar libros
+        public static string Eliminar(string isbn)
+        {
+            DLibros Datos = new DLibros();
+
+            return Datos.Eliminar(isbn);
+        }
     }
 }
