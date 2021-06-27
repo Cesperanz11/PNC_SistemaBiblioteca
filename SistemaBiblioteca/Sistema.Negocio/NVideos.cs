@@ -118,6 +118,26 @@ namespace Sistema.Negocio
 
         }
 
+
+
+        //Funcion para determinar existencia de video en pestania prestamos
+        public static string Existe_P(string dato, int type)
+        {
+            DVideos Datos = new DVideos();
+            string Rpta = "";
+
+            Rpta = Datos.Existe_P(dato, type);
+            if (Rpta.Equals("0"))
+            {
+                return "El dato que se ha consultado no existe en la BD";
+            }
+            else
+            {
+                return "OK";
+            }
+
+        }
+
         //Funcion para eliminar videos
         public static string Eliminar(int id_video)
         {

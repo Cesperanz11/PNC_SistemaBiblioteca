@@ -156,8 +156,29 @@ namespace Sistema.Presentacion
         }
 
 
-        //Funcion para buscar y regresar un maestro e imprimirlo
-        private void BuscarM()
+        //Funcion para buscar y regresar un video e imprimirlo
+        private void BuscarV()
+        {
+
+            try
+            {
+                //Aqui recuperara un DataTable con el Select que cumple la condicion de busqueda
+                dgvPrestamoVV.DataSource = NVideos.Buscar(TxtFraseV.Text, cmbVideo.SelectedIndex);
+
+                //Aqui le daremos formato al DataSource
+                //this.FormatoL();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
+        //Funcion para buscar y regresar un maestro e imprimirlo en Prestamo Libros
+        private void BuscarML()
         {
 
             try
@@ -167,6 +188,27 @@ namespace Sistema.Presentacion
 
                 //Aqui le daremos formato al DataSource
                 FormatoM();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
+        //Funcion para buscar y regresar un maestro e imprimirlo en Prestamo Videos
+        private void BuscarMV()
+        {
+
+            try
+            {
+                //Aqui recuperara un DataTable con el Select que cumple la condicion de busqueda
+                dgvPrestamoVM.DataSource = NUsuario.Listar(TxtMaestroV.Text);
+
+                //Aqui le daremos formato al DataSource
+                //FormatoM();
 
             }
             catch (Exception ex)
@@ -259,7 +301,7 @@ namespace Sistema.Presentacion
                 if (Rpta.Equals("OK"))
                 {
 
-                    this.BuscarM();
+                    this.BuscarML();
                     
 
                 }
@@ -380,5 +422,61 @@ namespace Sistema.Presentacion
         
     }
 
+
+
+
+        //Boton de Buscar un Video en pestania Prestamo de Videos
+        private void BtnBuscarV_Click(object sender, EventArgs e)
+        {
+            if (TxtFraseV.Text.Equals(""))
+            {
+                this.MensajeError("Primero ingrese una frase o palabra antes de querer buscar un video");
+                dgvPrestamoVV.DataSource = null;
+            }
+            else
+            {
+                string Rpta = "";
+
+                Rpta = NVideos.Existe_P(TxtFraseV.Text,  cmbVideo.SelectedIndex );
+
+                if (Rpta.Equals("OK"))
+                {
+                    this.BuscarV();
+
+                }
+                else
+                {
+                    this.MensajeError(Rpta);
+                }
+            }
+        }
+
+        //Boton de Buscar un Maestro en pestania Prestamo de Videos
+        private void BtnBuscarMV_Click(object sender, EventArgs e)
+        {
+            if (TxtMaestroV.Text.Equals(""))
+            {
+                this.MensajeError("Primero ingrese un nombre o apellido antes de querer buscar un maestro");
+                dgvPrestamoVM.DataSource = null;
+            }
+            else
+            {
+                string Rpta = "";
+
+                Rpta = NUsuario.Existe_P(TxtMaestroV.Text);
+
+                if (Rpta.Equals("OK"))
+                {
+
+                    this.BuscarMV();
+
+
+                }
+                else
+                {
+                    this.MensajeError(Rpta);
+                }
+            }
+        }
     }
 }

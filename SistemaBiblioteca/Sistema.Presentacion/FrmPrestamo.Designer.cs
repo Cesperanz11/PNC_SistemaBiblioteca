@@ -326,6 +326,7 @@ namespace Sistema.Presentacion
             this.BtnBuscarMV.TabIndex = 28;
             this.BtnBuscarMV.Text = "Buscar";
             this.BtnBuscarMV.UseVisualStyleBackColor = true;
+            this.BtnBuscarMV.Click += new System.EventHandler(this.BtnBuscarMV_Click);
             // 
             // dgvPrestamoVM
             // 
@@ -457,6 +458,7 @@ namespace Sistema.Presentacion
             this.BtnBuscarV.TabIndex = 7;
             this.BtnBuscarV.Text = "Buscar";
             this.BtnBuscarV.UseVisualStyleBackColor = true;
+            this.BtnBuscarV.Click += new System.EventHandler(this.BtnBuscarV_Click);
             // 
             // TxtFraseV
             // 
