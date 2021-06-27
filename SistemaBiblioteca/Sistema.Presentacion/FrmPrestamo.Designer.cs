@@ -31,7 +31,6 @@ namespace Sistema.Presentacion
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TPPrestamoL = new System.Windows.Forms.TabPage();
-            this.TPPrestamoV = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnBuscarML = new System.Windows.Forms.Button();
@@ -49,6 +48,7 @@ namespace Sistema.Presentacion
             this.cmbLibro = new System.Windows.Forms.ComboBox();
             this.BtnBuscarL = new System.Windows.Forms.Button();
             this.TxtFraseL = new System.Windows.Forms.TextBox();
+            this.TPPrestamoV = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.TPPrestamoL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoLM)).BeginInit();
@@ -88,16 +88,6 @@ namespace Sistema.Presentacion
             this.TPPrestamoL.Text = "Prestamo Libros";
             this.TPPrestamoL.UseVisualStyleBackColor = true;
             // 
-            // TPPrestamoV
-            // 
-            this.TPPrestamoV.Location = new System.Drawing.Point(4, 22);
-            this.TPPrestamoV.Name = "TPPrestamoV";
-            this.TPPrestamoV.Padding = new System.Windows.Forms.Padding(3);
-            this.TPPrestamoV.Size = new System.Drawing.Size(788, 423);
-            this.TPPrestamoV.TabIndex = 1;
-            this.TPPrestamoV.Text = "Prestamo Videos";
-            this.TPPrestamoV.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -124,6 +114,7 @@ namespace Sistema.Presentacion
             this.BtnBuscarML.TabIndex = 18;
             this.BtnBuscarML.Text = "Buscar";
             this.BtnBuscarML.UseVisualStyleBackColor = true;
+            this.BtnBuscarML.Click += new System.EventHandler(this.BtnBuscarML_Click);
             // 
             // dgvPrestamoLM
             // 
@@ -263,6 +254,16 @@ namespace Sistema.Presentacion
             this.TxtFraseL.Name = "TxtFraseL";
             this.TxtFraseL.Size = new System.Drawing.Size(222, 20);
             this.TxtFraseL.TabIndex = 11;
+            // 
+            // TPPrestamoV
+            // 
+            this.TPPrestamoV.Location = new System.Drawing.Point(4, 22);
+            this.TPPrestamoV.Name = "TPPrestamoV";
+            this.TPPrestamoV.Padding = new System.Windows.Forms.Padding(3);
+            this.TPPrestamoV.Size = new System.Drawing.Size(788, 423);
+            this.TPPrestamoV.TabIndex = 1;
+            this.TPPrestamoV.Text = "Prestamo Videos";
+            this.TPPrestamoV.UseVisualStyleBackColor = true;
             // 
             // FrmPrestamo
             // 

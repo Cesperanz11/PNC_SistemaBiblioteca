@@ -50,11 +50,11 @@ namespace Sistema.Negocio
         }
 
         // Funcion de listar usuarios (maestros)
-        public static DataTable Listar()
+        public static DataTable Listar(string dato)
         {
             //Se utiliza la funcion de la clase Datos para obtener la informacion
             DUsuario Datos = new DUsuario();
-            return Datos.Listar();
+            return Datos.Listar(dato);
         }
 
         // Funcion de obtener rol
@@ -65,6 +65,24 @@ namespace Sistema.Negocio
             string Rol = Datos.Get_Rol(Email);
 
             return Rol;
+        }
+
+        //Funcion para determinar existencia de un maestro en pestania prestamos
+        public static string Existe_P(string dato)
+        {
+            DUsuario Datos = new DUsuario();
+            string Rpta = "";
+
+            Rpta = Datos.Existe_P(dato);
+            if (Rpta.Equals("0"))
+            {
+                return "El maestro que se ha consultado no existe en la BD";
+            }
+            else
+            {
+                return "OK";
+            }
+
         }
     }
 }

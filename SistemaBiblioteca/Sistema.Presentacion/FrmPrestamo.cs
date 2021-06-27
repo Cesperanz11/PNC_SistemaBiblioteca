@@ -67,6 +67,35 @@ namespace Sistema.Presentacion
         }
 
 
+        //Funcion para dar formato a los libros mostrados
+        private void FormatoL()
+        {
+            dgvPrestamoLL.Columns[0].Width = 80;
+            dgvPrestamoLL.Columns[1].Width = 100;
+            dgvPrestamoLL.Columns[2].Width = 100;
+            dgvPrestamoLL.Columns[3].Width = 100;
+            dgvPrestamoLL.Columns[4].Visible = false;
+            dgvPrestamoLL.Columns[5].Visible = false;
+            dgvPrestamoLL.Columns[6].Visible = false;
+            dgvPrestamoLL.Columns[7].Visible = false;
+            dgvPrestamoLL.Columns[8].Visible = false;
+            dgvPrestamoLL.Columns[9].Visible = false;
+            dgvPrestamoLL.Columns[10].Visible = false;
+            dgvPrestamoLL.Columns[11].Visible = false;
+            dgvPrestamoLL.Columns[12].Visible = false;
+            dgvPrestamoLL.Columns[13].Visible = false;
+        }
+
+        //Funcion para dar formato a los maestros mostrados
+        private void FormatoM()
+        {
+            dgvPrestamoLM.Columns[0].Width = 100;
+            dgvPrestamoLM.Columns[1].Width = 100;
+            dgvPrestamoLM.Columns[2].Width = 100;
+        }
+
+
+
 
         //Funcion para buscar y regresar un libro e imprimirlo
         private void BuscarL()
@@ -78,7 +107,28 @@ namespace Sistema.Presentacion
                 dgvPrestamoLL.DataSource = NLibros.Buscar(TxtFraseL.Text, cmbLibro.SelectedIndex);
                 
                 //Aqui le daremos formato al DataSource
-                // FormatoL();
+                this.FormatoL();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
+        //Funcion para buscar y regresar un libro e imprimirlo
+        private void BuscarM()
+        {
+
+            try
+            {
+                //Aqui recuperara un DataTable con el Select que cumple la condicion de busqueda
+                dgvPrestamoLM.DataSource = NUsuario.Listar(TxtMaestroL.Text);
+
+                //Aqui le daremos formato al DataSource
+                FormatoM();
 
             }
             catch (Exception ex)
@@ -129,6 +179,33 @@ namespace Sistema.Presentacion
                 }
             }
         
+        }
+
+        //Boton de Buscar un Maestro en pestania Prestamo de Libros
+        private void BtnBuscarML_Click(object sender, EventArgs e)
+        {
+            if (TxtMaestroL.Text.Equals(""))
+            {
+                this.MensajeError("Primero ingrese un nombre o apellido antes de querer buscar un maestro");
+                dgvPrestamoLM.DataSource = null;
+            }
+            else
+            {
+                string Rpta = "";
+
+                Rpta = NUsuario.Existe_P(TxtMaestroL.Text);
+
+                if (Rpta.Equals("OK"))
+                {
+
+                    this.BuscarM();
+
+                }
+                else
+                {
+                    this.MensajeError(Rpta);
+                }
+            }
         }
     }
 }

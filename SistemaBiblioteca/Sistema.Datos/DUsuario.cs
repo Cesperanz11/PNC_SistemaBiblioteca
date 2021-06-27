@@ -103,8 +103,55 @@ namespace Sistema.Datos
             return Rpta;
         }
 
+
+        // Funcion de verificar existencia de usuario en pestania prestamos
+        public string Existe_P(string dato)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //creando conexion con la BD
+                SqlCon = Conexion.getInstancia().CrearConexion();
+
+                //generando nuevo comando para ejecutar en SQL Server el procedimiento almacenado "usuario_existe"
+                SqlCommand Comando = new SqlCommand("usuario_existe_prestamos", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                //Declarando value de los parametros dentro del procedimiento almacenado
+                Comando.Parameters.Add("@dato", SqlDbType.VarChar).Value = dato;
+
+                //consulta para ejecutar el procedimiento almacenado
+                SqlParameter ParExiste = new SqlParameter();
+                ParExiste.ParameterName = "@existe";
+                //especificando el tipo de variable que va retornar
+                ParExiste.SqlDbType = SqlDbType.Int;
+
+                //retornando el valor de respuesta de la query
+                ParExiste.Direction = ParameterDirection.Output;
+                Comando.Parameters.Add(ParExiste);
+
+                //se abre la conexion con BD
+                SqlCon.Open();
+
+                //ejecutando query que no devuelve ningun valor
+                Comando.ExecuteNonQuery();
+                Rpta = Convert.ToString(ParExiste.Value);
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                //si se genera conexion con exito, luego de tener los datos se cierra
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
+
         //Funcion de listar usuarios (maestros)
-        public DataTable Listar()
+        public DataTable Listar(string dato)
         {
             SqlDataReader Resultado;
             DataTable Tabla = new DataTable();
@@ -116,6 +163,7 @@ namespace Sistema.Datos
 
                 //para tener los datos se necesita llama un procedimiento almacenado "usuario_listar" dentro de SQL Server
                 SqlCommand Comando = new SqlCommand("usuario_listar", SqlCon);
+                Comando.Parameters.Add("dato", SqlDbType.VarChar).Value = dato;
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //se abre la conexion con BD
