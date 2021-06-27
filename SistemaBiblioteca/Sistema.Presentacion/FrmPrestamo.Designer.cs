@@ -146,6 +146,7 @@ namespace Sistema.Presentacion
             this.BtnGuardarL.TabIndex = 15;
             this.BtnGuardarL.Text = "Registrar Prestamo";
             this.BtnGuardarL.UseVisualStyleBackColor = true;
+            this.BtnGuardarL.Click += new System.EventHandler(this.BtnGuardarL_Click);
             // 
             // dtpLibro
             // 

@@ -95,7 +95,25 @@ namespace Sistema.Presentacion
         }
 
 
+        //Funcion para saber si se tienen filas de DataGridView seleccionadas
+        private int SeleccionarFilaL(DataGridView dgv)
+        {
+            //Para saber si en realidad si esta haciendo la verificacion
+            int fila = -1;
 
+            if(dgv.SelectedRows.Count > 0 ) {
+
+                fila = dgv.CurrentRow.Index;
+
+                return fila;
+            }
+            else 
+            { 
+               return fila; 
+            }
+            
+
+        }
 
         //Funcion para buscar y regresar un libro e imprimirlo
         private void BuscarL()
@@ -151,6 +169,11 @@ namespace Sistema.Presentacion
             dgvPrestamoLL.DataSource = null;
             dgvPrestamoLM.DataSource = null;
             dgvPrestamoLP.DataSource = null;
+            dgvPrestamoLL.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPrestamoLM.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPrestamoLP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtpLibro.Value = DateTime.Today;
+
         }
 
 
@@ -199,11 +222,39 @@ namespace Sistema.Presentacion
                 {
 
                     this.BuscarM();
+                    
 
                 }
                 else
                 {
                     this.MensajeError(Rpta);
+                }
+            }
+        }
+
+        //Boton de Registrar Prestamo en pestania Prestamo de Libros
+        private void BtnGuardarL_Click(object sender, EventArgs e)
+        {
+            int fila1 = SeleccionarFilaL(dgvPrestamoLL);
+            int fila2 = SeleccionarFilaL(dgvPrestamoLM);
+
+            int id_libro;
+            int id_usuario;
+
+            if ( fila1==-1 || fila2 == -1)
+            {
+                this.MensajeError("Seleccione las filas necesarias para hacer el prestamo (libro y maestro)");
+            }
+            else
+            {
+                if(dtpLibro.Checked == false)
+                {
+                    this.MensajeError("Seleccione una fecha antes de ingresar el prestamo");
+                }
+                else
+                {
+                    //id_libro = dgvPrestamoLL.DataSource.Rows[fila1]["codigo"] ;
+                    this.MensajeOk("VAMOS BIEN");
                 }
             }
         }
