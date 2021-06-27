@@ -9,7 +9,7 @@ using Sistema.Entidades;
 
 namespace Sistema.Negocio
 {
-    class NPrestamos
+    public class NPrestamos
     {
 
         // Funcion de listar prestamos de libros de un maestro

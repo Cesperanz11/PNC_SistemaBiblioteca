@@ -67,6 +67,19 @@ namespace Sistema.Presentacion
         }
 
 
+        //Funcion de validar fecha
+        private string CompararFecha(DateTime fecha_ingresada, DateTime fecha_actual)
+        {
+            int resultado = DateTime.Compare(fecha_ingresada, fecha_actual);
+            string Rpta ="";
+
+            if (resultado <= 0)
+                return Rpta  = "Ingrese una fecha que no sea menor o igual a la fecha actual";
+            else
+                return Rpta = "OK";
+        }
+
+
         //Funcion para dar formato a los libros mostrados
         private void FormatoL()
         {
@@ -241,20 +254,55 @@ namespace Sistema.Presentacion
             int id_libro;
             int id_usuario;
 
-            if ( fila1==-1 || fila2 == -1)
-            {
+            if ( fila1==-1 || fila2 == -1) // Este escenario es si ninguna fila a sido seleccionada aun
+            { 
                 this.MensajeError("Seleccione las filas necesarias para hacer el prestamo (libro y maestro)");
             }
-            else
+            else // Aqui ya se han seleccionado ambas filas, tanto de Libros como de Maestros
             {
-                if(dtpLibro.Checked == false)
+
+                DateTime hoy = DateTime.Today;
+                string resultado_fecha = this.CompararFecha(dtpLibro.Value, hoy);
+
+
+                if(dtpLibro.Checked == false) //Aqui se verifica si no hay fecha seleccionada
                 {
                     this.MensajeError("Seleccione una fecha antes de ingresar el prestamo");
                 }
-                else
+                else if ( resultado_fecha.Equals("OK") ) //Este es el escenario con una fecha valida seleccionada
                 {
-                    //id_libro = dgvPrestamoLL.DataSource.Rows[fila1]["codigo"] ;
-                    this.MensajeOk("VAMOS BIEN");
+
+                    try
+                    {
+                        string Rpta = "";
+
+
+                        Rpta = NPrestamos.Insertar_Libros(1000,1, dtpLibro.Value, hoy);
+                        if (Rpta.Equals("OK"))
+                        {
+                            this.MensajeOk("Se ingreso de forma correcta el prestamo del libro en el registro");
+                            //Se regresa los dgv en limpio
+                            dgvPrestamoLL.DataSource = null;
+                            dgvPrestamoLM.DataSource = null;
+                            dgvPrestamoLP.DataSource = null;
+
+                        }
+                        else
+                        {
+                            this.MensajeError(Rpta);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
+
+            }
+                else  //Esto es por si la fecha es menor o igual a la fecha actual, por ende no es valida
+                {
+                    this.MensajeError(resultado_fecha);
                 }
             }
         }
