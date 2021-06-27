@@ -36,5 +36,32 @@ namespace Sistema.Negocio
 
             return Datos.Insertar_Libros(Obj);
         }
+
+
+
+        // Funcion de listar prestamos de videos de un maestro
+        public static DataTable Listar_Videos(int id_usuario)
+        {
+            //Se utiliza la funcion de la clase Datos para obtener la informacion
+            DPrestamos Datos = new DPrestamos();
+            return Datos.Listar_Videos(id_usuario);
+        }
+
+
+        // Funcion para insertar prestamos de videos
+        public static string Insertar_Videos(int id_video, int id_usuario, DateTime fecha_inicial, DateTime fecha_final)
+        {
+            //Utiizando funcion para verificar que no se haya ingesado anteriormente
+            DPrestamos Datos = new DPrestamos();
+
+            //Se asignan los valores al objeto para posteriormente ejecutarlo
+            PrestamoVideos Obj = new PrestamoVideos();
+            Obj.id_video = id_video;
+            Obj.id_usuario = id_usuario;
+            Obj.fecha_inicial = fecha_final;
+            Obj.fecha_final = fecha_final;
+
+            return Datos.Insertar_Videos(Obj);
+        }
     }
 }

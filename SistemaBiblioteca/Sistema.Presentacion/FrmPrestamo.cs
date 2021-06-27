@@ -185,6 +185,8 @@ namespace Sistema.Presentacion
         //Funcion que se ejecuta al cargar la ventana
         private void FrmPrestamo_Load(object sender, EventArgs e)
         {
+
+            //Sirve para setear las opciones por default  de prestamos_libros al cargar la ventana
             cmbLibro.SelectedIndex = 1;
             dgvPrestamoLL.DataSource = null;
             dgvPrestamoLM.DataSource = null;
@@ -193,6 +195,17 @@ namespace Sistema.Presentacion
             dgvPrestamoLM.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPrestamoLP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtpLibro.Value = DateTime.Today;
+
+            //Sirve para setear las opciones por default  de prestamos_videos al cargar la ventana
+            cmbVideo.SelectedIndex = 0;
+            dgvPrestamoVV.DataSource = null;
+            dgvPrestamoVM.DataSource = null;
+            dgvPrestamoVP.DataSource = null;
+            dgvPrestamoVV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPrestamoVM.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPrestamoVP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtpVideo.Value = DateTime.Today;
+
 
         }
 
