@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="DLibros.cs" />
+    <Compile Include="DPrestamos.cs" />
     <Compile Include="DUsuario.cs" />
     <Compile Include="DVideos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
