@@ -86,7 +86,7 @@ namespace Sistema.Presentacion
             dgvPrestamoLL.Columns[0].Width = 80;
             dgvPrestamoLL.Columns[1].Width = 100;
             dgvPrestamoLL.Columns[2].Width = 100;
-            dgvPrestamoLL.Columns[3].Width = 100;
+            dgvPrestamoLL.Columns[3].Width = 120;
             dgvPrestamoLL.Columns[4].Visible = false;
             dgvPrestamoLL.Columns[5].Visible = false;
             dgvPrestamoLL.Columns[6].Visible = false;
@@ -107,12 +107,19 @@ namespace Sistema.Presentacion
             dgvPrestamoLM.Columns[2].Width = 100;
         }
 
+        //Funcion para dar formato a los prestamos de libros mostrados
+        private void FormatoPL()
+        {
+            dgvPrestamoLM.Columns[0].Width = 125;
+            dgvPrestamoLM.Columns[1].Width = 125;
+        }
+
 
         //Funcion para saber si se tienen filas de DataGridView seleccionadas
         private int SeleccionarFilaL(DataGridView dgv)
         {
             //Para saber si en realidad si esta haciendo la verificacion
-            int fila = -1;
+            int fila = 0;
 
             if(dgv.SelectedRows.Count > 0 ) {
 
@@ -149,7 +156,7 @@ namespace Sistema.Presentacion
         }
 
 
-        //Funcion para buscar y regresar un libro e imprimirlo
+        //Funcion para buscar y regresar un maestro e imprimirlo
         private void BuscarM()
         {
 
@@ -190,12 +197,17 @@ namespace Sistema.Presentacion
         }
 
 
+
+
+
+
+
         //Boton de Buscar un Libro en pestania Prestamo de Libros
         private void BtnBuscarL_Click(object sender, EventArgs e)
         {
             if (TxtFraseL.Text.Equals(""))
             {
-                this.MensajeError("Primero ingrese una frase antes de querer buscar un libro");
+                this.MensajeError("Primero ingrese una frase o palabra antes de querer buscar un libro");
                 dgvPrestamoLL.DataSource = null;
             }
             else
@@ -248,13 +260,27 @@ namespace Sistema.Presentacion
         //Boton de Registrar Prestamo en pestania Prestamo de Libros
         private void BtnGuardarL_Click(object sender, EventArgs e)
         {
-            int fila1 = SeleccionarFilaL(dgvPrestamoLL);
-            int fila2 = SeleccionarFilaL(dgvPrestamoLM);
+            
 
-            int id_libro;
-            int id_usuario;
+            //Guardando la fila que esta actualmente seleccionada
+            int filaL = SeleccionarFilaL(dgvPrestamoLL);
+            int filaM = SeleccionarFilaL(dgvPrestamoLM);
 
-            if ( fila1==-1 || fila2 == -1) // Este escenario es si ninguna fila a sido seleccionada aun
+
+            //Guardando el DataTable que se habia mandado a buscar en el dgv
+            DataTable libros = NLibros.Buscar(TxtFraseL.Text, cmbLibro.SelectedIndex);
+            DataTable maestros = NUsuario.Listar(TxtMaestroL.Text);
+
+
+            //Guardando el ID de la fila actualmente seleccionada
+            int id_libro = Convert.ToInt32(libros.Rows[filaL]["codigo"]);
+            int id_usuario = Convert.ToInt32(maestros.Rows[filaM]["codigo"]); 
+
+
+
+            //Logica de verificar campos antes de ingresar prestamo
+
+            if ( filaL==-1 || filaM == -1) // Este escenario es si ninguna fila a sido seleccionada aun
             { 
                 this.MensajeError("Seleccione las filas necesarias para hacer el prestamo (libro y maestro)");
             }
@@ -277,7 +303,7 @@ namespace Sistema.Presentacion
                         string Rpta = "";
 
 
-                        Rpta = NPrestamos.Insertar_Libros(1000,1, dtpLibro.Value, hoy);
+                        Rpta = NPrestamos.Insertar_Libros(id_libro,id_usuario, dtpLibro.Value, hoy);
                         if (Rpta.Equals("OK"))
                         {
                             this.MensajeOk("Se ingreso de forma correcta el prestamo del libro en el registro");
@@ -285,6 +311,9 @@ namespace Sistema.Presentacion
                             dgvPrestamoLL.DataSource = null;
                             dgvPrestamoLM.DataSource = null;
                             dgvPrestamoLP.DataSource = null;
+
+                            TxtFraseL.Clear();
+                            TxtMaestroL.Clear();
 
                         }
                         else
@@ -306,5 +335,37 @@ namespace Sistema.Presentacion
                 }
             }
         }
+
+
+
+        //Funcion que verifica el cambio de fila seleccionada
+        private void dgvPrestamoLM_SelectionChanged(object sender, EventArgs e)
+        {
+
+            //Guardando la fila que esta actualmente seleccionada
+            int filaM = SeleccionarFilaL(dgvPrestamoLM);
+
+            //Guardando el DataTable que se habia mandado a buscar en el dgv
+            DataTable maestros = NUsuario.Listar(TxtMaestroL.Text);
+
+
+            //Guardando el ID de la fila actualmente seleccionada
+            int id_usuario = Convert.ToInt32(maestros.Rows[filaM]["codigo"]);
+
+            try
+            {
+                //Obteniendo la tabla de la BD
+                dgvPrestamoLP.DataSource = NPrestamos.Listar_Libros(id_usuario);
+
+                //Aplicando el formato a la tabla para mejor disenio
+                this.FormatoPL();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        
+    }
+
     }
 }

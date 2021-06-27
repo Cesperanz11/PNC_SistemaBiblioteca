@@ -13,11 +13,11 @@ namespace Sistema.Negocio
     {
 
         // Funcion de listar prestamos de libros de un maestro
-        public static DataTable Listar_Libros(int id_libro, int id_usuario)
+        public static DataTable Listar_Libros( int id_usuario)
         {
             //Se utiliza la funcion de la clase Datos para obtener la informacion
             DPrestamos Datos = new DPrestamos();
-            return Datos.Listar_Libros(id_libro, id_usuario);
+            return Datos.Listar_Libros(id_usuario);
         }
 
 

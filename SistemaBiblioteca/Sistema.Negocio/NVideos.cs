@@ -63,7 +63,7 @@ namespace Sistema.Negocio
             return Datos.Buscar(Valor, criterio);
         }
 
-        // Funcion de obtener videos al actualizar
+        // Funcion de obtener videos al actualizar y eliminar
         public static DataTable Obtener(int id_video)
         {
             DVideos Datos = new DVideos();

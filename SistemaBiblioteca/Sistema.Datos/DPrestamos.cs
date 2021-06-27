@@ -12,7 +12,7 @@ namespace Sistema.Datos
     public class DPrestamos
     {
         //Funcion para listar los prestamos de libros de un maestro
-        public DataTable Listar_Libros(int id_libro, int id_usuario)
+        public DataTable Listar_Libros( int id_usuario)
         {
             SqlDataReader Resultado;
             DataTable Tabla = new DataTable();
@@ -24,7 +24,6 @@ namespace Sistema.Datos
 
                 //para tener los datos se necesita llama un procedimiento almacenado "usuario_listar" dentro de SQL Server
                 SqlCommand Comando = new SqlCommand("prestamoslibros_listar", SqlCon);
-                Comando.Parameters.Add("id_libro", SqlDbType.Int).Value = id_libro;
                 Comando.Parameters.Add("id_usuario", SqlDbType.Int).Value = id_usuario;
                 Comando.CommandType = CommandType.StoredProcedure;
 
