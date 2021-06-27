@@ -37,6 +37,27 @@ namespace Sistema.Negocio
             
         }
 
+
+        //Funcion para determinar existencia de libro en pestania prestamos
+        public static string Existe_P(string dato, int type)
+        {
+            DLibros Datos = new DLibros();
+            string Rpta = "";
+
+            Rpta = Datos.Existe_P(dato, type);
+            if (Rpta.Equals("0"))
+            {
+                return "El dato que se ha consultado no existe en la BD";
+            }
+            else
+            {
+                return "OK";
+            }
+
+        }
+
+
+
         // Funcion para insertar libros
         public static string Insertar(int num_ejemplares, string isbn, string titulo, string autor, 
             string editorial, int anio_edicion, string num_edicion, string pais, string idioma, 

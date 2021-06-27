@@ -110,12 +110,13 @@ namespace Sistema.Presentacion
             if (TxtFraseL.Text.Equals(""))
             {
                 this.MensajeError("Primero ingrese una frase antes de querer buscar un libro");
+                dgvPrestamoLL.DataSource = null;
             }
             else
             {
                 string Rpta = "";
 
-                Rpta = NLibros.Existe(TxtFraseL.Text);
+                Rpta = NLibros.Existe_P(TxtFraseL.Text, cmbLibro.SelectedIndex);
 
                 if (Rpta.Equals("OK"))
                 {

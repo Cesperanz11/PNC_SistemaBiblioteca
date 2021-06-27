@@ -140,6 +140,53 @@ namespace Sistema.Datos
             return Rpta;
         }
 
+        //Funcion para validar existencia del libro en pestania prestamos
+        public string Existe_P(string dato, int type)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //creando conexion con la BD
+                SqlCon = Conexion.getInstancia().CrearConexion();
+
+                //generando nuevo comando para ejecutar en SQL Server el procedimiento almacenado "libros_existe"
+                SqlCommand Comando = new SqlCommand("libros_existe_prestamos", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                //Declarando value de los parametros dentro del procedimiento almacenado
+                Comando.Parameters.Add("@dato", SqlDbType.VarChar).Value = dato;
+                Comando.Parameters.Add("@type", SqlDbType.Int).Value = type;
+
+                //consulta para ejecutar el procedimiento almacenado
+                SqlParameter ParExiste = new SqlParameter();
+                ParExiste.ParameterName = "@existe";
+                //especificando el tipo de variable que va retornar
+                ParExiste.SqlDbType = SqlDbType.Int;
+
+                //retornando el valor de respuesta de la query
+                ParExiste.Direction = ParameterDirection.Output;
+                Comando.Parameters.Add(ParExiste);
+
+                //se abre la conexion con BD
+                SqlCon.Open();
+
+                //ejecutando query que no devuelve ningun valor
+                Comando.ExecuteNonQuery();
+                Rpta = Convert.ToString(ParExiste.Value);
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                //si se genera conexion con exito, luego de tener los datos se cierra
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
+
         //Funcion de buscar libros
         public DataTable Buscar(string Valor, int criterio)
         {
