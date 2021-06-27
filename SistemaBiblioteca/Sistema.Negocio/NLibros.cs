@@ -26,7 +26,7 @@ namespace Sistema.Negocio
             string Rpta = "";
 
             Rpta = Datos.Existe(isbn);
-            if (Rpta.Equals("0"))
+            if (Rpta.Equals("0") || isbn.Equals(""))
             {
                 return "El dato que se ha consultado no existe en la BD";
             }

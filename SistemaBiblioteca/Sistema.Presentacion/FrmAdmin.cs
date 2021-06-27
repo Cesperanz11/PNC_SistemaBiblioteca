@@ -596,7 +596,7 @@ namespace Sistema.Presentacion
         {
             string Rpta = "";
 
-            Rpta = NLibros.Existe(TxtIsbn_.Text.ToString());
+            Rpta = NLibros.Existe(TxtIsbn_.Text);
 
             if (Rpta.Equals("OK"))
             {
@@ -643,20 +643,27 @@ namespace Sistema.Presentacion
         //Boton de Buscar de pestania Actualizar Videos
         private void BtnBuscarV__Click(object sender, EventArgs e)
         {
-            string Rpta = "";
-
-            Rpta = NVideos.BuscarID(Convert.ToInt32(TxtId_.Text));
-
-            if (Rpta.Equals("OK"))
+            if (TxtId_.Text.Equals(""))
             {
-                this.BuscarV();
-                this.MostrarVideos();
-                BtnActualizarV.Visible = true;
-
+                this.MensajeError("El ID de video que se ha consultado no existe en la BD");
             }
             else
             {
-                this.MensajeError(Rpta);
+                string Rpta = "";
+
+                Rpta = NVideos.BuscarID(Convert.ToInt32(TxtId_.Text));
+
+                if (Rpta.Equals("OK"))
+                {
+                    this.BuscarV();
+                    this.MostrarVideos();
+                    BtnActualizarV.Visible = true;
+
+                }
+                else
+                {
+                    this.MensajeError(Rpta);
+                }
             }
         }
 
@@ -749,19 +756,26 @@ namespace Sistema.Presentacion
         //Boton de Buscar de pestania Eliminar Videos
         private void BtnBuscarEV_Click(object sender, EventArgs e)
         {
-            string Rpta = "";
-
-            Rpta = NVideos.BuscarID(Convert.ToInt32(TxtIdEV.Text));
-
-            if (Rpta.Equals("OK"))
+            if (TxtIdEV.Text.Equals(""))
             {
-                dgvEliminarV.DataSource = NVideos.Obtener(Convert.ToInt32(TxtIdEV.Text));
-                BtnEliminarEV.Visible = true;
-
+                this.MensajeError("El ID de video que se ha consultado no existe en la BD");
             }
             else
             {
-                this.MensajeError(Rpta);
+                string Rpta = "";
+
+                Rpta = NVideos.BuscarID(Convert.ToInt32(TxtIdEV.Text));
+
+                if (Rpta.Equals("OK"))
+                {
+                    dgvEliminarV.DataSource = NVideos.Obtener(Convert.ToInt32(TxtIdEV.Text));
+                    BtnEliminarEV.Visible = true;
+
+                }
+                else
+                {
+                    this.MensajeError(Rpta);
+                }
             }
         }
 
