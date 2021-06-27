@@ -20,15 +20,15 @@ namespace Sistema.Negocio
         }
 
         //Funcion para determinar existencia de libro
-        public static string Existe(string ISBN)
+        public static string Existe(string isbn)
         {
             DLibros Datos = new DLibros();
             string Rpta = "";
 
-            Rpta = Datos.Existe(ISBN);
+            Rpta = Datos.Existe(isbn);
             if (Rpta.Equals("0"))
             {
-                return "El isbn que se ha consultado no existe en la BD";
+                return "El dato que se ha consultado no existe en la BD";
             }
             else 
             {

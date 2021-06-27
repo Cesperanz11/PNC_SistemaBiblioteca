@@ -147,6 +147,8 @@ namespace Sistema.Presentacion
         }
 
 
+
+
         //Funcion para ocultar textboxes de Actualizar Libros
         private void OcultarLibros()
         {
@@ -294,13 +296,14 @@ namespace Sistema.Presentacion
 
 
 
-        //Funcion para buscar un libro al actualizar
+        //Funcion para buscar y regresar un libro al actualizar e imprimirlo
         private void BuscarL()
         {
             DataTable libro = new DataTable();
             
             try
             {
+                //Aqui recuperara un DataTable con el Select que cumple la condicion de busqueda
                 libro = NLibros.Buscar(TxtIsbn_.Text, 0);
                 //Asignando al texto de Actualizar Libro su valor correspondiente, identificandolo con su nombre de alias (establecido en la BD)
                 TxtTituloL_.Text = libro.Rows[0]["titulo"].ToString();
@@ -324,13 +327,14 @@ namespace Sistema.Presentacion
             }
         }
 
-        //Funcion para buscar un video al actualizar
+        //Funcion para buscar y regresar un video al actualizar e imprimirlo
         private void BuscarV()
         {
             DataTable video = new DataTable();
 
             try
             {
+                //Aqui recuperara un DataTable con el Select que cumple la condicion de busqueda
                 video = NVideos.Obtener(Convert.ToInt32(TxtId_.Text));
                 //Asignando al texto de Actualizar Libro su valor correspondiente, identificandolo con su nombre de alias (establecido en la BD)
                 TxtTituloV_.Text = video.Rows[0]["titulo"].ToString();
@@ -443,9 +447,20 @@ namespace Sistema.Presentacion
             }
         }
 
+        //Funcion para crear el FrmPrestamos
+        public static void ThreadProcPrestamo()
+        {
+            FrmPrestamo f;
+            Application.Run(new FrmPrestamo());
+        }
+
+
+        //Funcion de pasar el control a FrmPrestamos
         private void prestamosDeLibrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProcPrestamo));
+            t.Start();
+            this.Close();
         }
 
         private void TPSelectL_Click(object sender, EventArgs e)
@@ -581,7 +596,7 @@ namespace Sistema.Presentacion
         {
             string Rpta = "";
 
-            Rpta = NLibros.Existe(TxtIsbn_.Text);
+            Rpta = NLibros.Existe(TxtIsbn_.Text.ToString());
 
             if (Rpta.Equals("OK"))
             {

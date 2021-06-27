@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDevolucion.Designer.cs">
+      <DependentUpon>FrmDevolucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,12 @@
     <Compile Include="FrmMaestros.Designer.cs">
       <DependentUpon>FrmMaestros.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrestamo.Designer.cs">
+      <DependentUpon>FrmPrestamo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmLogin.resx">
@@ -74,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMaestros.resx">
       <DependentUpon>FrmMaestros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrestamo.resx">
+      <DependentUpon>FrmPrestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
