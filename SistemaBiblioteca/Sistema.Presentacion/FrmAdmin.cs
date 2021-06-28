@@ -447,11 +447,15 @@ namespace Sistema.Presentacion
             }
         }
 
+
+
+
         //Funcion para crear el FrmPrestamos
-        public static void ThreadProcPrestamo()
+        public void ThreadProcPrestamo()
         {
-            FrmPrestamo f;
-            Application.Run(new FrmPrestamo());
+            
+            FrmPrestamo f = new FrmPrestamo();
+            Application.Run(f);
         }
 
 
@@ -462,6 +466,25 @@ namespace Sistema.Presentacion
             t.Start();
             this.Close();
         }
+
+
+        //Funcion para crear el FrmPrestamos
+        public static void ThreadProcDevolucion()
+        {
+            FrmDevolucion f = new FrmDevolucion();
+            Application.Run(f);
+        }
+
+        //Funcion de pasar el control a FrmPrestamos
+        private void devolucionDeLibrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProcDevolucion));
+            t.Start();
+            this.Close();
+        }
+
+
+
 
         private void TPSelectL_Click(object sender, EventArgs e)
         {
@@ -816,5 +839,7 @@ namespace Sistema.Presentacion
             BtnEliminarEV.Visible = false;
             TabControl.SelectedIndex = 4;
         }
+
+        
     }
 }

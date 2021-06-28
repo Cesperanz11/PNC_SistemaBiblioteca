@@ -236,6 +236,7 @@ namespace Sistema.Presentacion
             this.devolucionDeLibrosToolStripMenuItem.Name = "devolucionDeLibrosToolStripMenuItem";
             this.devolucionDeLibrosToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.devolucionDeLibrosToolStripMenuItem.Text = "Devoluciones";
+            this.devolucionDeLibrosToolStripMenuItem.Click += new System.EventHandler(this.devolucionDeLibrosToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 

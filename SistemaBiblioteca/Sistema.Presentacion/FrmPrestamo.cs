@@ -13,9 +13,11 @@ namespace Sistema.Presentacion
 {
     public partial class FrmPrestamo : Form
     {
+
         public FrmPrestamo()
         {
             InitializeComponent();
+
         }
 
         //Funcion para Listar Libros
@@ -587,5 +589,9 @@ namespace Sistema.Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+
+
+        
     }
 }
