@@ -338,6 +338,7 @@ namespace Sistema.Presentacion
             this.dgvPrestamoVM.ReadOnly = true;
             this.dgvPrestamoVM.Size = new System.Drawing.Size(294, 124);
             this.dgvPrestamoVM.TabIndex = 27;
+            this.dgvPrestamoVM.SelectionChanged += new System.EventHandler(this.dgvPrestamoVM_SelectionChanged);
             // 
             // dgvPrestamoVV
             // 
@@ -358,6 +359,7 @@ namespace Sistema.Presentacion
             this.BtnGuardarV.TabIndex = 25;
             this.BtnGuardarV.Text = "Registrar Prestamo";
             this.BtnGuardarV.UseVisualStyleBackColor = true;
+            this.BtnGuardarV.Click += new System.EventHandler(this.BtnGuardarV_Click);
             // 
             // dtpVideo
             // 

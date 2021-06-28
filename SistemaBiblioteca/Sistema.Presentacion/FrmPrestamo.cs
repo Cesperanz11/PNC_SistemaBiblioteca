@@ -116,7 +116,7 @@ namespace Sistema.Presentacion
 
 
         //Funcion para saber si se tienen filas de DataGridView seleccionadas
-        private int SeleccionarFilaL(DataGridView dgv)
+        private int SeleccionarFila(DataGridView dgv)
         {
             //Para saber si en realidad si esta haciendo la verificacion
             int fila = 0;
@@ -318,8 +318,8 @@ namespace Sistema.Presentacion
             
 
             //Guardando la fila que esta actualmente seleccionada
-            int filaL = SeleccionarFilaL(dgvPrestamoLL);
-            int filaM = SeleccionarFilaL(dgvPrestamoLM);
+            int filaL = SeleccionarFila(dgvPrestamoLL);
+            int filaM = SeleccionarFila(dgvPrestamoLM);
 
 
             //Guardando el DataTable que se habia mandado a buscar en el dgv
@@ -335,7 +335,7 @@ namespace Sistema.Presentacion
 
             //Logica de verificar campos antes de ingresar prestamo
 
-            if ( filaL==-1 || filaM == -1) // Este escenario es si ninguna fila a sido seleccionada aun
+            if ( dgvPrestamoLL.DataSource == null || dgvPrestamoLM.DataSource == null ) // Este escenario es si ninguna fila a sido seleccionada aun o si el DGV esta vacio
             { 
                 this.MensajeError("Seleccione las filas necesarias para hacer el prestamo (libro y maestro)");
             }
@@ -393,12 +393,12 @@ namespace Sistema.Presentacion
 
 
 
-        //Funcion que verifica el cambio de fila seleccionada
+        //Funcion que verifica el cambio de fila seleccionada en dgvMaestros en Prestamos de Libros
         private void dgvPrestamoLM_SelectionChanged(object sender, EventArgs e)
         {
 
             //Guardando la fila que esta actualmente seleccionada
-            int filaM = SeleccionarFilaL(dgvPrestamoLM);
+            int filaM = SeleccionarFila(dgvPrestamoLM);
 
             //Guardando el DataTable que se habia mandado a buscar en el dgv
             DataTable maestros = NUsuario.Listar(TxtMaestroL.Text);
@@ -476,6 +476,115 @@ namespace Sistema.Presentacion
                 {
                     this.MensajeError(Rpta);
                 }
+            }
+        }
+
+        //Boton de Registrar Prestamo en pestania Prestamo de Videos
+        private void BtnGuardarV_Click(object sender, EventArgs e)
+        {
+
+
+            //Guardando la fila que esta actualmente seleccionada
+            int filaV = SeleccionarFila(dgvPrestamoVV);
+            int filaM = SeleccionarFila(dgvPrestamoVM);
+
+
+            //Guardando el DataTable que se habia mandado a buscar en el dgv
+            DataTable videos = NVideos.Buscar(TxtFraseV.Text, cmbVideo.SelectedIndex);
+            DataTable maestros = NUsuario.Listar(TxtMaestroV.Text);
+
+
+            //Guardando el ID de la fila actualmente seleccionada
+            int id_video = Convert.ToInt32(videos.Rows[filaV]["codigo"]);
+            int id_usuario = Convert.ToInt32(maestros.Rows[filaM]["codigo"]);
+
+
+
+            //Logica de verificar campos antes de ingresar prestamo
+
+            if ( dgvPrestamoVV.DataSource == null || dgvPrestamoVM.DataSource == null) // Este escenario es si ninguna fila a sido seleccionada aun o si el DGV esta vacio
+            {
+                this.MensajeError("Seleccione las filas necesarias para hacer el prestamo (video y maestro)");
+            }
+            else // Aqui ya se han seleccionado ambas filas, tanto de Libros como de Maestros
+            {
+
+                DateTime hoy = DateTime.Today;
+                string resultado_fecha = this.CompararFecha(dtpVideo.Value, hoy);
+
+
+                if (dtpVideo.Checked == false) //Aqui se verifica si no hay fecha seleccionada
+                {
+                    this.MensajeError("Seleccione una fecha antes de ingresar el prestamo");
+                }
+                else if (resultado_fecha.Equals("OK")) //Este es el escenario con una fecha valida seleccionada
+                {
+
+                    try
+                    {
+                        string Rpta = "";
+
+
+                        Rpta = NPrestamos.Insertar_Videos(id_video, id_usuario, dtpVideo.Value, hoy);
+                        if (Rpta.Equals("OK"))
+                        {
+                            this.MensajeOk("Se ingreso de forma correcta el prestamo del video en el registro");
+                            //Se regresa los dgv en limpio
+                            dgvPrestamoVV.DataSource = null;
+                            dgvPrestamoVM.DataSource = null;
+                            dgvPrestamoVP.DataSource = null;
+
+                            TxtFraseV.Clear();
+                            TxtMaestroV.Clear();
+
+                        }
+                        else
+                        {
+                            this.MensajeError(Rpta);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
+
+                }
+                else  //Esto es por si la fecha es menor o igual a la fecha actual, por ende no es valida
+                {
+                    this.MensajeError(resultado_fecha);
+                }
+            }
+        }
+
+
+
+        //Funcion que verifica el cambio de fila seleccionada en dgvMaestros en Prestamos de Videos
+        private void dgvPrestamoVM_SelectionChanged(object sender, EventArgs e)
+        {
+
+            //Guardando la fila que esta actualmente seleccionada
+            int filaM = SeleccionarFila(dgvPrestamoVM);
+
+            //Guardando el DataTable que se habia mandado a buscar en el dgv
+            DataTable maestros = NUsuario.Listar(TxtMaestroV.Text);
+
+
+            //Guardando el ID de la fila actualmente seleccionada
+            int id_usuario = Convert.ToInt32(maestros.Rows[filaM]["codigo"]);
+
+            try
+            {
+                //Obteniendo la tabla de la BD
+                dgvPrestamoVP.DataSource = NPrestamos.Listar_Videos(id_usuario);
+
+                //Aplicando el formato a la tabla para mejor disenio
+                //this.FormatoPL();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
     }
