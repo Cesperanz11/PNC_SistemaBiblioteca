@@ -450,37 +450,27 @@ namespace Sistema.Presentacion
 
 
 
-        //Funcion para crear el FrmPrestamos
-        public void ThreadProcPrestamo()
-        {
-            
-            FrmPrestamo f = new FrmPrestamo();
-            Application.Run(f);
-        }
 
 
         //Funcion de pasar el control a FrmPrestamos
         private void prestamosDeLibrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProcPrestamo));
-            t.Start();
-            this.Close();
-        }
 
 
-        //Funcion para crear el FrmPrestamos
-        public static void ThreadProcDevolucion()
-        {
-            FrmDevolucion f = new FrmDevolucion();
-            Application.Run(f);
+            FrmPrestamo f = new FrmPrestamo();
+            f.ShowDialog();
+
         }
+
 
         //Funcion de pasar el control a FrmPrestamos
         private void devolucionDeLibrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProcDevolucion));
-            t.Start();
-            this.Close();
+
+
+            FrmDevolucion f = new FrmDevolucion();
+            f.ShowDialog();
+
         }
 
 

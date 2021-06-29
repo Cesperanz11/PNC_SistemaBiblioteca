@@ -102,6 +102,17 @@ namespace Sistema.Negocio
             return Datos.Buscar(Valor, criterio);
         }
 
+
+        // Funcion para buscar libros en pestania prestamos
+        public static DataTable BuscarActivos(string Valor, int criterio)
+        {
+            DLibros Datos = new DLibros();
+
+            return Datos.BuscarActivos(Valor, criterio);
+        }
+
+
+
         // Funcion para actualizar libros
         public static string Actualizar(int num_ejemplares, string isbn, string titulo, string autor,
             string editorial, int anio_edicion, string num_edicion, string pais, string idioma,
@@ -137,5 +148,22 @@ namespace Sistema.Negocio
 
             return Datos.Eliminar(isbn);
         }
+
+
+        // Funcion para activar libros 
+        public static string Activar(int Id)
+        {
+            DLibros Datos = new DLibros();
+
+            return Datos.Activar(Id);
+        }
+
+        public static string Desactivar(int Id)
+        {
+            DLibros Datos = new DLibros();
+
+            return Datos.Desactivar(Id);
+        }
+
     }
 }

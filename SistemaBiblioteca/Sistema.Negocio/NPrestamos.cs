@@ -31,11 +31,21 @@ namespace Sistema.Negocio
             PrestamoLibros Obj = new PrestamoLibros();
             Obj.id_libro = id_libro;
             Obj.id_usuario = id_usuario;
-            Obj.fecha_inicial = fecha_final;
+            Obj.fecha_inicial = fecha_inicial;
             Obj.fecha_final = fecha_final;
 
             return Datos.Insertar_Libros(Obj);
         }
+
+
+        // Funcion para eliminar prestamos de libros
+        public static string Eliminar_Libros(int id_prestamo)
+        {
+            DPrestamos Datos = new DPrestamos();
+
+            return Datos.Eliminar_Libros(id_prestamo);
+        }
+
 
 
 
@@ -62,6 +72,15 @@ namespace Sistema.Negocio
             Obj.fecha_final = fecha_final;
 
             return Datos.Insertar_Videos(Obj);
+        }
+
+
+        // Funcion para eliminar prestamos de videos
+        public static string Eliminar_Videos(int id_prestamo)
+        {
+            DPrestamos Datos = new DPrestamos();
+
+            return Datos.Eliminar_Videos(id_prestamo);
         }
     }
 }

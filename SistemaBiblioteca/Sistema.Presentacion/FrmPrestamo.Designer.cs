@@ -477,6 +477,7 @@ namespace Sistema.Presentacion
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmPrestamo";
             this.Text = "FrmPrestamo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrestamo_FormClosing);
             this.Load += new System.EventHandler(this.FrmPrestamo_Load);
             this.tabControl1.ResumeLayout(false);
             this.TPPrestamoL.ResumeLayout(false);

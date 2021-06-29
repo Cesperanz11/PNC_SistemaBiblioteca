@@ -86,6 +86,39 @@ namespace Sistema.Datos
         }
 
 
+        //Funcion para eliminar prestamo de libros
+        public string Eliminar_Libros(int id_prestamo)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("prestamoslibros_eliminar", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@id_prestamo", SqlDbType.Int).Value = id_prestamo;
+                SqlCon.Open();
+                Rpta = Comando.ExecuteNonQuery() == 1 ? "OK" : "No se pudo eliminar el prestamo del libro";
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+
+            return Rpta;
+        }
+
+
+
+
+
+
+
+
         //Funcion para listar los prestamos de videos de un maestro
         public DataTable Listar_Videos(int id_usuario)
         {
@@ -157,6 +190,33 @@ namespace Sistema.Datos
                 //si se genera conexion con exito, luego de tener los datos se cierra
                 if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
             }
+            return Rpta;
+        }
+
+
+        //Funcion para eliminar prestamo de videos
+        public string Eliminar_Videos(int id_prestamo)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("prestamosvideos_eliminar", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@id_prestamo", SqlDbType.Int).Value = id_prestamo;
+                SqlCon.Open();
+                Rpta = Comando.ExecuteNonQuery() == 1 ? "OK" : "No se pudo eliminar el prestamo del video";
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+
             return Rpta;
         }
 

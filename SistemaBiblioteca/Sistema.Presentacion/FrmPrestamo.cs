@@ -20,46 +20,13 @@ namespace Sistema.Presentacion
 
         }
 
-        //Funcion para Listar Libros
-        private void ListarPrestamos_Libros()
-        {
-            try
-            {
-                //Obteniendo la tabla de la BD
-                dgvPrestamoLL.DataSource = NLibros.Listar();
-
-                //Aplicando el formato a la tabla para mejor disenio
-                // this.Formato();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
-
-        //Funcion para listar videos
-        private void ListarPrestamos_Videos()
-        {
-            try
-            {
-                //Obteniendo la tabla de la BD
-                //dgvPrestamoVL.DataSource = NVideos.Listar();
-
-                //Aplicando el formato a la tabla para mejor disenio
-                // this.Formato();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
-
 
 
         //Funcion de Mensaje de Error
         private void MensajeError(string Mensaje)
         {
             MessageBox.Show(Mensaje, "Sistema Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
         //Funcion de Mensaje de OK
@@ -144,7 +111,7 @@ namespace Sistema.Presentacion
             try
             {
                 //Aqui recuperara un DataTable con el Select que cumple la condicion de busqueda
-                dgvPrestamoLL.DataSource = NLibros.Buscar(TxtFraseL.Text, cmbLibro.SelectedIndex);
+                dgvPrestamoLL.DataSource = NLibros.BuscarActivos(TxtFraseL.Text, cmbLibro.SelectedIndex);
                 
                 //Aqui le daremos formato al DataSource
                 this.FormatoL();
@@ -364,10 +331,13 @@ namespace Sistema.Presentacion
                         if (Rpta.Equals("OK"))
                         {
                             this.MensajeOk("Se ingreso de forma correcta el prestamo del libro en el registro");
-                            //Se regresa los dgv en limpio
+                            //Se regresan los dgv en limpio
                             dgvPrestamoLL.DataSource = null;
                             dgvPrestamoLM.DataSource = null;
                             dgvPrestamoLP.DataSource = null;
+
+                            //Se desactiva el libro que se registro en el prestamo
+                            NLibros.Desactivar(id_libro);
 
                             TxtFraseL.Clear();
                             TxtMaestroL.Clear();
@@ -592,6 +562,9 @@ namespace Sistema.Presentacion
 
 
 
-        
+        private void FrmPrestamo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //FrmAdmin.ActiveForm.Show();
+        }
     }
 }
