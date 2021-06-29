@@ -199,6 +199,7 @@ namespace Sistema.Presentacion
             this.dgvDevolucionVM.ReadOnly = true;
             this.dgvDevolucionVM.Size = new System.Drawing.Size(439, 124);
             this.dgvDevolucionVM.TabIndex = 33;
+            this.dgvDevolucionVM.SelectionChanged += new System.EventHandler(this.dgvDevolucionVM_SelectionChanged);
             // 
             // BtnGuardarV
             // 
@@ -208,6 +209,7 @@ namespace Sistema.Presentacion
             this.BtnGuardarV.TabIndex = 32;
             this.BtnGuardarV.Text = "Devolucion de Video";
             this.BtnGuardarV.UseVisualStyleBackColor = true;
+            this.BtnGuardarV.Click += new System.EventHandler(this.BtnGuardarV_Click);
             // 
             // dgvDevolucionVP
             // 
@@ -250,6 +252,7 @@ namespace Sistema.Presentacion
             this.BtnBuscarV.TabIndex = 7;
             this.BtnBuscarV.Text = "Buscar";
             this.BtnBuscarV.UseVisualStyleBackColor = true;
+            this.BtnBuscarV.Click += new System.EventHandler(this.BtnBuscarV_Click);
             // 
             // TxtFraseV
             // 

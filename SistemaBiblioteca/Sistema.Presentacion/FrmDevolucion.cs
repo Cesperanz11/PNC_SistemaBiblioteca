@@ -36,7 +36,7 @@ namespace Sistema.Presentacion
         }
 
 
-        //Funcion para dar formato a los prestamos de libros mostrados
+        //Funcion para dar formato a las devoluciones de libros mostrados
         private void FormatoPL()
         {
             dgvDevolucionLP.Columns[0].Width = 125;
@@ -45,6 +45,18 @@ namespace Sistema.Presentacion
             dgvDevolucionLP.Columns[5].Visible = false;
 
         }
+
+        //Funcion para dar formato a las devoluciones de videos mostrados
+        private void FormatoPV()
+        {
+            dgvDevolucionVP.Columns[0].Width = 125;
+            dgvDevolucionVP.Columns[1].Width = 125;
+            dgvDevolucionVP.Columns[4].Visible = false;
+            dgvDevolucionVP.Columns[5].Visible = false;
+
+        }
+
+
 
 
         //Funcion para buscar y regresar un maestro e imprimirlo en Devolucion Libros
@@ -217,7 +229,7 @@ namespace Sistema.Presentacion
                     Rpta = NPrestamos.Eliminar_Libros(id_prestamo);
                     if (Rpta.Equals("OK"))
                     {
-                        this.MensajeOk("Se ingreso de forma correcta el prestamo del libro en el registro");
+                        this.MensajeOk("Se devolvio de forma correcta el libro");
                         //Se regresan los dgv en limpio
                         dgvDevolucionLM.DataSource = null;
                         dgvDevolucionLP.DataSource = null;
@@ -268,6 +280,147 @@ namespace Sistema.Presentacion
 
                 //Aplicando el formato a la tabla para mejor disenio
                 this.FormatoPL();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
+
+
+
+
+        //Boton de Buscar en pestania Devolucion de Videos
+        private void BtnBuscarV_Click(object sender, EventArgs e)
+        {
+            if (TxtFraseV.Text.Equals(""))
+            {
+                this.MensajeError("Primero ingrese un nombre o apellido antes de querer buscar un maestro");
+                dgvDevolucionLM.DataSource = null;
+            }
+            else
+            {
+                string Rpta = "";
+
+                Rpta = NUsuario.Existe_P(TxtFraseV.Text);
+
+                if (Rpta.Equals("OK"))
+                {
+
+                    this.BuscarMV();
+
+
+                }
+                else
+                {
+                    this.MensajeError(Rpta);
+                }
+            }
+        }
+
+
+
+        //Boton de Devolucion en pestania Devolucion de Videos
+        private void BtnGuardarV_Click(object sender, EventArgs e)
+        {
+
+
+            //Guardando la fila que esta actualmente seleccionada
+            int filaM = SeleccionarFila(dgvDevolucionVM);
+            int filaP = SeleccionarFila(dgvDevolucionVP);
+
+
+            //Guardando el DataTable que se habia mandado a buscar en el dgv de Maestros
+            DataTable maestros = NUsuario.Listar(TxtFraseV.Text);
+
+
+            //Guardando el ID de la fila actualmente seleccionada en dgv Maestros
+            int id_usuario = Convert.ToInt32(maestros.Rows[filaM]["codigo"]);
+
+
+
+
+            //Guardando el DataTable que se habia mandado a buscar en el dgv de Prestamos activos
+            DataTable prestamos = NPrestamos.Listar_Videos(id_usuario);
+
+            //Guardando el ID de la fila actualmente seleccionada en dgv Prestamos activos
+            int id_prestamo = Convert.ToInt32(prestamos.Rows[filaP]["ID"]);
+
+
+            //Guardando el Id_Libro de la fila actualmente seleccionada en dgv Prestamos activos
+            int id_video = Convert.ToInt32(prestamos.Rows[filaP]["ID_Video"]);
+
+
+
+            //Logica de verificar campos antes de ingresar prestamo
+
+            if (dgvDevolucionVM.DataSource == null || dgvDevolucionVP.DataSource == null) // Este escenario es si ninguna fila a sido seleccionada aun o si el DGV esta vacio
+            {
+                this.MensajeError("Seleccione las filas necesarias para hacer la devolucion");
+            }
+            else // Aqui ya se han seleccionado ambas filas, tanto de Maestros como de Prestamos Activos
+            {
+
+                try
+                {
+                    string Rpta = "";
+
+
+                    Rpta = NPrestamos.Eliminar_Videos(id_prestamo);
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.MensajeOk("Se devolvio de forma correcta el video prestado");
+                        //Se regresan los dgv en limpio
+                        dgvDevolucionVM.DataSource = null;
+                        dgvDevolucionVP.DataSource = null;
+
+                        //Se activa el libro que se registro en el prestamo
+                        NLibros.Activar(id_video);
+
+                        TxtFraseV.Clear();
+
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+
+            }
+        }
+
+
+
+        //Funcion que verifica el cambio de fila seleccionada en dgvMaestros en Devolucion de Videos
+        private void dgvDevolucionVM_SelectionChanged(object sender, EventArgs e)
+        {
+
+
+            //Guardando la fila que esta actualmente seleccionada
+            int filaM = SeleccionarFila(dgvDevolucionVM);
+
+            //Guardando el DataTable que se habia mandado a buscar en el dgv
+            DataTable maestros = NUsuario.Listar(TxtFraseV.Text);
+
+
+            //Guardando el ID de la fila actualmente seleccionada
+            int id_usuario = Convert.ToInt32(maestros.Rows[filaM]["codigo"]);
+
+            try
+            {
+                //Obteniendo la tabla de la BD
+                dgvDevolucionVP.DataSource = NPrestamos.Listar_Videos(id_usuario);
+
+                //Aplicando el formato a la tabla para mejor disenio
+                this.FormatoPV();
             }
             catch (Exception ex)
             {

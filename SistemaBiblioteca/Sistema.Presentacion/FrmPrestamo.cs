@@ -87,6 +87,17 @@ namespace Sistema.Presentacion
         }
 
 
+        //Funcion para dar formato a los prestamos de videos mostrados
+        private void FormatoPV()
+        {
+            dgvPrestamoVP.Columns[0].Width = 125;
+            dgvPrestamoVP.Columns[1].Width = 125;
+            dgvPrestamoVP.Columns[4].Visible = false;
+            dgvPrestamoVP.Columns[5].Visible = false;
+
+        }
+
+
 
         private string ComprobarEstado( int estado )
         {
@@ -574,7 +585,7 @@ namespace Sistema.Presentacion
                 dgvPrestamoVP.DataSource = NPrestamos.Listar_Videos(id_usuario);
 
                 //Aplicando el formato a la tabla para mejor disenio
-                //this.FormatoPL();
+                this.FormatoPV();
             }
             catch (Exception ex)
             {
