@@ -79,8 +79,27 @@ namespace Sistema.Presentacion
         //Funcion para dar formato a los prestamos de libros mostrados
         private void FormatoPL()
         {
-            dgvPrestamoLM.Columns[0].Width = 125;
-            dgvPrestamoLM.Columns[1].Width = 125;
+            dgvPrestamoLP.Columns[0].Width = 125;
+            dgvPrestamoLP.Columns[1].Width = 125;
+            dgvPrestamoLP.Columns[4].Visible = false;
+            dgvPrestamoLP.Columns[5].Visible = false;
+
+        }
+
+
+
+        private string ComprobarEstado( int estado )
+        {
+            string Rpta = "";
+
+            if(estado == 1)
+            {
+                return Rpta = "OK";
+            }
+            else
+            {
+                return Rpta = "Lo que se ha solicitado no esta disponible para prestamo";
+            }
         }
 
 
@@ -327,7 +346,7 @@ namespace Sistema.Presentacion
                         string Rpta = "";
 
 
-                        Rpta = NPrestamos.Insertar_Libros(id_libro,id_usuario, dtpLibro.Value, hoy);
+                        Rpta = NPrestamos.Insertar_Libros(id_libro,id_usuario, hoy, dtpLibro.Value);
                         if (Rpta.Equals("OK"))
                         {
                             this.MensajeOk("Se ingreso de forma correcta el prestamo del libro en el registro");
@@ -336,8 +355,11 @@ namespace Sistema.Presentacion
                             dgvPrestamoLM.DataSource = null;
                             dgvPrestamoLP.DataSource = null;
 
+                            dtpLibro.Value = DateTime.Today;
+                            
+
                             //Se desactiva el libro que se registro en el prestamo
-                            NLibros.Desactivar(id_libro);
+                            //NLibros.Desactivar(id_libro);
 
                             TxtFraseL.Clear();
                             TxtMaestroL.Clear();
@@ -497,7 +519,7 @@ namespace Sistema.Presentacion
                         string Rpta = "";
 
 
-                        Rpta = NPrestamos.Insertar_Videos(id_video, id_usuario, dtpVideo.Value, hoy);
+                        Rpta = NPrestamos.Insertar_Videos(id_video, id_usuario, hoy, dtpVideo.Value);
                         if (Rpta.Equals("OK"))
                         {
                             this.MensajeOk("Se ingreso de forma correcta el prestamo del video en el registro");

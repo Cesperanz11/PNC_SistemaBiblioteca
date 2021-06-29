@@ -68,7 +68,7 @@ namespace Sistema.Negocio
             PrestamoVideos Obj = new PrestamoVideos();
             Obj.id_video = id_video;
             Obj.id_usuario = id_usuario;
-            Obj.fecha_inicial = fecha_final;
+            Obj.fecha_inicial = fecha_inicial;
             Obj.fecha_final = fecha_final;
 
             return Datos.Insertar_Videos(Obj);

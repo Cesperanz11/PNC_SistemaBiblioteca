@@ -32,10 +32,10 @@ namespace Sistema.Presentacion
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TPDevolucionL = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvDevolucionLM = new System.Windows.Forms.DataGridView();
             this.BtnGuardarL = new System.Windows.Forms.Button();
             this.dgvDevolucionLP = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvDevolucionLM = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnBuscarL = new System.Windows.Forms.Button();
             this.TxtFraseL = new System.Windows.Forms.TextBox();
@@ -50,9 +50,9 @@ namespace Sistema.Presentacion
             this.TxtFraseV = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.TPDevolucionL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucionLM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucionLP)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucionLM)).BeginInit();
             this.TPDevolucionV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucionVM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucionVP)).BeginInit();
@@ -92,24 +92,13 @@ namespace Sistema.Presentacion
             this.label1.TabIndex = 30;
             this.label1.Text = "Prestamos activos del profesor seleccionado:";
             // 
-            // dgvDevolucionLM
-            // 
-            this.dgvDevolucionLM.AllowUserToAddRows = false;
-            this.dgvDevolucionLM.AllowUserToDeleteRows = false;
-            this.dgvDevolucionLM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDevolucionLM.Location = new System.Drawing.Point(8, 74);
-            this.dgvDevolucionLM.Name = "dgvDevolucionLM";
-            this.dgvDevolucionLM.ReadOnly = true;
-            this.dgvDevolucionLM.Size = new System.Drawing.Size(439, 124);
-            this.dgvDevolucionLM.TabIndex = 26;
-            // 
             // BtnGuardarL
             // 
             this.BtnGuardarL.Location = new System.Drawing.Point(557, 159);
             this.BtnGuardarL.Name = "BtnGuardarL";
             this.BtnGuardarL.Size = new System.Drawing.Size(200, 47);
             this.BtnGuardarL.TabIndex = 25;
-            this.BtnGuardarL.Text = "Registrar Prestamo";
+            this.BtnGuardarL.Text = "Devolucion de Libro";
             this.BtnGuardarL.UseVisualStyleBackColor = true;
             this.BtnGuardarL.Click += new System.EventHandler(this.BtnGuardarL_Click);
             // 
@@ -137,6 +126,18 @@ namespace Sistema.Presentacion
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Busqueda de Maestro";
+            // 
+            // dgvDevolucionLM
+            // 
+            this.dgvDevolucionLM.AllowUserToAddRows = false;
+            this.dgvDevolucionLM.AllowUserToDeleteRows = false;
+            this.dgvDevolucionLM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDevolucionLM.Location = new System.Drawing.Point(8, 74);
+            this.dgvDevolucionLM.Name = "dgvDevolucionLM";
+            this.dgvDevolucionLM.ReadOnly = true;
+            this.dgvDevolucionLM.Size = new System.Drawing.Size(439, 124);
+            this.dgvDevolucionLM.TabIndex = 26;
+            this.dgvDevolucionLM.SelectionChanged += new System.EventHandler(this.dgvDevolucionLM_SelectionChanged);
             // 
             // label2
             // 
@@ -205,7 +206,7 @@ namespace Sistema.Presentacion
             this.BtnGuardarV.Name = "BtnGuardarV";
             this.BtnGuardarV.Size = new System.Drawing.Size(200, 47);
             this.BtnGuardarV.TabIndex = 32;
-            this.BtnGuardarV.Text = "Registrar Prestamo";
+            this.BtnGuardarV.Text = "Devolucion de Video";
             this.BtnGuardarV.UseVisualStyleBackColor = true;
             // 
             // dgvDevolucionVP
@@ -269,10 +270,10 @@ namespace Sistema.Presentacion
             this.tabControl1.ResumeLayout(false);
             this.TPDevolucionL.ResumeLayout(false);
             this.TPDevolucionL.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucionLM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucionLP)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucionLM)).EndInit();
             this.TPDevolucionV.ResumeLayout(false);
             this.TPDevolucionV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucionVM)).EndInit();

@@ -36,6 +36,17 @@ namespace Sistema.Presentacion
         }
 
 
+        //Funcion para dar formato a los prestamos de libros mostrados
+        private void FormatoPL()
+        {
+            dgvDevolucionLP.Columns[0].Width = 125;
+            dgvDevolucionLP.Columns[1].Width = 125;
+            dgvDevolucionLP.Columns[4].Visible = false;
+            dgvDevolucionLP.Columns[5].Visible = false;
+
+        }
+
+
         //Funcion para buscar y regresar un maestro e imprimirlo en Devolucion Libros
         private void BuscarML()
         {
@@ -232,6 +243,36 @@ namespace Sistema.Presentacion
             }
         }
 
-        
+
+
+        //Funcion que verifica el cambio de fila seleccionada en dgvMaestros en Devolucion de Libros
+
+        private void dgvDevolucionLM_SelectionChanged(object sender, EventArgs e)
+        {
+
+
+            //Guardando la fila que esta actualmente seleccionada
+            int filaM = SeleccionarFila(dgvDevolucionLM);
+
+            //Guardando el DataTable que se habia mandado a buscar en el dgv
+            DataTable maestros = NUsuario.Listar(TxtFraseL.Text);
+
+
+            //Guardando el ID de la fila actualmente seleccionada
+            int id_usuario = Convert.ToInt32(maestros.Rows[filaM]["codigo"]);
+
+            try
+            {
+                //Obteniendo la tabla de la BD
+                dgvDevolucionLP.DataSource = NPrestamos.Listar_Libros(id_usuario);
+
+                //Aplicando el formato a la tabla para mejor disenio
+                this.FormatoPL();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
     }
 }
