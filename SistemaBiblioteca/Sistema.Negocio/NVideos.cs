@@ -145,5 +145,21 @@ namespace Sistema.Negocio
 
             return Datos.Eliminar(id_video);
         }
+
+        // Funcion para activar videos 
+        public static string Activar(int Id)
+        {
+            DVideos Datos = new DVideos();
+
+            return Datos.Activar(Id);
+        }
+
+        // Funcion para desactivar videos 
+        public static string Desactivar(int Id)
+        {
+            DVideos Datos = new DVideos();
+
+            return Datos.Desactivar(Id);
+        }
     }
 }

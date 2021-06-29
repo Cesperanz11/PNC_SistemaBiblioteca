@@ -243,6 +243,7 @@ namespace Sistema.Presentacion
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
+            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
             // 
             // helpMenu
             // 
@@ -1737,6 +1738,7 @@ namespace Sistema.Presentacion
             this.Name = "FrmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Biblioteca (Administracion)";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAdmin_FormClosing);
             this.Load += new System.EventHandler(this.FrmAdmin_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();

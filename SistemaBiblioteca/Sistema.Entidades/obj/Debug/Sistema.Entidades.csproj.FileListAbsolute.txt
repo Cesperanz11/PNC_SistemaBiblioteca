@@ -4,3 +4,9 @@ C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_Sis
 C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Entidades\obj\Debug\Sistema.Entidades.csproj.CoreCompileInputs.cache
 C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Entidades\obj\Debug\Sistema.Entidades.dll
 C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Entidades\obj\Debug\Sistema.Entidades.pdb
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Entidades\bin\Debug\Sistema.Entidades.dll
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Entidades\bin\Debug\Sistema.Entidades.pdb
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Entidades\obj\Debug\Sistema.Entidades.csproj.AssemblyReference.cache
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Entidades\obj\Debug\Sistema.Entidades.csproj.CoreCompileInputs.cache
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Entidades\obj\Debug\Sistema.Entidades.dll
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Entidades\obj\Debug\Sistema.Entidades.pdb

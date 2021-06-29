@@ -7,3 +7,12 @@ C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_Sis
 C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.csproj.CopyComplete
 C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.dll
 C:\Users\owner\Desktop\Ciclo 01-2021\Programacion n-capas\Proyecto_Final\PNC_SistemaBiblioteca\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.pdb
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.csproj.AssemblyReference.cache
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.csproj.CoreCompileInputs.cache
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.dll
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.pdb
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Datos\bin\Debug\Sistema.Datos.dll
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Datos\bin\Debug\Sistema.Datos.pdb
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Datos\bin\Debug\Sistema.Entidades.dll
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Datos\bin\Debug\Sistema.Entidades.pdb
+D:\User\Desktop\Programming\UCA\Ciclo01-2021\Programacion N-Capas\Proyecto Final\SistemaBiblioteca\Sistema.Datos\obj\Debug\Sistema.Datos.csproj.CopyComplete

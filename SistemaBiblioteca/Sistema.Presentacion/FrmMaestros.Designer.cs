@@ -31,22 +31,22 @@ namespace Sistema.Presentacion
         {
             this.TabControlMaestros = new System.Windows.Forms.TabControl();
             this.TPLibros = new System.Windows.Forms.TabPage();
-            this.TPVideos = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BtnBuscarL = new System.Windows.Forms.Button();
-            this.cmbLibros = new System.Windows.Forms.ComboBox();
-            this.TxtSearchL = new System.Windows.Forms.TextBox();
-            this.LblCriterio = new System.Windows.Forms.Label();
             this.dgvLibros = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dgvVideo = new System.Windows.Forms.DataGridView();
-            this.cmbVideos = new System.Windows.Forms.ComboBox();
-            this.BtnBuscarV = new System.Windows.Forms.Button();
+            this.LblCriterio = new System.Windows.Forms.Label();
+            this.TxtSearchL = new System.Windows.Forms.TextBox();
+            this.cmbLibros = new System.Windows.Forms.ComboBox();
+            this.BtnBuscarL = new System.Windows.Forms.Button();
+            this.TPVideos = new System.Windows.Forms.TabPage();
             this.TxtSearchV = new System.Windows.Forms.TextBox();
+            this.BtnBuscarV = new System.Windows.Forms.Button();
+            this.cmbVideos = new System.Windows.Forms.ComboBox();
+            this.dgvVideo = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TabControlMaestros.SuspendLayout();
             this.TPLibros.SuspendLayout();
-            this.TPVideos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
+            this.TPVideos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +75,55 @@ namespace Sistema.Presentacion
             this.TPLibros.Text = "Libros";
             this.TPLibros.UseVisualStyleBackColor = true;
             // 
+            // dgvLibros
+            // 
+            this.dgvLibros.AllowUserToAddRows = false;
+            this.dgvLibros.AllowUserToDeleteRows = false;
+            this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLibros.Location = new System.Drawing.Point(0, 63);
+            this.dgvLibros.Name = "dgvLibros";
+            this.dgvLibros.ReadOnly = true;
+            this.dgvLibros.Size = new System.Drawing.Size(794, 324);
+            this.dgvLibros.TabIndex = 5;
+            // 
+            // LblCriterio
+            // 
+            this.LblCriterio.AutoSize = true;
+            this.LblCriterio.Location = new System.Drawing.Point(421, 26);
+            this.LblCriterio.Name = "LblCriterio";
+            this.LblCriterio.Size = new System.Drawing.Size(108, 13);
+            this.LblCriterio.TabIndex = 4;
+            this.LblCriterio.Text = "Criterio de Busqueda:";
+            // 
+            // TxtSearchL
+            // 
+            this.TxtSearchL.Location = new System.Drawing.Point(19, 23);
+            this.TxtSearchL.Name = "TxtSearchL";
+            this.TxtSearchL.Size = new System.Drawing.Size(379, 20);
+            this.TxtSearchL.TabIndex = 3;
+            // 
+            // cmbLibros
+            // 
+            this.cmbLibros.FormattingEnabled = true;
+            this.cmbLibros.Items.AddRange(new object[] {
+            "ISBN",
+            "Titulo",
+            "Autor"});
+            this.cmbLibros.Location = new System.Drawing.Point(535, 23);
+            this.cmbLibros.Name = "cmbLibros";
+            this.cmbLibros.Size = new System.Drawing.Size(121, 21);
+            this.cmbLibros.TabIndex = 2;
+            // 
+            // BtnBuscarL
+            // 
+            this.BtnBuscarL.Location = new System.Drawing.Point(662, 21);
+            this.BtnBuscarL.Name = "BtnBuscarL";
+            this.BtnBuscarL.Size = new System.Drawing.Size(87, 23);
+            this.BtnBuscarL.TabIndex = 0;
+            this.BtnBuscarL.Text = "Buscar";
+            this.BtnBuscarL.UseVisualStyleBackColor = true;
+            this.BtnBuscarL.Click += new System.EventHandler(this.BtnBuscarL_Click);
+            // 
             // TPVideos
             // 
             this.TPVideos.Controls.Add(this.TxtSearchV);
@@ -90,85 +139,22 @@ namespace Sistema.Presentacion
             this.TPVideos.Text = "Videos";
             this.TPVideos.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // TxtSearchV
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(715, 28);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "SISTEMA DE CONSULTA DE CONTENIDOS DE BIBLIOTECA CENTRAL";
+            this.TxtSearchV.Location = new System.Drawing.Point(10, 25);
+            this.TxtSearchV.Name = "TxtSearchV";
+            this.TxtSearchV.Size = new System.Drawing.Size(379, 20);
+            this.TxtSearchV.TabIndex = 4;
             // 
-            // BtnBuscarL
+            // BtnBuscarV
             // 
-            this.BtnBuscarL.Location = new System.Drawing.Point(662, 21);
-            this.BtnBuscarL.Name = "BtnBuscarL";
-            this.BtnBuscarL.Size = new System.Drawing.Size(87, 23);
-            this.BtnBuscarL.TabIndex = 0;
-            this.BtnBuscarL.Text = "Buscar";
-            this.BtnBuscarL.UseVisualStyleBackColor = true;
-            this.BtnBuscarL.Click += new System.EventHandler(this.BtnBuscarL_Click);
-            // 
-            // cmbLibros
-            // 
-            this.cmbLibros.FormattingEnabled = true;
-            this.cmbLibros.Items.AddRange(new object[] {
-            "ISBN",
-            "Titulo",
-            "Autor"});
-            this.cmbLibros.Location = new System.Drawing.Point(535, 23);
-            this.cmbLibros.Name = "cmbLibros";
-            this.cmbLibros.Size = new System.Drawing.Size(121, 21);
-            this.cmbLibros.TabIndex = 2;
-            // 
-            // TxtSearchL
-            // 
-            this.TxtSearchL.Location = new System.Drawing.Point(19, 23);
-            this.TxtSearchL.Name = "TxtSearchL";
-            this.TxtSearchL.Size = new System.Drawing.Size(379, 20);
-            this.TxtSearchL.TabIndex = 3;
-            // 
-            // LblCriterio
-            // 
-            this.LblCriterio.AutoSize = true;
-            this.LblCriterio.Location = new System.Drawing.Point(421, 26);
-            this.LblCriterio.Name = "LblCriterio";
-            this.LblCriterio.Size = new System.Drawing.Size(108, 13);
-            this.LblCriterio.TabIndex = 4;
-            this.LblCriterio.Text = "Criterio de Busqueda:";
-            // 
-            // dgvLibros
-            // 
-            this.dgvLibros.AllowUserToAddRows = false;
-            this.dgvLibros.AllowUserToDeleteRows = false;
-            this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLibros.Location = new System.Drawing.Point(0, 63);
-            this.dgvLibros.Name = "dgvLibros";
-            this.dgvLibros.ReadOnly = true;
-            this.dgvLibros.Size = new System.Drawing.Size(794, 324);
-            this.dgvLibros.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(417, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Criterio de Busqueda:";
-            // 
-            // dgvVideo
-            // 
-            this.dgvVideo.AllowUserToAddRows = false;
-            this.dgvVideo.AllowUserToDeleteRows = false;
-            this.dgvVideo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVideo.Location = new System.Drawing.Point(0, 68);
-            this.dgvVideo.Name = "dgvVideo";
-            this.dgvVideo.ReadOnly = true;
-            this.dgvVideo.Size = new System.Drawing.Size(794, 319);
-            this.dgvVideo.TabIndex = 1;
+            this.BtnBuscarV.Location = new System.Drawing.Point(669, 25);
+            this.BtnBuscarV.Name = "BtnBuscarV";
+            this.BtnBuscarV.Size = new System.Drawing.Size(104, 23);
+            this.BtnBuscarV.TabIndex = 3;
+            this.BtnBuscarV.Text = "Buscar";
+            this.BtnBuscarV.UseVisualStyleBackColor = true;
+            this.BtnBuscarV.Click += new System.EventHandler(this.BtnBuscarV_Click);
             // 
             // cmbVideos
             // 
@@ -182,22 +168,36 @@ namespace Sistema.Presentacion
             this.cmbVideos.Size = new System.Drawing.Size(121, 21);
             this.cmbVideos.TabIndex = 2;
             // 
-            // BtnBuscarV
+            // dgvVideo
             // 
-            this.BtnBuscarV.Location = new System.Drawing.Point(669, 25);
-            this.BtnBuscarV.Name = "BtnBuscarV";
-            this.BtnBuscarV.Size = new System.Drawing.Size(104, 23);
-            this.BtnBuscarV.TabIndex = 3;
-            this.BtnBuscarV.Text = "Buscar";
-            this.BtnBuscarV.UseVisualStyleBackColor = true;
-            this.BtnBuscarV.Click += new System.EventHandler(this.BtnBuscarV_Click);
+            this.dgvVideo.AllowUserToAddRows = false;
+            this.dgvVideo.AllowUserToDeleteRows = false;
+            this.dgvVideo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVideo.Location = new System.Drawing.Point(0, 68);
+            this.dgvVideo.Name = "dgvVideo";
+            this.dgvVideo.ReadOnly = true;
+            this.dgvVideo.Size = new System.Drawing.Size(794, 319);
+            this.dgvVideo.TabIndex = 1;
             // 
-            // TxtSearchV
+            // label2
             // 
-            this.TxtSearchV.Location = new System.Drawing.Point(10, 25);
-            this.TxtSearchV.Name = "TxtSearchV";
-            this.TxtSearchV.Size = new System.Drawing.Size(379, 20);
-            this.TxtSearchV.TabIndex = 4;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(417, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Criterio de Busqueda:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(715, 28);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "SISTEMA DE CONSULTA DE CONTENIDOS DE BIBLIOTECA CENTRAL";
             // 
             // FrmMaestros
             // 
@@ -208,14 +208,16 @@ namespace Sistema.Presentacion
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TabControlMaestros);
             this.Name = "FrmMaestros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Biblioteca (Maestros)";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMaestros_FormClosing);
             this.Load += new System.EventHandler(this.FrmMaestros_Load);
             this.TabControlMaestros.ResumeLayout(false);
             this.TPLibros.ResumeLayout(false);
             this.TPLibros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).EndInit();
             this.TPVideos.ResumeLayout(false);
             this.TPVideos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

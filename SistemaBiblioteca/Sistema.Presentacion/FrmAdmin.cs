@@ -473,6 +473,12 @@ namespace Sistema.Presentacion
 
         }
 
+        //Funcion de pasar el control a FrmReportes
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReportes f = new FrmReportes();
+            f.ShowDialog();
+        }
 
 
 
@@ -830,6 +836,18 @@ namespace Sistema.Presentacion
             TabControl.SelectedIndex = 4;
         }
 
-        
+        //Funcion para crear el FrmLogin
+        public static void ThreadProcLogin()
+        {
+            FrmLogin f;
+            Application.Run(new FrmLogin());
+        }
+
+        private void FrmAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Cerrando sesion y abriendo el login de nuevo
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProcLogin));
+            t.Start();
+        }
     }
 }

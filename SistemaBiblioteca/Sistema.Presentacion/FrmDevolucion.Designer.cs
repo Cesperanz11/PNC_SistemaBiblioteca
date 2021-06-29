@@ -268,6 +268,7 @@ namespace Sistema.Presentacion
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmDevolucion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDevolucion";
             this.Load += new System.EventHandler(this.FrmDevolucion_Load);
             this.tabControl1.ResumeLayout(false);

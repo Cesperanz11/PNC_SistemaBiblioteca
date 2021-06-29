@@ -158,6 +158,7 @@ namespace Sistema.Negocio
             return Datos.Activar(Id);
         }
 
+        // Funcion para desactivar libros 
         public static string Desactivar(int Id)
         {
             DLibros Datos = new DLibros();

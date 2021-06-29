@@ -16,10 +16,10 @@ namespace Sistema.Datos
         {
             //Asginando las variables para generar la conexion con la BD
             this.Base = "proyectofinal_biblioteca";
-            this.Servidor = "192.168.134.1";
+            this.Servidor = "DESKTOP-BQRAI5N\\SQLEXPRESS"; //Cambiar por "192.168.134.1" y Seguridad = false
             this.Usuario = "sa";
             this.Clave = "uca";
-            this.Seguridad = false; //Seguridad de Windows (false debido a que se esta utilizando una maquina virtual para el servidor)
+            this.Seguridad = true; //Seguridad de Windows (false debido a que se esta utilizando una maquina virtual para el servidor)
         }
 
         public SqlConnection CrearConexion()

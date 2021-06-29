@@ -370,7 +370,7 @@ namespace Sistema.Presentacion
                             
 
                             //Se desactiva el libro que se registro en el prestamo
-                            //NLibros.Desactivar(id_libro);
+                            NLibros.Desactivar(id_libro);
 
                             TxtFraseL.Clear();
                             TxtMaestroL.Clear();
@@ -538,6 +538,11 @@ namespace Sistema.Presentacion
                             dgvPrestamoVV.DataSource = null;
                             dgvPrestamoVM.DataSource = null;
                             dgvPrestamoVP.DataSource = null;
+
+                            dtpVideo.Value = DateTime.Today;
+
+                            //Se desactiva el libro que se registro en el prestamo
+                            NVideos.Desactivar(id_video);
 
                             TxtFraseV.Clear();
                             TxtMaestroV.Clear();

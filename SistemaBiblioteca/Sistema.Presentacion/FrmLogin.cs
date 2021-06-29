@@ -130,6 +130,11 @@ namespace Sistema.Presentacion
             }
         }
 
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            TxtEmail.Clear();
+            TxtPassword.Clear();
+        }
     }
     
 }

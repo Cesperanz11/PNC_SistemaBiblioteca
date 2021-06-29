@@ -106,5 +106,18 @@ namespace Sistema.Presentacion
         {
             this.BuscarV();
         }
+
+        //Funcion para crear el FrmLogin
+        public static void ThreadProcLogin()
+        {
+            FrmLogin f;
+            Application.Run(new FrmLogin());
+        }
+        private void FrmMaestros_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Cerrando sesion y abriendo el login de nuevo
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProcLogin));
+            t.Start();
+        }
     }
 }

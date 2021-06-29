@@ -212,7 +212,7 @@ namespace Sistema.Presentacion
 
 
 
-            //Logica de verificar campos antes de ingresar prestamo
+            //Logica de verificar campos antes de devolver un libro
 
             if (dgvDevolucionLM.DataSource == null || dgvDevolucionLP.DataSource == null) // Este escenario es si ninguna fila a sido seleccionada aun o si el DGV esta vacio
             {
@@ -261,8 +261,6 @@ namespace Sistema.Presentacion
 
         private void dgvDevolucionLM_SelectionChanged(object sender, EventArgs e)
         {
-
-
             //Guardando la fila que esta actualmente seleccionada
             int filaM = SeleccionarFila(dgvDevolucionLM);
 
@@ -276,10 +274,23 @@ namespace Sistema.Presentacion
             try
             {
                 //Obteniendo la tabla de la BD
-                dgvDevolucionLP.DataSource = NPrestamos.Listar_Libros(id_usuario);
+                DataTable DevolucionLP = NPrestamos.Listar_Libros(id_usuario);
 
-                //Aplicando el formato a la tabla para mejor disenio
-                this.FormatoPL();
+                if(DevolucionLP.Rows.Count > 0) {
+
+                    dgvDevolucionLP.DataSource = DevolucionLP;
+
+                    //Aplicando el formato a la tabla para mejor disenio
+                    this.FormatoPL();
+                } else
+                {
+                    TxtFraseL.Clear();
+                    dgvDevolucionLM.DataSource = null;
+                    this.MensajeError("Este usuario no tiene prestamos activos");
+                    dgvDevolucionLP.DataSource = null;
+                }
+
+                
             }
             catch (Exception ex)
             {
@@ -376,8 +387,8 @@ namespace Sistema.Presentacion
                         dgvDevolucionVM.DataSource = null;
                         dgvDevolucionVP.DataSource = null;
 
-                        //Se activa el libro que se registro en el prestamo
-                        NLibros.Activar(id_video);
+                        //Se activa el video que se registro en el prestamo
+                        NVideos.Activar(id_video);
 
                         TxtFraseV.Clear();
 

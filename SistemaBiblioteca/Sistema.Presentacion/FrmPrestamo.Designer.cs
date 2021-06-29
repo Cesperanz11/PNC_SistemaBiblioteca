@@ -476,6 +476,7 @@ namespace Sistema.Presentacion
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmPrestamo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrestamo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrestamo_FormClosing);
             this.Load += new System.EventHandler(this.FrmPrestamo_Load);
